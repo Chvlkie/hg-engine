@@ -7,89 +7,89 @@
 
 .open "base/arm9.bin", 0x02000000
 
-.org 0x02000000 + 0xFA558 //New Bark Town
-.halfword ITEM_POTION
+.org 0x02000000 + 0xFA558 //R01 - 8000
+.halfword ITEM_ORAN_BERRY
 
-.org 0x02000000 + 0xFA560 //Cherrygrove
-.halfword ITEM_NUGGET
-
-.org 0x02000000 + 0xFA568 //Cherrygrove
-.halfword ITEM_NUGGET
-
-.org 0x02000000 + 0xFA570 //R30
-.halfword ITEM_POTION
-
-.org 0x02000000 + 0xFA578 //Dark Cave
-.halfword ITEM_POKE_BALL
-
-.org 0x02000000 + 0xFA580 //Dark Cave
-.halfword ITEM_MAX_ETHER
-
-.org 0x02000000 + 0xFA588 //Dark Cave
-.halfword ITEM_MAX_REVIVE
-
-.org 0x02000000 + 0xFA590 //Dark Cave
-.halfword ITEM_HYPER_POTION
-
-.org 0x02000000 + 0xFA598 //Dark Cave
-.halfword ITEM_ELIXIR
-
-.org 0x02000000 + 0xFA5A0 //Violet
-.halfword ITEM_HYPER_POTION
-
-.org 0x02000000 + 0xFA5A8 //Violet
-.halfword ITEM_POKE_BALL
-
-.org 0x02000000 + 0xFA5B0 //Ruins of Alph E
-.halfword ITEM_GREAT_BALL
-
-.org 0x02000000 + 0xFA5B8 //Ruins of Alph SW
-.halfword ITEM_BIG_MUSHROOM
-
-.org 0x02000000 + 0xFA5C0 //Ruins of Alph W
-.halfword ITEM_TINY_MUSHROOM
-
-.org 0x02000000 + 0xFA5C8 //Ruins of Alph NW
+.org 0x02000000 + 0xFA560 //Viridian - 8225
 .halfword ITEM_RARE_CANDY
 
-.org 0x02000000 + 0xFA5D0 //Ruins of Alph SW
+.org 0x02000000 + 0xFA568 //R22 - 8001
+.halfword ITEM_REPEL
+
+.org 0x02000000 + 0xFA570 //Viridian Forest - 8002
+.halfword ITEM_ANTIDOTE
+
+.org 0x02000000 + 0xFA578 //Viridian Forest - 8014
+.halfword ITEM_TINY_MUSHROOM
+
+.org 0x02000000 + 0xFA580 //Viridian Forest - 8015
+.halfword ITEM_PECHA_BERRY
+
+.org 0x02000000 + 0xFA588 //Viridian Forest - 8016
+.halfword ITEM_POTION
+
+.org 0x02000000 + 0xFA590 //Pewter -8017
+.halfword ITEM_POTION
+
+.org 0x02000000 + 0xFA598 //Pewter -8018
+.halfword ITEM_RARE_CANDY
+
+.org 0x02000000 + 0xFA5A0 //Pewter - 8003
+.halfword ITEM_REPEL
+
+.org 0x02000000 + 0xFA5A8 //R03 - 8108
+.halfword ITEM_ORAN_BERRY
+
+.org 0x02000000 + 0xFA5B0 //R03
 .halfword ITEM_NUGGET
 
-.org 0x02000000 + 0xFA5D8 //Union Cave 1F E
-.halfword ITEM_GREAT_BALL
+.org 0x02000000 + 0xFA5B8 //R03
+.halfword ITEM_PERSIM_BERRY
 
-.org 0x02000000 + 0xFA5E0 //Union Cave 1F S
-.halfword ITEM_PARALYZE_HEAL
-
-.org 0x02000000 + 0xFA5E8 //Union Cave 1F W
-.halfword ITEM_BIG_PEARL
-
-.org 0x02000000 + 0xFA5F0 //Union Cave B1F S
-.halfword ITEM_X_SPEED
-
-.org 0x02000000 + 0xFA5F8 //Union Cave B1F E
-.halfword ITEM_REVIVE
-
-.org 0x02000000 + 0xFA600 //Union Cave B2F SW
-.halfword ITEM_ULTRA_BALL
-
-.org 0x02000000 + 0xFA608 //Union Cave B2F W
-.halfword ITEM_CALCIUM
-
-.org 0x02000000 + 0xFA610 //R32 E
-.halfword ITEM_HEART_SCALE
-
-.org 0x02000000 + 0xFA618 //R32 SW
-.halfword ITEM_GREAT_BALL
-
-.org 0x02000000 + 0xFA620 //R32 N
+.org 0x02000000 + 0xFA5C0 //Mt.Moon 1
 .halfword ITEM_SUPER_POTION
 
-.org 0x02000000 + 0xFA628 //Azalea Town
-.halfword ITEM_FULL_HEAL 
+.org 0x02000000 + 0xFA5C8 //Mt.Moon 1
+.halfword ITEM_CALCIUM
 
-.org 0x02000000 + 0xFA630 //Slowpoke Well Entrance
+.org 0x02000000 + 0xFA5D0 //Mt.Moon 1
+.halfword ITEM_MOON_STONE
+
+.org 0x02000000 + 0xFA5D8 //Mt.Moon 2
+.halfword ITEM_TINY_MUSHROOM
+
+.org 0x02000000 + 0xFA5E0 //Mt.Moon 2
+.halfword ITEM_TINY_MUSHROOM
+
+.org 0x02000000 + 0xFA5E8 //Mt.Moon 2
+.halfword ITEM_BIG_MUSHROOM
+
+.org 0x02000000 + 0xFA5F0 //Mt.Moon 3
+.halfword ITEM_MOON_STONE
+
+.org 0x02000000 + 0xFA5F8 //Mt.Moon 3
+.halfword ITEM_ETHER
+
+.org 0x02000000 + 0xFA600 //R04
 .halfword ITEM_GREAT_BALL
+
+.org 0x02000000 + 0xFA608 //R04
+.halfword ITEM_RAZZ_BERRY
+
+.org 0x02000000 + 0xFA610 //Cerulean
+.halfword ITEM_RARE_CANDY
+
+.org 0x02000000 + 0xFA618 //Cerulean
+.halfword ITEM_PP_UP
+
+.org 0x02000000 + 0xFA620 //Cerulean
+.halfword ITEM_HP_UP
+
+.org 0x02000000 + 0xFA628 //R25
+.halfword ITEM_PECHA_BERRY
+
+.org 0x02000000 + 0xFA630 //R25
+.halfword ITEM_ELIXIR
 
 .org 0x02000000 + 0xFA638 //Slowpoke Well B1F Rock
 .halfword ITEM_SUPER_POTION
