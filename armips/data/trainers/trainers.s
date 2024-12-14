@@ -11,7 +11,7 @@
 
 trainerdata 0, "-"
     trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_PKMN_TRAINER_ETHAN
+    trainerclass TRAINERCLASS_PLAYER_M
     nummons 0
     item ITEM_NONE
     item ITEM_NONE
@@ -613,7 +613,7 @@ trainerdata 19, "Mickey"
 
 trainerdata 20, "Falkner"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_FALKNER
+    trainerclass TRAINERCLASS_LEADER_BROCK
     nummons 2
     item ITEM_NONE
     item ITEM_NONE
@@ -651,7 +651,7 @@ trainerdata 20, "Falkner"
 
 trainerdata 21, "Bugsy"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_BUGSY
+    trainerclass TRAINERCLASS_LEADER_MISTY
     nummons 3
     item ITEM_SUPER_POTION
     item ITEM_NONE
@@ -920,7 +920,7 @@ trainerdata 29, "Rod"
 
 trainerdata 30, "Whitney"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_WHITNEY
+    trainerclass TRAINERCLASS_LEADER_LT_SURGE
     nummons 2
     item ITEM_SUPER_POTION
     item ITEM_SUPER_POTION
@@ -958,7 +958,7 @@ trainerdata 30, "Whitney"
 
 trainerdata 31, "Morty"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_MORTY
+    trainerclass TRAINERCLASS_LEADER_ERIKA
     nummons 4
     item ITEM_HYPER_POTION
     item ITEM_HYPER_POTION
@@ -1020,7 +1020,7 @@ trainerdata 31, "Morty"
 
 trainerdata 32, "Pryce"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_PRYCE
+    trainerclass TRAINERCLASS_LEADER_BLAINE
     nummons 3
     item ITEM_HYPER_POTION
     item ITEM_FULL_RESTORE
@@ -1070,7 +1070,7 @@ trainerdata 32, "Pryce"
 
 trainerdata 33, "Jasmine"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_JASMINE
+    trainerclass TRAINERCLASS_LEADER_KOGA
     nummons 3
     item ITEM_HYPER_POTION
     item ITEM_HYPER_POTION
@@ -1120,7 +1120,7 @@ trainerdata 33, "Jasmine"
 
 trainerdata 34, "Chuck"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_CHUCK
+    trainerclass TRAINERCLASS_LEADER_SABRINA
     nummons 2
     item ITEM_HYPER_POTION
     item ITEM_HYPER_POTION
@@ -1158,7 +1158,7 @@ trainerdata 34, "Chuck"
 
 trainerdata 35, "Clair"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_CLAIR
+    trainerclass TRAINERCLASS_LEADER_GIOVANNI
     nummons 4
     item ITEM_HYPER_POTION
     item ITEM_FULL_RESTORE
@@ -1403,7 +1403,7 @@ trainerdata 42, "Nathan"
 
 trainerdata 43, "Chow"
     trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_SAGE
+    trainerclass TRAINERCLASS_GAMBLER
     nummons 3
     item ITEM_NONE
     item ITEM_NONE
@@ -1628,7 +1628,7 @@ trainerdata 50, "Abe"
 
 trainerdata 51, "Nico"
     trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_SAGE
+    trainerclass TRAINERCLASS_GAMBLER
     nummons 3
     item ITEM_NONE
     item ITEM_NONE
@@ -1663,7 +1663,7 @@ trainerdata 51, "Nico"
 
 trainerdata 52, "Edmond"
     trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_SAGE
+    trainerclass TRAINERCLASS_GAMBLER
     nummons 3
     item ITEM_NONE
     item ITEM_NONE
@@ -1698,7 +1698,7 @@ trainerdata 52, "Edmond"
 
 trainerdata 53, "Jin"
     trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_SAGE
+    trainerclass TRAINERCLASS_GAMBLER
     nummons 1
     item ITEM_NONE
     item ITEM_NONE
@@ -1719,7 +1719,7 @@ trainerdata 53, "Jin"
 
 trainerdata 54, "Troy"
     trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_SAGE
+    trainerclass TRAINERCLASS_GAMBLER
     nummons 2
     item ITEM_NONE
     item ITEM_NONE
@@ -1747,7 +1747,7 @@ trainerdata 54, "Troy"
 
 trainerdata 55, "Neal"
     trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_SAGE
+    trainerclass TRAINERCLASS_GAMBLER
     nummons 1
     item ITEM_NONE
     item ITEM_NONE
@@ -2683,7 +2683,7 @@ trainerdata 86, "Randall"
 
 trainerdata 87, "Mickey"
     trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_SAGE
+    trainerclass TRAINERCLASS_GAMBLER
     nummons 1
     item ITEM_NONE
     item ITEM_NONE
@@ -2704,7 +2704,7 @@ trainerdata 87, "Mickey"
 
 trainerdata 88, "Mickey"
     trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_SAGE
+    trainerclass TRAINERCLASS_GAMBLER
     nummons 5
     item ITEM_NONE
     item ITEM_NONE
@@ -7586,7 +7586,7 @@ trainerdata 244, "Lance"
 
 trainerdata 245, "Will"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_ELITE_FOUR_WILL
+    trainerclass TRAINERCLASS_ELITE_FOUR_LORELEI
     nummons 5
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -7660,7 +7660,7 @@ trainerdata 245, "Will"
 
 trainerdata 246, "Karen"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_ELITE_FOUR_KAREN
+    trainerclass TRAINERCLASS_ELITE_FOUR_BRUNO
     nummons 5
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -7734,7 +7734,7 @@ trainerdata 246, "Karen"
 
 trainerdata 247, "Koga"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_ELITE_FOUR_KOGA
+    trainerclass TRAINERCLASS_ELITE_FOUR_AGATHA
     nummons 5
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -7977,7 +7977,7 @@ trainerdata 252, "Harold"
 
 trainerdata 253, "Brock"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_BROCK
+    trainerclass TRAINERCLASS_PKMN_TRAINER_RED
     nummons 5
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -8051,7 +8051,7 @@ trainerdata 253, "Brock"
 
 trainerdata 254, "Misty"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_MISTY
+    trainerclass TRAINERCLASS_PKMN_TRAINER_GREEN
     nummons 4
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -8113,7 +8113,7 @@ trainerdata 254, "Misty"
 
 trainerdata 255, "Lt. Surge"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_LT_SURGE
+    trainerclass TRAINERCLASS_TEAM_ROCKET_JESSIE_JAMES
     nummons 5
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -8187,7 +8187,7 @@ trainerdata 255, "Lt. Surge"
 
 trainerdata 256, "Erika"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_ERIKA
+    trainerclass TRAINERCLASS_TEAM_ROCKET_JESSIE
     nummons 4
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -8249,7 +8249,7 @@ trainerdata 256, "Erika"
 
 trainerdata 257, "Janine"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_JANINE
+    trainerclass TRAINERCLASS_TEAM_ROCKET_JAMES
     nummons 5
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -8323,7 +8323,7 @@ trainerdata 257, "Janine"
 
 trainerdata 258, "Sabrina"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_SABRINA
+    trainerclass TRAINERCLASS_LEADER_14
     nummons 3
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -8373,7 +8373,7 @@ trainerdata 258, "Sabrina"
 
 trainerdata 259, "Blaine"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_BLAINE
+    trainerclass TRAINERCLASS_LEADER_15
     nummons 3
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -8423,7 +8423,7 @@ trainerdata 259, "Blaine"
 
 trainerdata 260, "Red"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_PKMN_TRAINER_RED
+    trainerclass TRAINERCLASS_PKMN_TRAINER_TBC
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -8509,7 +8509,7 @@ trainerdata 260, "Red"
 
 trainerdata 261, "Blue"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_BLUE
+    trainerclass TRAINERCLASS_LEADER_16
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -13993,7 +13993,7 @@ trainerdata 417, "Jenn"
 
 trainerdata 418, "Bruno"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_ELITE_FOUR_BRUNO
+    trainerclass TRAINERCLASS_ELITE_FOUR_LANCE
     nummons 5
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -16196,7 +16196,7 @@ trainerdata 485, "Archer"
 
 trainerdata 486, "Proton"
     trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_EXECUTIVE_PROTON
+    trainerclass TRAINERCLASS_EXECUTIVE_ORION
     nummons 2
     item ITEM_NONE
     item ITEM_NONE
@@ -16224,7 +16224,7 @@ trainerdata 486, "Proton"
 
 trainerdata 487, "Petrel"
     trainermontype TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_EXECUTIVE_PETREL
+    trainerclass TRAINERCLASS_EXECUTIVE_MARGOT
     nummons 6
     item ITEM_NONE
     item ITEM_NONE
@@ -16304,7 +16304,7 @@ trainerdata 487, "Petrel"
 
 trainerdata 488, "Petrel"
     trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_EXECUTIVE_PETREL
+    trainerclass TRAINERCLASS_EXECUTIVE_MARGOT
     nummons 3
     item ITEM_NONE
     item ITEM_NONE
@@ -18388,7 +18388,7 @@ trainerdata 541, "Andy"
 
 trainerdata 542, "Mickey"
     trainermontype TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_SAGE
+    trainerclass TRAINERCLASS_GAMBLER
     nummons 2
     item ITEM_NONE
     item ITEM_NONE
@@ -18424,7 +18424,7 @@ trainerdata 542, "Mickey"
 
 trainerdata 543, "Mickey"
     trainermontype TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_SAGE
+    trainerclass TRAINERCLASS_GAMBLER
     nummons 2
     item ITEM_NONE
     item ITEM_NONE
@@ -18460,7 +18460,7 @@ trainerdata 543, "Mickey"
 
 trainerdata 544, "Mickey"
     trainermontype TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_SAGE
+    trainerclass TRAINERCLASS_GAMBLER
     nummons 2
     item ITEM_NONE
     item ITEM_NONE
@@ -23611,7 +23611,7 @@ trainerdata 701, "Lance"
 
 trainerdata 702, "Will"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_ELITE_FOUR_WILL
+    trainerclass TRAINERCLASS_ELITE_FOUR_LORELEI
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -23697,7 +23697,7 @@ trainerdata 702, "Will"
 
 trainerdata 703, "Koga"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_ELITE_FOUR_KOGA
+    trainerclass TRAINERCLASS_ELITE_FOUR_AGATHA
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -23783,7 +23783,7 @@ trainerdata 703, "Koga"
 
 trainerdata 704, "Bruno"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_ELITE_FOUR_BRUNO
+    trainerclass TRAINERCLASS_ELITE_FOUR_LANCE
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -23869,7 +23869,7 @@ trainerdata 704, "Bruno"
 
 trainerdata 705, "Karen"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_ELITE_FOUR_KAREN
+    trainerclass TRAINERCLASS_ELITE_FOUR_BRUNO
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -23955,7 +23955,7 @@ trainerdata 705, "Karen"
 
 trainerdata 706, "Proton"
     trainermontype TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_EXECUTIVE_PROTON
+    trainerclass TRAINERCLASS_EXECUTIVE_ORION
     nummons 2
     item ITEM_NONE
     item ITEM_NONE
@@ -24096,7 +24096,7 @@ trainerdata 711, "Darach"
 
 trainerdata 712, "Falkner"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_FALKNER
+    trainerclass TRAINERCLASS_LEADER_BROCK
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -24182,7 +24182,7 @@ trainerdata 712, "Falkner"
 
 trainerdata 713, "Bugsy"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_BUGSY
+    trainerclass TRAINERCLASS_LEADER_MISTY
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -24268,7 +24268,7 @@ trainerdata 713, "Bugsy"
 
 trainerdata 714, "Whitney"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_WHITNEY
+    trainerclass TRAINERCLASS_LEADER_LT_SURGE
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -24354,7 +24354,7 @@ trainerdata 714, "Whitney"
 
 trainerdata 715, "Morty"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_MORTY
+    trainerclass TRAINERCLASS_LEADER_ERIKA
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -24440,7 +24440,7 @@ trainerdata 715, "Morty"
 
 trainerdata 716, "Pryce"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_PRYCE
+    trainerclass TRAINERCLASS_LEADER_BLAINE
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -24526,7 +24526,7 @@ trainerdata 716, "Pryce"
 
 trainerdata 717, "Jasmine"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_JASMINE
+    trainerclass TRAINERCLASS_LEADER_KOGA
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -24612,7 +24612,7 @@ trainerdata 717, "Jasmine"
 
 trainerdata 718, "Chuck"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_CHUCK
+    trainerclass TRAINERCLASS_LEADER_SABRINA
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -24698,7 +24698,7 @@ trainerdata 718, "Chuck"
 
 trainerdata 719, "Clair"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_CLAIR
+    trainerclass TRAINERCLASS_LEADER_GIOVANNI
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -24784,7 +24784,7 @@ trainerdata 719, "Clair"
 
 trainerdata 720, "Brock"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_BROCK
+    trainerclass TRAINERCLASS_PKMN_TRAINER_RED
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -24870,7 +24870,7 @@ trainerdata 720, "Brock"
 
 trainerdata 721, "Misty"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_MISTY
+    trainerclass TRAINERCLASS_PKMN_TRAINER_GREEN
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -24956,7 +24956,7 @@ trainerdata 721, "Misty"
 
 trainerdata 722, "Lt. Surge"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_LT_SURGE
+    trainerclass TRAINERCLASS_TEAM_ROCKET_JESSIE_JAMES
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -25042,7 +25042,7 @@ trainerdata 722, "Lt. Surge"
 
 trainerdata 723, "Erika"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_ERIKA
+    trainerclass TRAINERCLASS_TEAM_ROCKET_JESSIE
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -25128,7 +25128,7 @@ trainerdata 723, "Erika"
 
 trainerdata 724, "Janine"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_JANINE
+    trainerclass TRAINERCLASS_TEAM_ROCKET_JAMES
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -25214,7 +25214,7 @@ trainerdata 724, "Janine"
 
 trainerdata 725, "Sabrina"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_SABRINA
+    trainerclass TRAINERCLASS_LEADER_14
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -25300,7 +25300,7 @@ trainerdata 725, "Sabrina"
 
 trainerdata 726, "Blaine"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_BLAINE
+    trainerclass TRAINERCLASS_LEADER_15
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -25386,7 +25386,7 @@ trainerdata 726, "Blaine"
 
 trainerdata 727, "Blue"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_BLUE
+    trainerclass TRAINERCLASS_LEADER_16
     nummons 6
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
@@ -25670,7 +25670,7 @@ trainerdata 733, "Lance"
 
 trainerdata 734, "Clair"
     trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
-    trainerclass TRAINERCLASS_LEADER_CLAIR
+    trainerclass TRAINERCLASS_LEADER_GIOVANNI
     nummons 3
     item ITEM_FULL_RESTORE
     item ITEM_FULL_RESTORE
