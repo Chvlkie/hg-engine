@@ -14,7 +14,7 @@
 .halfword ITEM_RARE_CANDY
 
 .org 0x02000000 + 0xFA568 //R22 - 8001
-.halfword ITEM_REPEL
+.halfword ITEM_SUPER_POTION
 
 .org 0x02000000 + 0xFA570 //Viridian Forest - 8002
 .halfword ITEM_ANTIDOTE
@@ -26,7 +26,7 @@
 .halfword ITEM_PECHA_BERRY
 
 .org 0x02000000 + 0xFA588 //Viridian Forest - 8016
-.halfword ITEM_POTION
+.halfword ITEM_SUPER_POTION
 
 .org 0x02000000 + 0xFA590 //Pewter -8017
 .halfword ITEM_POTION
@@ -92,127 +92,127 @@
 .halfword ITEM_ELIXIR
 
 .org 0x02000000 + 0xFA638 //Slowpoke Well B1F Rock
-.halfword ITEM_SUPER_POTION
+.halfword ITEM_ORAN_BERRY
 
 .org 0x02000000 + 0xFA640 //Slowpoke Well B1F Ladder
-.halfword ITEM_FULL_HEAL
+.halfword ITEM_BLUK_BERRY
 
 .org 0x02000000 + 0xFA648 //Ilex Forest W
-.halfword ITEM_ANTIDOTE
+.halfword ITEM_PEARL
 
 .org 0x02000000 + 0xFA650 //Ilex Forest
-.halfword ITEM_SUPER_POTION
+.halfword ITEM_HEART_SCALE
 
 .org 0x02000000 + 0xFA658 //Ilex Forest
-.halfword ITEM_FULL_HEAL
+.halfword ITEM_ELIXIR
 
 .org 0x02000000 + 0xFA660 //Ilex Forest
-.halfword ITEM_ETHER
+.halfword ITEM_CHESTO_BERRY
 
 .org 0x02000000 + 0xFA668 //Ilex Forest
-.halfword ITEM_TINY_MUSHROOM
+.halfword ITEM_RARE_CANDY
 
 .org 0x02000000 + 0xFA670 //Ilex Forest
-.halfword ITEM_REPEL
+.halfword ITEM_PERISM_BERRY
 
 .org 0x02000000 + 0xFA678 //Ilex Forest W Surf
-.halfword ITEM_BIG_MUSHROOM
+.halfword ITEM_CHERI_BERRY
 
 .org 0x02000000 + 0xFA680 //Ilex Forest
-.halfword ITEM_TINY_MUSHROOM
+.halfword ITEM_MAX_ETHER
 
 .org 0x02000000 + 0xFA688 //Ilex Forest
-.halfword ITEM_TINY_MUSHROOM
+.halfword ITEM_SUPER_POTION
 
 .org 0x02000000 + 0xFA690 //R34 Centre
-.halfword ITEM_RARE_CANDY
+.halfword ITEM_ANTIDOTE
 
 .org 0x02000000 + 0xFA698 //R34 E
-.halfword ITEM_SUPER_POTION
-
-.org 0x02000000 + 0xFA6A0 //Goldenrod
-.halfword ITEM_SUPER_POTION
-
-.org 0x02000000 + 0xFA6A8 //Goldenrod Dept Store Basement W
 .halfword ITEM_PARALYZE_HEAL
 
-.org 0x02000000 + 0xFA6B0 //Goldenrod Dept Store Basement Centre
-.halfword ITEM_SUPER_POTION
-
-.org 0x02000000 + 0xFA6B8 //Goldenrod Dept Store Basement SE
-.halfword ITEM_ANTIDOTE
-
-.org 0x02000000 + 0xFA6C0 //Goldenrod Tunnel Basement
-.halfword ITEM_MAX_POTION
-
-.org 0x02000000 + 0xFA6C8 //Goldenrod Tunnel Basement
-.halfword ITEM_REVIVE
-
-.org 0x02000000 + 0xFA6D0 //R35 NW
-.halfword ITEM_NUGGET
-
-.org 0x02000000 + 0xFA6D8 //R36 W
+.org 0x02000000 + 0xFA6A0 //Goldenrod
 .halfword ITEM_AWAKENING
 
-.org 0x02000000 + 0xFA6E0 //National Park
-.halfword ITEM_FULL_HEAL
+.org 0x02000000 + 0xFA6A8 //Goldenrod Dept Store Basement W
+.halfword ITEM_POTION
 
-.org 0x02000000 + 0xFA6E8 //National Park
-.halfword ITEM_FULL_HEAL
-
-.org 0x02000000 + 0xFA6F0 //Pokeathlon Dome NE
-.halfword ITEM_PP_UP
-
-.org 0x02000000 + 0xFA6F8 //Pokeathlon Dome W
-.halfword ITEM_PROTEIN
-
-.org 0x02000000 + 0xFA700 //Ecruteak Centre
-.halfword ITEM_HYPER_POTION
-
-.org 0x02000000 + 0xFA708 //Ecruteak N
+.org 0x02000000 + 0xFA6B0 //Goldenrod Dept Store Basement Centre
 .halfword ITEM_ETHER
 
-.org 0x02000000 + 0xFA710 //Ecruteak NE
+.org 0x02000000 + 0xFA6B8 //Goldenrod Dept Store Basement SE
+.halfword ITEM_ICE_HEAL
+
+.org 0x02000000 + 0xFA6C0 //Goldenrod Tunnel Basement
+.halfword ITEM_BURN_HEAL
+
+.org 0x02000000 + 0xFA6C8 //Goldenrod Tunnel Basement
+.halfword ITEM_SITRUS_BERRY
+
+.org 0x02000000 + 0xFA6D0 //R35 NW
 .halfword ITEM_RARE_CANDY
 
+.org 0x02000000 + 0xFA6D8 //R36 W
+.halfword ITEM_PARALYZE_HEAL
+
+.org 0x02000000 + 0xFA6E0 //National Park
+.halfword ITEM_MAX_ETHER
+
+.org 0x02000000 + 0xFA6E8 //National Park
+.halfword ITEM_IRON
+
+.org 0x02000000 + 0xFA6F0 //Pokeathlon Dome NE
+.halfword ITEM_THUNDER_STONE
+
+.org 0x02000000 + 0xFA6F8 //Pokeathlon Dome W
+.halfword ITEM_ZINC
+
+.org 0x02000000 + 0xFA700 //Ecruteak Centre
+.halfword ITEM_WATER_STONE
+
+.org 0x02000000 + 0xFA708 //Ecruteak N
+.halfword ITEM_BIG_PEARL
+
+.org 0x02000000 + 0xFA710 //Ecruteak NE
+.halfword ITEM_PEARL
+
 .org 0x02000000 + 0xFA718 //Ecruteak W
-.halfword ITEM_ULTRA_BALL
+.halfword ITEM_CHERISH_BALL
 
 .org 0x02000000 + 0xFA720 //Burned Tower Entrance N
-.halfword ITEM_ETHER
+.halfword ITEM_HYPER_POTION
 
 .org 0x02000000 + 0xFA728 //Burned Tower Entrance SW
-.halfword ITEM_ULTRA_BALL
+.halfword ITEM_PECHA_BERRY
 
 .org 0x02000000 + 0xFA730 //Burned Tower Basement NW
-.halfword ITEM_ANTIDOTE
+.halfword ITEM_CHERI_BERRY
 
 .org 0x02000000 + 0xFA738 //Burned Tower Basement S
-.halfword ITEM_REVIVE
+.halfword ITEM_CHESTO_BERRY
 
 .org 0x02000000 + 0xFA740 //Bellchime Trail
-.halfword ITEM_TINY_MUSHROOM
+.halfword ITEM_ESCAPE_ROPE
 
 .org 0x02000000 + 0xFA748 //Bellchime Trail
-.halfword ITEM_BIG_MUSHROOM
+.halfword ITEM_ZINC
 
 .org 0x02000000 + 0xFA750 //Bellchime Trail
-.halfword ITEM_BIG_MUSHROOM
+.halfword ITEM_IRON
 
 .org 0x02000000 + 0xFA758 //Bellchime Trail
-.halfword ITEM_TINY_MUSHROOM
+.halfword ITEM_HARD_STONE
 
 .org 0x02000000 + 0xFA760 //Bellchime Trail
-.halfword ITEM_TINY_MUSHROOM
+.halfword ITEM_LIGHT_CLAY
 
 .org 0x02000000 + 0xFA768 //Bell Tower 3F
-.halfword ITEM_MAX_POTION
+.halfword ITEM_NANAB_BERRY
 
 .org 0x02000000 + 0xFA770 //Bell Tower 5F
-.halfword ITEM_FULL_RESTORE
+.halfword ITEM_MAX_ETHER
 
 .org 0x02000000 + 0xFA778 //Bell Tower 8F
-.halfword ITEM_CARBOS
+.halfword ITEM_ANTIDOTE
 
 .org 0x02000000 + 0xFA780 //R38
 .halfword ITEM_HP_UP
