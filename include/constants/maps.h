@@ -541,5 +541,8 @@
 #define MAP_T07SP0101                         537
 #define MAP_R00                               538
 #define MAP_T10R0801                          539
+#define MAP_T04SEW01                          540
+#define MAP_T04SEW02                          541
+#define MAP_D46R0102                          542
 
 #endif //POKEHEARTGOLD_CONSTANTS_MAPS_H
