@@ -113,7 +113,7 @@
 .halfword ITEM_RARE_CANDY
 
 .org 0x02000000 + 0xFA670 //Ilex Forest
-.halfword ITEM_PERISM_BERRY
+.halfword ITEM_PERSIM_BERRY
 
 .org 0x02000000 + 0xFA678 //Ilex Forest W Surf
 .halfword ITEM_CHERI_BERRY
