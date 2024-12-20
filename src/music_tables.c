@@ -159,6 +159,7 @@ struct MonBattleMusic PokemonBattleMusic[] =
     {.species = SPECIES_GLASTRIER,   .combo = ANIM_MUSIC_COMBO_MEWTWO_LATI_TWINS},
     {.species = SPECIES_SPECTRIER,   .combo = ANIM_MUSIC_COMBO_MEWTWO_LATI_TWINS},
     {.species = SPECIES_ENAMORUS,   .combo = ANIM_MUSIC_COMBO_MEWTWO_LATI_TWINS},
+  /*
     {.species = SPECIES_WO_CHIEN,   .combo = ANIM_MUSIC_COMBO_MEWTWO_LATI_TWINS},
     {.species = SPECIES_CHIEN_PAO,   .combo = ANIM_MUSIC_COMBO_MEWTWO_LATI_TWINS},
     {.species = SPECIES_TING_LU,   .combo = ANIM_MUSIC_COMBO_MEWTWO_LATI_TWINS},
@@ -194,7 +195,7 @@ struct MonBattleMusic PokemonBattleMusic[] =
     {.species = SPECIES_MARSHADOW,   .combo = ANIM_MUSIC_COMBO_MEWTWO_LATI_TWINS},
     {.species = SPECIES_ZERAORA,   .combo = ANIM_MUSIC_COMBO_MEWTWO_LATI_TWINS},
     {.species = SPECIES_ZARUDE,   .combo = ANIM_MUSIC_COMBO_MEWTWO_LATI_TWINS},
-    {.species = SPECIES_PECHARUNT,   .combo = ANIM_MUSIC_COMBO_MEWTWO_LATI_TWINS},
+    {.species = SPECIES_PECHARUNT,   .combo = ANIM_MUSIC_COMBO_MEWTWO_LATI_TWINS},*/
 
     // (***END VANILLA ENTRIES***)
 };

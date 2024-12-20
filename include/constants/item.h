@@ -490,7 +490,7 @@
 #define ITEM_RED_SCALE       478
 #define ITEM_LOST_ITEM       479
 #define ITEM_PASS            480
-#define ITEM_MACHINE_PART    481
+#define ITEM_SILPH_SCOPE    481
 #define ITEM_SILVER_WING     482
 #define ITEM_RAINBOW_WING    483
 #define ITEM_MYSTERY_EGG     484

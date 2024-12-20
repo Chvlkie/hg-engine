@@ -479,7 +479,7 @@ A bottle used for watering plants in the\nBerry Pots.
 A scale from the red GYARADOS. It glows\nred like a flame.
 The Poké Doll lost by the Copycat.
 A ticket required for riding the Magnet\nTrain. It allows you to ride whenever\nand however much you’d like.
-An important machine part for the\nPower Plant that was stolen.
+A scope that lets you see what\ncannot usually be seen.\nIt is made by Silph Co.
 A strange, silvery feather\nthat sparkles.
 A mystical, rainbow feather\nthat sparkles.
 A mysterious Egg obtained from Mr.\nPokémon. What’s in the Egg is unknown.

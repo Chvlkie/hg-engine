@@ -479,7 +479,7 @@ a {COLOR 255}Squirt Bottle{COLOR 0}
 a {COLOR 255}Red Scale{COLOR 0}
 a {COLOR 255}Lost Item{COLOR 0}
 a {COLOR 255}Pass{COLOR 0}
-a {COLOR 255}Machine Part{COLOR 0}
+a {COLOR 255}Silph Scope{COLOR 0}
 a {COLOR 255}Silver Wing{COLOR 0}
 a {COLOR 255}Rainbow Wing{COLOR 0}
 a {COLOR 255}Mystery Egg{COLOR 0}

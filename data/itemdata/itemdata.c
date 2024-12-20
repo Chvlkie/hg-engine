@@ -29781,7 +29781,7 @@ const ITEMDATA __data[] =
     },
 },
 
-[ITEM_MACHINE_PART - NUM_UNKNOWN_SLOTS_EXPLORER_KIT] =
+[ITEM_SILPH_SCOPE - NUM_UNKNOWN_SLOTS_EXPLORER_KIT] =
 {
     .price = 0,
     .holdEffect = 0,
