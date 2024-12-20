@@ -155,4 +155,5 @@
 .halfword SPECIES_MEWTWO
 .halfword SPECIES_MEW
 
+
 .close
