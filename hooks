@@ -502,3 +502,14 @@ arm9 sub_0207AFC4 0207AFC4 1
 0012 GetBattlerAbility 022527CC 2
 
 0012 BattleSystem_BufferMessage 0223C754 2
+
+
+#Pokegear to town map
+arm9 ReplacePokegearWithTownMap 0203EA84 1
+
+#Disable Lake of Rage swap
+arm9 ShouldUseAlternateLakeOfRage 0203b16c 2
+arm9 RemoveMahoganyTownAntennaTree 0203b0f4 1
+
+#Use Rival Name in other classes
+arm9 trainer_name_hook 0207340C 0

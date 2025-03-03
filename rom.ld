@@ -734,3 +734,8 @@ BattleMessage_BufferTrainerClass = 0x0223CEB4 | 1;
 BattleMessage_BufferTrainerName = 0x0223CECC | 1;
 BattleMessage_BufferBoxName = 0x0223CEE4 | 1;
 BufferItemNameWithIndefArticle = 0x0200C100 | 1;
+
+/* Pokegear to Town Map*/
+MI_CpuFill8 = 0x020D4994 | 1;
+sub_02092D8C = 0x02092D8C | 1;
+PokegearTownMap_LaunchApp_Impl = 0x0203EA5C | 1;

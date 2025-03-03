@@ -50,14 +50,14 @@ Ruin Maniac
 Psychic
 Psychic
 PI
-Guitarist
+Rocker
 Ace Trainer
 Ace Trainer
 Team Rocket
 Skier
-Roughneck
+Cue Ball
 Clown
-Worker
+Engineer
 School Kid
 School Kid
 Team Rocket
@@ -77,7 +77,7 @@ Leader
 Leader
 Teacher
 Super Nerd
-Sage
+Gambler
 Parasol Lady
 Waiter
 Medium
@@ -96,15 +96,15 @@ Elite Four
 ₧₦ Trainer
 ₧₦ Trainer
 Tower Tycoon
-Leader
+₧₦ Trainer
 Hall Matron
 Factory Head
 Arcade Star
 Castle Valet
-Leader
-Leader
-Leader
-Leader
+₧₦ Trainer
+Team Rocket
+Team Rocket
+Team Rocket
 Leader
 Leader
 ₧₦ Trainer

@@ -473,8 +473,8 @@
 #define ITEM_SS_TICKET       456
 #define ITEM_CONTEST_PASS    457
 #define ITEM_MAGMA_STONE     458
-#define ITEM_PARCEL          459
-#define ITEM_COUPON_1        460
+#define ITEM_OAKS_PARCEL          459
+#define ITEM_BIKE_VOUCHER        460
 #define ITEM_COUPON_2        461
 #define ITEM_COUPON_3        462
 #define ITEM_STORAGE_KEY     463

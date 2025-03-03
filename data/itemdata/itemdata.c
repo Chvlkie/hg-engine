@@ -28351,7 +28351,7 @@ const ITEMDATA __data[] =
     },
 },
 
-[ITEM_PARCEL - NUM_UNKNOWN_SLOTS_EXPLORER_KIT] =
+[ITEM_OAKS_PARCEL - NUM_UNKNOWN_SLOTS_EXPLORER_KIT] =
 {
     .price = 0,
     .holdEffect = 0,
@@ -28416,7 +28416,7 @@ const ITEMDATA __data[] =
     },
 },
 
-[ITEM_COUPON_1 - NUM_UNKNOWN_SLOTS_EXPLORER_KIT] =
+[ITEM_BIKE_VOUCHER - NUM_UNKNOWN_SLOTS_EXPLORER_KIT] =
 {
     .price = 0,
     .holdEffect = 0,

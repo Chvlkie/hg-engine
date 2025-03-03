@@ -490,12 +490,18 @@ arm9 080517D4 2D
 arm9 08051886 20
 
 # PokemonBattleMusic table range
-arm9 080518CA 0B
+arm9 080518CA 39
 
 # sTrainerEncounterMusicParam table range
-arm9 080550D4 2C
+arm9 080550D4 53
 
 # PrizeMoney table range
 0012 0223FBD0 81
 0012 0223FBD4 81
 0012 0223FBDC 81
+
+# Title Cry
+0060 21E5A6B 96
+
+# Oak Intro Cry
+0053 21E71B2 19
