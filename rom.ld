@@ -735,6 +735,10 @@ BattleMessage_BufferTrainerName = 0x0223CECC | 1;
 BattleMessage_BufferBoxName = 0x0223CEE4 | 1;
 BufferItemNameWithIndefArticle = 0x0200C100 | 1;
 
+_GetNpcTradeName = 0x02259C1C | 1;
+MonSetTrainerMemo = 0x0208F260 | 1;
+MapHeader_GetMapSec = 0x0203B36C | 1;
+
 /* Pokegear to Town Map*/
 MI_CpuFill8 = 0x020D4994 | 1;
 sub_02092D8C = 0x02092D8C | 1;
