@@ -678,11 +678,37 @@ trainer_name_hook:
 b return_to_02073422
 
 return_to_02073422:
-    ldr     r0, =0x02073422 + 1 // resume original function
+    ldr     r0, =0x02073422 | 1 
     bx      r0
 
 use_rival_name:
-    ldr     r1, =0x02073418 + 1 // resume original function
+    ldr     r1, =0x02073418 | 1 
     bx      r1
 
+.pool
+
+.global vs_mughost_rival_name
+vs_mughost_rival_name:
+    ldr r0, [sp, #0x18]    
+    ldrh r2, [r0, #4]      
+    cmp r2, #0x17    // TRAINERCLASS_RIVAL     
+    beq vs_use_rival_name  
+    cmp r2, #0x56    // TRAINERCLASS_CHAMPION     
+    beq vs_use_rival_name
+    mov r2, #0            
+    ldr r1, [sp, #0x14]   
+    ldrh r0, [r0, #6]     
+    bl ov115_0225F158     
+    ldr r1, =0x0225FD2A | 1
+    bx r1                  
+
+vs_use_rival_name:
+    ldr r0, [r6, #0x10]  
+    ldr r0, [r0, #0xc]    
+    ldr r1, [sp, #0x14]   
+    bl ov115_0225F1BC     
+    str r0, [sp, #0x14]   
+     mov r2, #0  
+    ldr r1, =0x0225FD2A | 1
+    bx r1                
 .pool
