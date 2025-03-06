@@ -534,3 +534,9 @@ arm9 080550D4 53
 
 # Use Regular Safari Zone Encounters
 0002 02246E59 E0
+
+# Change Catch Tutorial Mon
+# Wild Pokemon
+arm9 02051B9A 13
+# Hero Pokemon
+arm9 02051B78 10
