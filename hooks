@@ -518,5 +518,5 @@ arm9 RemoveMahoganyTownAntennaTree 0203b0f4 1
 arm9 trainer_name_hook 0207340C 0
 
 # Rival name in Elite 4 VS Mughsot
-0115 vs_mughost_rival_name 0225FD20 2
+0115 e4_mughost_rival_name 0225FD20 2
 
