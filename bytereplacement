@@ -526,17 +526,42 @@ arm9 080550D4 53
 # _CreateTradeMon_hook setup
 0023 02259C40 60 B4 C0 46
 
-# Title Cry
+# Title Cry - (Max FF)
 0060 021E5A6B 96
 
-# Oak Intro Cry
+# Oak Intro Cry - (Max FF)
 0053 021E71B2 19
 
-# Use Regular Safari Zone Encounters
+# Use Header Encounters in Safari Zone
 0002 02246E59 E0
 
 # Change Catch Tutorial Mon
-# Wild Pokemon
+# Wild Pokemon - (Max FF)
 arm9 02051B9A 13
-# Hero Pokemon
+
+# Hero Pokemon - (Max FF)
 arm9 02051B78 10
+
+# CUT BADGE REQUIRED (00 to 0F)
+arm9 02067F80 01
+
+# FLY BADGE REQUIRED (00 to 0F)
+arm9 02068024 02
+
+# SURF BADGE REQUIRED (00 to 0F)
+arm9 020680F8 04
+
+# STRENGTH BADGE REQUIRED (00 to 0F)
+arm9 020681D8 03
+
+# ROCK SMASH BADGE REQUIRED (00 to 0F)
+arm9 02068288 00
+
+# WATERFALL BADGE REQUIRED (00 to 0F)
+arm9 02068340 06
+
+# ROCK CLIMB BADGE REQUIRED (00 to 0F)
+arm9 020683E8 05
+
+# WHIRLPOOL BADGE REQUIRED (00 to 0F)
+arm9 02068884 07
