@@ -1388,8 +1388,9 @@
     .long (((\arg_0 - .) / 4) - 1)
     .endm
 
-    .macro CalcConfusionDamage
+    .macro CalcConfusionDamage arg_0
     .long 254
+    .long (((\arg_0 - .) / 4) - 1)
     .endm
 
     .macro CheckCanActivateDefiantOrCompetitive arg_0, arg_1, arg_2
@@ -1404,6 +1405,12 @@
     CheckAbility CHECK_OPCODE_HAVE, \battlerCategory, ABILITY_DEFIANT, \label
     CheckAbility CHECK_OPCODE_HAVE, \battlerCategory, ABILITY_COMPETITIVE, \label
     .endm
+
+    .equ BASE_ENGINE_BTL_SCR_CMDS_MAX, 255
+
+    // .macro YourCustomCommand
+    // .long (BASE_ENGINE_BTL_SCR_CMDS_MAX + 1)
+    // .endm
 
 
 .endif
