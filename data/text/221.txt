@@ -459,7 +459,7 @@ The pass required for entering Pokémon\nContests. It has a drawing of an award\
 A stone formed when boulders melted in\nintensely hot magma, then hardened.\nMagma remains sealed inside.
 A parcel entrusted in your care.\nYou are supposed to deliver it to\nProf. Oak in Pallet Town.
 A coupon to be exchanged for a\nBicycle at the Bike shop in\nCerulean City.
-A coupon to be exchanged for a\nPokémon Watch (Pokétch for short).\nThree coupons are needed.
+A flute that can play with such a\nbeautiful tone that even sleeping Pokémon\nfind themselves woken up.
 A coupon to be exchanged for a\nPokémon Watch (Pokétch for short).\nThree coupons are needed.
 The key to Team Galactic’s sinister\nwarehouse located at the edge of\nVeilstone City.
 A fantastic medicine dispensed by the\npharmacy in Cianwood City. It fully\nheals a Pokémon of any ailment.
