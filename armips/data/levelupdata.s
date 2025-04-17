@@ -90,6 +90,7 @@ levelup SPECIES_CHARMANDER
     learnset MOVE_EMBER, 5
     learnset MOVE_SMOKESCREEN, 8
     learnset MOVE_DRAGON_BREATH, 12
+    learnset MOVE_METAL_CLAW, 13
     learnset MOVE_DRAGON_RAGE, 16
     learnset MOVE_FIRE_FANG, 20
     learnset MOVE_SCARY_FACE, 23
@@ -110,6 +111,7 @@ levelup SPECIES_CHARMELEON
     learnset MOVE_EMBER, 7
     learnset MOVE_SMOKESCREEN, 10
     learnset MOVE_DRAGON_BREATH, 12
+    learnset MOVE_METAL_CLAW, 13
     learnset MOVE_DRAGON_RAGE, 17
     learnset MOVE_FIRE_FANG, 23
     learnset MOVE_SCARY_FACE, 29
@@ -123,6 +125,7 @@ levelup SPECIES_CHARMELEON
 
 
 levelup SPECIES_CHARIZARD
+    learnset MOVE_METAL_CLAW, 1
     learnset MOVE_AIR_SLASH, 0
     learnset MOVE_WING_ATTACK, 0
     learnset MOVE_AIR_SLASH, 1
