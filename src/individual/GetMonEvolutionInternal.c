@@ -16,6 +16,7 @@
 #include "../../include/constants/moves.h"
 #include "../../include/constants/species.h"
 #include "../../include/constants/weather_numbers.h"
+#include "../../include/constants/maps.h"
 
 // top 5 bits are now form bit
 // if the form is nonzero, have to set it to that form.  most mons should keep their forms on evolution, but specifically significant gendered mons will need to not
@@ -212,7 +213,7 @@ u16 GetMonEvolutionInternal(struct Party *party, struct PartyPokemon *pokemon, u
                 {
                     u32 location = gFieldSysPtr->location->mapId;
 
-                    if (location == 117 || location == 147)
+                    if (location == MAP_D46R0102)
                     {
                         target = evoTable[i].target & 0x7FF;
                         *method_ret = EVO_ETERNA;

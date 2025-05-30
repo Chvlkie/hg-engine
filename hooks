@@ -510,3 +510,17 @@ arm9 DestroyHeap_hook 0201AA24 3
 
 # expand metronome move pool
 0012 load_max_move_num_metronome 022408AC 0
+
+#Pokegear to town map
+arm9 ReplacePokegearWithTownMap 0203EA84 1
+
+#Disable Lake of Rage swap
+arm9 ShouldUseAlternateLakeOfRage 0203b16c 2
+arm9 RemoveMahoganyTownAntennaTree 0203b0f4 1
+
+#Use Rival Name in other classes
+arm9 trainer_name_hook 0207340C 0
+
+# Rival name in Elite 4 VS Mughsot
+0115 e4_mughost_rival_name 0225FD20 2
+

@@ -357,17 +357,39 @@ bx r2
 
 .global WindowClose
 WindowClose:
-ldr r0, =0x04000050
-mov r1, #0x0
-strh r1, [r0]
-mov r0, r5
-add r0, #0xD2
-ldrb r1, [r0, #0x0]
-mov r0, #0x40
-ldr r2, =0x02041198 + 1
-bx r2
+    ldr r0, =0x04000050        // Load address of G2_BLDCNT register
+    ldrh r1, [r0]              // Load current value of G2_BLDCNT
+
+    // Check if G2_BLDCNT equals 0x1B4F
+    mov r2, #0x1B              // Load upper byte of 0x1B4F into r2
+    lsl r2, r2, #8             // Shift left to form 0x1B00
+    add r2, r2, #0x4F          // Add lower byte to form 0x1B4F
+    cmp r1, r2                 // Compare current value with 0x1B4F
+    bne SkipReset              // If not equal, skip resetting registers
+
+    // Reset G2_BLDCNT
+    mov r1, #0x0               // Prepare value to clear settings
+    strh r1, [r0]              // Reset G2_BLDCNT
+
+    // Reset G2_BLDALPHA
+    ldr r0, =0x04000052        // Load address of G2_BLDALPHA register
+    strh r1, [r0]              // Reset G2_BLDALPHA
+
+    // Reset G2_BLDY
+    ldr r0, =0x04000054        // Load address of G2_BLDY register
+    strh r1, [r0]              // Reset G2_BLDY
+
+SkipReset:
+    // Original function logic
+    mov r0, r5                 // Load value of r5 into r0
+    add r0, #0xD2              // Offset r0 by 0xD2
+    ldrb r1, [r0, #0x0]        // Load byte from memory at [r0]
+    mov r0, #0x40              // Set r0 to 0x40
+    ldr r2, =0x02041198 + 1    // Load function pointer (Thumb mode)
+    bx r2                      // Branch to the function at r2
 
 .pool
+
 
 
 // new method:  from the parent func
@@ -722,3 +744,51 @@ word_to_store_form_at:
 .global gTriggerDouble
 gTriggerDouble:
 .word 0
+
+.global trainer_name_hook
+trainer_name_hook:
+    ldr     r0, [r6, #0x0]      
+    str     r0, [r3, #0x0]      
+    add     r0, sp, #0x14       
+    ldrb    r0, [r0, #0x1]      
+    cmp     r0, #0x17          // TRAINERCLASS_RIVAL
+    beq     use_rival_name
+    cmp     r0, #0x56          // TRAINERCLASS_CHAMPION
+    beq     use_rival_name
+b return_to_02073422
+
+return_to_02073422:
+    ldr     r0, =0x02073422 | 1 
+    bx      r0
+
+use_rival_name:
+    ldr     r1, =0x02073418 | 1 
+    bx      r1
+
+.pool
+
+.global e4_mughost_rival_name
+e4_mughost_rival_name:
+    ldr r0, [sp, #0x18]    
+    ldrh r2, [r0, #4]      
+    cmp r2, #0x17    // TRAINERCLASS_RIVAL     
+    beq e4_use_rival_name  
+    cmp r2, #0x56    // TRAINERCLASS_CHAMPION     
+    beq e4_use_rival_name
+    mov r2, #0            
+    ldr r1, [sp, #0x14]   
+    ldrh r0, [r0, #6]     
+    bl ov115_0225F158     
+    ldr r1, =0x0225FD2A | 1
+    bx r1                  
+
+e4_use_rival_name:
+    ldr r0, [r6, #0x10]  
+    ldr r0, [r0, #0xc]    
+    ldr r1, [sp, #0x14]   
+    bl ov115_0225F1BC     
+    str r0, [sp, #0x14]   
+     mov r2, #0  
+    ldr r1, =0x0225FD2A | 1
+    bx r1                
+.pool

@@ -457,9 +457,9 @@ an {COLOR 255}Azure Flute{COLOR 0}
 an {COLOR 255}S.S. Ticket{COLOR 0}
 a {COLOR 255}Contest Pass{COLOR 0}
 a {COLOR 255}Magma Stone{COLOR 0}
-a {COLOR 255}Parcel{COLOR 0}
-a {COLOR 255}Coupon 1{COLOR 0}
-a {COLOR 255}Coupon 2{COLOR 0}
+a {COLOR 255}Oak’s Parcel{COLOR 0}
+a {COLOR 255}Bike Voucher{COLOR 0}
+a {COLOR 255}Poké Flute{COLOR 0}
 a {COLOR 255}Coupon 3{COLOR 0}
 a {COLOR 255}Storage Key{COLOR 0}
 a {COLOR 255}Secret Medicine{COLOR 0}

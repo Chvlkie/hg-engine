@@ -50,14 +50,14 @@ a Ruin Maniac
 a Psychic
 a Psychic
 a PI
-a Guitarist
+a Rocker
 an Ace Trainer
 an Ace Trainer
 a Team Rocket
 a Skier
-a Roughneck
+a Cue Ball
 a Clown
-a Worker
+an Engineer
 a School Kid
 a School Kid
 a Team Rocket
@@ -77,7 +77,7 @@ a Leader
 a Leader
 a Teacher
 a Super Nerd
-a Sage
+a Gambler
 a Parasol Lady
 a Waiter
 a Medium
@@ -96,15 +96,15 @@ a ₧₦ Trainer
 a ₧₦ Trainer
 a ₧₦ Trainer
 a Tower Tycoon
-a Leader
+a ₧₦ Trainer
 a Hall Matron
 a Factory Head
 an Arcade Star
 a Castle Valet
-a Leader
-a Leader
-a Leader
-a Leader
+a ₧₦ Trainer
+a Team Rocket
+a Team Rocket
+Team Rocket
 a Leader
 a Leader
 a ₧₦ Trainer
@@ -114,16 +114,4 @@ an Elite Four
 a Scientist
 an Executive
 a Boarder
-an Executive
-an Executive
-an Executive
-a Passerby
-a Mystery Man
-a Double Team
-a Young Couple
-a ₧₦ Trainer
-a Rocket Boss
-a ₧₦ Trainer
-a ₧₦ Trainer
-a ₧₦ Trainer
-a ₧₦ Trainer
+a

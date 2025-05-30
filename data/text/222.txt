@@ -457,9 +457,9 @@ Azure Flute
 S.S. Ticket
 Contest Pass
 Magma Stone
-Parcel
-Coupon 1
-Coupon 2
+Oak’s Parcel
+Bike Voucher
+Poké Flute
 Coupon 3
 Storage Key
 Secret Medicine

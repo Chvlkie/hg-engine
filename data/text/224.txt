@@ -457,9 +457,9 @@ Azure Flutes
 S.S. Tickets
 Contest Passes
 Magma Stones
-Parcels
-Coupon 1s
-Coupon 2s
+Oak’s Parcels
+Bike Vouchers
+Poké Flutes
 Coupon 3s
 Storage Keys
 SecretPotions

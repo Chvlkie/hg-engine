@@ -406,10 +406,10 @@ arm9 080517D4 2D
 arm9 08051886 20
 
 # PokemonBattleMusic table range
-arm9 080518CA 0B
+arm9 080518CA 39
 
 # sTrainerEncounterMusicParam table range
-arm9 080550D4 2C
+arm9 080550D4 53
 
 # PrizeMoney table range
 0012 0223FBD0 81
@@ -447,3 +447,51 @@ arm9 080550D4 2C
 
 # change the string displayed when a mon learns a tm without having to overwrite a move
 arm9 020821B0 DB
+
+# Title Cry - (Max FF)
+0060 021E5A6B 96
+
+# Oak Intro Cry - (Max FF)
+0053 021E71B2 19
+
+# Use Header Encounters in Safari Zone
+0002 02246E59 E0
+
+# Change Catch Tutorial Mon
+# Wild Pokemon - (Max FF)
+arm9 02051B9A 13
+
+# Hero Pokemon - (Max FF)
+arm9 02051B78 10
+
+# CUT BADGE REQUIRED (00 to 0F)
+arm9 02067F80 01
+
+# FLY BADGE REQUIRED (00 to 0F)
+arm9 02068024 02
+
+# SURF BADGE REQUIRED (00 to 0F)
+arm9 020680F8 04
+
+# STRENGTH BADGE REQUIRED (00 to 0F)
+arm9 020681D8 03
+
+# ROCK SMASH BADGE REQUIRED (00 to 0F)
+arm9 02068288 00
+
+# WATERFALL BADGE REQUIRED (00 to 0F)
+arm9 02068340 06
+
+# ROCK CLIMB BADGE REQUIRED (00 to 0F)
+arm9 020683E8 05
+
+# WHIRLPOOL BADGE REQUIRED (00 to 0F)
+arm9 02068884 07
+
+# BLOCK PHONE CALLS
+arm9 02092df4 02 78 01 21 8A 43 02 70 C0 46 C0 46 00 21 41 61 81 61 70 47
+0002 022521a6 00
+0002 02251f92 00
+
+# TRAINER CONTACT SCRIPT
+arm9 020641E8 9E 0E

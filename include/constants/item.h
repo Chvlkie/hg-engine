@@ -889,7 +889,7 @@
 #define BAG_SLOT_QUANTITY_MAX                    999
 
 #ifdef REUSABLE_TMS
-#define BAG_TMHM_QUANTITY_MAX                      1
+#define BAG_TMHM_QUANTITY_MAX                     99
 #else
 #define BAG_TMHM_QUANTITY_MAX                     99
 #endif

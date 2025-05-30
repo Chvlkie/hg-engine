@@ -454,12 +454,12 @@ A letter from Prof. Oak.\nWritten in it is a request for you to\ngo to Rt. 224.
 A feather that glows like the moon.\nIt is said to possess the power to\ndispel nightmares.
 A card needed for entering the inn in\nCanalave City. Oddly, the last date\nmarked on it was 50 years ago.
 A flute that puts out echoing sounds\nthat do not seem to be of this world.\nIt is unknown who made it.
-The ticket required for sailing on the\nferry S.S. Aqua. It has a drawing of a\nship on it.
+The ticket required for sailing on the\nferry S.S. Anne. It has a drawing of a\nship on it.
 The pass required for entering Pokémon\nContests. It has a drawing of an award\nribbon on it.
 A stone formed when boulders melted in\nintensely hot magma, then hardened.\nMagma remains sealed inside.
-A parcel entrusted in your care.\nYou are supposed to deliver it to your\nchildhood friend who left Twinleaf Town.
-A coupon to be exchanged for a\nPokémon Watch (Pokétch for short).\nThree coupons are needed.
-A coupon to be exchanged for a\nPokémon Watch (Pokétch for short).\nThree coupons are needed.
+A parcel entrusted in your care.\nYou are supposed to deliver it to\nProf. Oak in Pallet Town.
+A coupon to be exchanged for a\nBicycle at the Bike shop in\nCerulean City.
+A flute that can play with such a\nbeautiful tone that even sleeping Pokémon\nfind themselves woken up.
 A coupon to be exchanged for a\nPokémon Watch (Pokétch for short).\nThree coupons are needed.
 The key to Team Galactic’s sinister\nwarehouse located at the edge of\nVeilstone City.
 A fantastic medicine dispensed by the\npharmacy in Cianwood City. It fully\nheals a Pokémon of any ailment.
