@@ -91,6 +91,7 @@ void BattleContext_AddEntryHazardToQueue(struct BattleStruct *ctx, u32 side, u32
 BOOL btl_scr_cmd_101_addentryhazardtoqueue(void *bsys UNUSED, struct BattleStruct *ctx);
 void BattleContext_RemoveEntryHazardFromQueue(struct BattleStruct *ctx, u32 side, u32 hazard);
 BOOL btl_scr_cmd_102_removeentryhazardfromqueue(void *bsys UNUSED, struct BattleStruct *ctx);
+BOOL btl_scr_cmd_103_calcelectroball(void *bsys UNUSED, struct BattleStruct *ctx);
 BOOL BtlCmd_GoToMoveScript(struct BattleSystem *bsys, struct BattleStruct *ctx);
 BOOL BtlCmd_WeatherHPRecovery(void *bw, struct BattleStruct *sp);
 BOOL BtlCmd_CalcWeatherBallParams(void *bw, struct BattleStruct *sp);
@@ -371,13 +372,14 @@ const u8 *BattleScrCmdNames[] =
     "JumpToCurrentEntryHazard",
     "AddEntryHazardToQueue",
     "RemoveEntryHazardFromQueue",
+    "CalcElectroBallPower",
     // "YourCustomCommand",
 };
 
 u32 cmdAddress = 0;
 #endif // DEBUG_BATTLE_SCRIPT_COMMANDS
 
-#define BASE_ENGINE_BTL_SCR_CMDS_MAX 0xFF
+#define BASE_ENGINE_BTL_SCR_CMDS_MAX 0x102
 
 const btl_scr_cmd_func NewBattleScriptCmdTable[] =
 {
@@ -415,7 +417,7 @@ const btl_scr_cmd_func NewBattleScriptCmdTable[] =
     [0x100 - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_100_jumptocurrententryhazard,
     [0x101 - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_101_addentryhazardtoqueue,
     [0x102 - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_102_removeentryhazardfromqueue,
-    // [BASE_ENGINE_BTL_SCR_CMDS_MAX - START_OF_NEW_BTL_SCR_CMDS + 1] = btl_scr_cmd_custom_01_your_custom_command,
+    [(BASE_ENGINE_BTL_SCR_CMDS_MAX + 1) - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_103_calcelectroball,
 };
 
 // entries before 0xFFFE are banned for mimic and metronome--after is just banned for metronome.  table ends with 0xFFFF
@@ -3251,6 +3253,38 @@ BOOL btl_scr_cmd_102_removeentryhazardfromqueue(void *bsys UNUSED, struct Battle
 
     return FALSE;
 }
+
+BOOL btl_scr_cmd_103_calcelectroball(void *bsys UNUSED, struct BattleStruct *ctx)
+{
+    IncrementBattleScriptPtr(ctx, 1);
+
+    u32 userSpeed = ctx->effectiveSpeed[ctx->attack_client];
+    u32 targetSpeed = ctx->effectiveSpeed[ctx->defence_client];
+
+    // Handle zero speed case first (prevent division by zero)
+    if (userSpeed == 0) {
+        ctx->damage_power = 40;  
+        return FALSE;
+    }
+
+    u32 comparisonBase = userSpeed * 100;
+
+    if (targetSpeed * 100 > comparisonBase / 2) {       // >50%
+        ctx->damage_power = 60;
+    }
+    else if (targetSpeed * 100 > comparisonBase / 3) {  // >33%
+        ctx->damage_power = 80;
+    }
+    else if (targetSpeed * 100 > comparisonBase / 4) {  // >25%
+        ctx->damage_power = 120;
+    }
+    else {                                             // ≤25%
+        ctx->damage_power = 150;
+    }
+
+    return FALSE;
+}
+
 
 /**
  *  @brief script command to calculate the amount of HP should a client recover by using Moonlight, Morning Sun, or Synthesis

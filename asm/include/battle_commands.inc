@@ -1428,11 +1428,11 @@
     CheckAbility CHECK_OPCODE_HAVE, \battlerCategory, ABILITY_COMPETITIVE, \label
     .endm
 
-    .equ BASE_ENGINE_BTL_SCR_CMDS_MAX, 255
+    .equ BASE_ENGINE_BTL_SCR_CMDS_MAX, 258
 
-    // .macro YourCustomCommand
-    // .long (BASE_ENGINE_BTL_SCR_CMDS_MAX + 1)
-    // .endm
+     .macro CalcElectroBallPower
+     .long (BASE_ENGINE_BTL_SCR_CMDS_MAX + 1)
+     .endm
 
 
 .endif
