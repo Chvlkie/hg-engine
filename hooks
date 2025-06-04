@@ -275,7 +275,7 @@ arm9 IsPlayerOnIce 0205B828 1
 arm9 Tr_TextBox 0205B564 2
 arm9 FieldMsgPrintInit 0205B4EC 2
 arm9 WindowClose 02041190 0
-
+arm9 ReleaseAll 02041F50 1
 #endif
 
 arm9 GrabCryNumSpeciesForm 02006A0C 2

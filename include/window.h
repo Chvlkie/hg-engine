@@ -17,6 +17,16 @@ typedef struct
     /* 0x0C */ void *chrbuf;
 } GF_BGL_BMPWIN; // size = 0x10
 
+typedef struct WindowOptions {
+    u16 textSpeed : 4;
+    u16 soundMethod : 2;
+    u16 battleStyle : 1;
+    u16 battleScene : 1;
+    u16 buttonMode : 2;
+    u16 frame : 5;
+    u16 dummy : 1;
+} WindowOptions;
+
 void LONG_CALL TalkWinGraphicSet(void *ini, u8 frmnum, u16 cgx, u8 pal, u8 win_num, u32 heap);
 u8 LONG_CALL GF_BGL_BmpWinGet_Frame(GF_BGL_BMPWIN *win);
 u8 LONG_CALL CONFIG_GetWindowType(const void *cfg);
