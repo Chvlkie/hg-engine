@@ -1344,7 +1344,8 @@ struct PACKED BattleStruct {
     /*0x315F*/ u8 magicBounceTracker; // if any client has already activated magic bounce, another can not activate
     /*0x3160*/ u8 binding_turns[4]; // turns left for bind
     /*0x3164*/ u8 entryHazardQueue[2][NUM_HAZARD_IDX];
-    /*0x316E*/ u8 hazardQueueTracker;
+    /*0x316E*/ u8 hazardQueueTracker:7;
+               u8 itemActivatedTracker:1; // if an item that isn't lost on activation has been activated for this hit (think rocky helmet)
     /*0x316F*/ u8 padding_316F[0x317E - 0x316F]; // padding to get moveTbl to 317E (for convenience of 3180 in asm)
     /*0x317E*/ struct BattleMove moveTbl[NUM_OF_MOVES + 1];
     /*0x    */ u32 gainedExperience[6]; // possible experience gained per party member in order to get level scaling done right
@@ -3589,7 +3590,7 @@ void LONG_CALL ov12_02252D14(struct BattleSystem *bsys, struct BattleStruct *ctx
                     && IS_VALID_MOVE_TARGET(ctx, BATTLER_ALLY(ctx->attack_client))) {\
                         numClientsChecked++;\
                         failureSubscriptToRun = functionToBeCalled(bsys, ctx, BATTLER_ALLY(ctx->attack_client));\
-                        if (failureSubscriptToRun) {\
+                        if (failureSubscriptToRun != 0) {\
                             ctx->moveStatusFlagForSpreadMoves[BATTLER_ALLY(ctx->attack_client)] = MOVE_STATUS_FLAG_FAILED;\
                             numClientsFailed++;\
                         }\
@@ -3601,7 +3602,7 @@ void LONG_CALL ov12_02252D14(struct BattleSystem *bsys, struct BattleStruct *ctx
                     && IS_VALID_MOVE_TARGET(ctx, BATTLER_OPPONENT_SIDE_LEFT(ctx->attack_client))) {\
                         numClientsChecked++;\
                         failureSubscriptToRun = functionToBeCalled(bsys, ctx, BATTLER_OPPONENT_SIDE_LEFT(ctx->attack_client));\
-                        if (failureSubscriptToRun) {\
+                        if (failureSubscriptToRun != 0) {\
                             ctx->moveStatusFlagForSpreadMoves[BATTLER_OPPONENT_SIDE_LEFT(ctx->attack_client)] = MOVE_STATUS_FLAG_FAILED;\
                             numClientsFailed++;\
                         }\
@@ -3613,7 +3614,7 @@ void LONG_CALL ov12_02252D14(struct BattleSystem *bsys, struct BattleStruct *ctx
                     && IS_VALID_MOVE_TARGET(ctx, BATTLER_OPPONENT_SIDE_RIGHT(ctx->attack_client))) {\
                         numClientsChecked++;\
                         failureSubscriptToRun = functionToBeCalled(bsys, ctx, BATTLER_OPPONENT_SIDE_RIGHT(ctx->attack_client));\
-                        if (failureSubscriptToRun) {\
+                        if (failureSubscriptToRun != 0) {\
                             ctx->moveStatusFlagForSpreadMoves[BATTLER_OPPONENT_SIDE_RIGHT(ctx->attack_client)] = MOVE_STATUS_FLAG_FAILED;\
                             numClientsFailed++;\
                         }\
@@ -3637,10 +3638,20 @@ void LONG_CALL ov12_02252D14(struct BattleSystem *bsys, struct BattleStruct *ctx
             ctx->clientLoopForSpreadMoves = SPREAD_MOVE_LOOP_MAX + 1;\
             if (IS_VALID_MOVE_TARGET(ctx, ctx->defence_client)) {\
                 int failureSubscriptToRun = functionToBeCalled(bsys, ctx, ctx->defence_client);\
-                if (failureSubscriptToRun) {\
+                if (failureSubscriptToRun == 1) {\
                     LoadBattleSubSeqScript(ctx, ARC_BATTLE_MOVE_SEQ, ctx->current_move_index);\
                     ctx->server_seq_no = CONTROLLER_COMMAND_24;\
                     ST_ServerTotteokiCountCalc(bsys, ctx);\
+                    return;\
+                }\
+                if (failureSubscriptToRun > 1) {\
+                    ctx->oneTurnFlag[ctx->attack_client].parental_bond_flag = 0;\
+                    ctx->oneTurnFlag[ctx->attack_client].parental_bond_is_active = FALSE;\
+                    ctx->msg_work = ctx->defence_client;\
+                    LoadBattleSubSeqScript(ctx, ARC_BATTLE_SUB_SEQ, failureSubscriptToRun);\
+                    ctx->next_server_seq_no = ctx->server_seq_no;\
+                    ctx->server_seq_no = CONTROLLER_COMMAND_RUN_SCRIPT;\
+                    ctx->moveStatusFlagForSpreadMoves[ctx->defence_client] = MOVE_STATUS_NO_MORE_WORK;\
                     return;\
                 }\
             }\
