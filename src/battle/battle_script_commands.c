@@ -3263,25 +3263,24 @@ BOOL btl_scr_cmd_103_calcelectroball(void *bsys UNUSED, struct BattleStruct *ctx
 
     // Handle zero speed case first (prevent division by zero)
     if (userSpeed == 0) {
-        ctx->damage_power = 40;  
+        ctx->damage_power += 40;  
         return FALSE;
     }
 
     u32 comparisonBase = userSpeed * 100;
 
     if (targetSpeed * 100 > comparisonBase / 2) {       // >50%
-        ctx->damage_power = 60;
+        ctx->damage_power += 60;
     }
     else if (targetSpeed * 100 > comparisonBase / 3) {  // >33%
-        ctx->damage_power = 80;
+        ctx->damage_power += 80;
     }
     else if (targetSpeed * 100 > comparisonBase / 4) {  // >25%
-        ctx->damage_power = 120;
+        ctx->damage_power += 120;
     }
     else {                                             // ≤25%
-        ctx->damage_power = 150;
+        ctx->damage_power += 150;
     }
-
     return FALSE;
 }
 
