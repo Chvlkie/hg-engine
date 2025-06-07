@@ -152,11 +152,14 @@
 #define BATTLE_TYPE_NPC_MULTI 0x40
 #define BATTLE_TYPE_BATTLE_TOWER 0x80
 #define BATTLE_TYPE_ROAMER 0x100
-#define BATTLE_TYPE_POKE_PARK 0x200
+#define BATTLE_TYPE_PAL_PARK 0x200
 #define BATTLE_TYPE_CATCHING_DEMO 0x400
 #define BATTLE_TYPE_BUG_CONTEST 0x1000
 
-#define BATTLE_TYPE_NO_EXPERIENCE (BATTLE_TYPE_WIRELESS | BATTLE_TYPE_SAFARI | BATTLE_TYPE_BATTLE_TOWER | BATTLE_TYPE_POKE_PARK)
+#define BATTLE_TYPE_NO_EXPERIENCE (BATTLE_TYPE_WIRELESS | BATTLE_TYPE_SAFARI | BATTLE_TYPE_BATTLE_TOWER | BATTLE_TYPE_PAL_PARK)
+
+// change the flow of the ball callback to make sure that critical captures only shake once then succeed.  if it shakes, it succeeds, though
+#define CRITICAL_CAPTURE_MASK (0x80)
 
 
 /**
@@ -302,6 +305,14 @@
 #define STATUS2_BIDE_1           (1 << 9)
 
 #define STATUS2_BIDE    (STATUS2_BIDE_0 | STATUS2_BIDE_1)
+
+#define HAZARD_IDX_NONE 0
+#define HAZARD_IDX_SPIKES 1
+#define HAZARD_IDX_TOXIC_SPIKES 2
+#define HAZARD_IDX_STEALTH_ROCK 3
+#define HAZARD_IDX_STICKY_WEB 4
+#define HAZARD_IDX_SHARP_STEEL 5
+#define NUM_HAZARD_IDX (HAZARD_IDX_SHARP_STEEL)
 
 /**
  *  @brief side status flags that apply to one side
@@ -656,7 +667,7 @@ struct __attribute__((packed)) OneTurnEffect
                u32 escape_flag : 2;
                u32 prevent_one_hit_ko_ability : 1; /**< pokémon has damp active */
                // begin custom flags
-               enum ForceExecutionOrder{EXECUTION_ORDER_NORMAL, EXECUTION_ORDER_AFTER_YOU, EXECUTION_ORDER_QUASH} force_execution_order_flag : 2;
+               enum ForceExecutionOrder{EXECUTION_ORDER_NORMAL, EXECUTION_ORDER_AFTER_YOU, EXECUTION_ORDER_QUASH} forceExecutionOrderFlag : 2;
                u32 parental_bond_flag : 2;
                u32 parental_bond_is_active : 1;
                u32 rampageProcessedFlag : 1;
@@ -1027,8 +1038,8 @@ typedef enum ControllerCommand {
     CONTROLLER_COMMAND_POKEMON_INPUT, //15
     CONTROLLER_COMMAND_RUN_INPUT,
     CONTROLLER_COMMAND_SAFARI_THROW_BALL,
+    CONTROLLER_COMMAND_SAFARI_THROW_BAIT,
     CONTROLLER_COMMAND_SAFARI_THROW_MUD,
-    CONTROLLER_COMMAND_SAFARI_RUN,
     CONTROLLER_COMMAND_SAFARI_WATCHING, //20
     CONTROLLER_COMMAND_CATCHING_CONSTEST_THROW_BALL,
     CONTROLLER_COMMAND_RUN_SCRIPT,
@@ -1145,6 +1156,8 @@ typedef struct OnceOnlyAbilityFlags {
     BOOL superSweetSyrupFlag;
 } OnceOnlyAbilityFlags;
 
+#define BATTLE_SCRIPT_PUSH_DEPTH 4
+
 /**
  *  @brief the entire battle structure that we are interested in (for the most part)
  *
@@ -1200,9 +1213,9 @@ struct PACKED BattleStruct {
     /*0xB0*/ int skill_arc_index;
     /*0xB4*/ int skill_seq_no;
     /*0xB8*/ int push_count;
-    /*0xBC*/ int push_skill_arc_kind[CLIENT_MAX];
-    /*0xCC*/ int push_skill_arc_index[CLIENT_MAX];
-    /*0xDC*/ int push_skill_seq_no[CLIENT_MAX];
+    /*0xBC*/ int push_skill_arc_kind[BATTLE_SCRIPT_PUSH_DEPTH];
+    /*0xCC*/ int push_skill_arc_index[BATTLE_SCRIPT_PUSH_DEPTH];
+    /*0xDC*/ int push_skill_seq_no[BATTLE_SCRIPT_PUSH_DEPTH];
     /*0xEC*/ int executionIndex;
     /*0xF0*/ int wait_cnt;
     /*0xF4*/ MESSAGE_PARAM mp;          // buffMsg
@@ -1330,7 +1343,10 @@ struct PACKED BattleStruct {
     /*0x315E*/ u8 frisk_tracker; // see which clients have been frisked by the frisk client (1 << client)
     /*0x315F*/ u8 magicBounceTracker; // if any client has already activated magic bounce, another can not activate
     /*0x3160*/ u8 binding_turns[4]; // turns left for bind
-    /*0x3164*/ u8 padding_3164[0x1A]; // padding to get moveTbl to 317E (for convenience of 3180 in asm)
+    /*0x3164*/ u8 entryHazardQueue[2][NUM_HAZARD_IDX];
+    /*0x316E*/ u8 hazardQueueTracker:7;
+               u8 itemActivatedTracker:1; // if an item that isn't lost on activation has been activated for this hit (think rocky helmet)
+    /*0x316F*/ u8 padding_316F[0x317E - 0x316F]; // padding to get moveTbl to 317E (for convenience of 3180 in asm)
     /*0x317E*/ struct BattleMove moveTbl[NUM_OF_MOVES + 1];
     /*0x    */ u32 gainedExperience[6]; // possible experience gained per party member in order to get level scaling done right
     /*0x    */ u32 gainedExperienceShare[6]; // possible experience gained per party member in order to get level scaling done right
@@ -1743,7 +1759,8 @@ typedef enum BeforeTurnState {
 
 
 enum {
-    BEFORE_MOVE_START = 0,
+    BEFORE_MOVE_START_FLAG_UNLOAD = 0,
+    BEFORE_MOVE_START,
 
     BEFORE_MOVE_STATE_RECHARGE,
     BEFORE_MOVE_STATE_SLEEP_OR_FROZEN,
@@ -3573,7 +3590,7 @@ void LONG_CALL ov12_02252D14(struct BattleSystem *bsys, struct BattleStruct *ctx
                     && IS_VALID_MOVE_TARGET(ctx, BATTLER_ALLY(ctx->attack_client))) {\
                         numClientsChecked++;\
                         failureSubscriptToRun = functionToBeCalled(bsys, ctx, BATTLER_ALLY(ctx->attack_client));\
-                        if (failureSubscriptToRun) {\
+                        if (failureSubscriptToRun != 0) {\
                             ctx->moveStatusFlagForSpreadMoves[BATTLER_ALLY(ctx->attack_client)] = MOVE_STATUS_FLAG_FAILED;\
                             numClientsFailed++;\
                         }\
@@ -3585,7 +3602,7 @@ void LONG_CALL ov12_02252D14(struct BattleSystem *bsys, struct BattleStruct *ctx
                     && IS_VALID_MOVE_TARGET(ctx, BATTLER_OPPONENT_SIDE_LEFT(ctx->attack_client))) {\
                         numClientsChecked++;\
                         failureSubscriptToRun = functionToBeCalled(bsys, ctx, BATTLER_OPPONENT_SIDE_LEFT(ctx->attack_client));\
-                        if (failureSubscriptToRun) {\
+                        if (failureSubscriptToRun != 0) {\
                             ctx->moveStatusFlagForSpreadMoves[BATTLER_OPPONENT_SIDE_LEFT(ctx->attack_client)] = MOVE_STATUS_FLAG_FAILED;\
                             numClientsFailed++;\
                         }\
@@ -3597,7 +3614,7 @@ void LONG_CALL ov12_02252D14(struct BattleSystem *bsys, struct BattleStruct *ctx
                     && IS_VALID_MOVE_TARGET(ctx, BATTLER_OPPONENT_SIDE_RIGHT(ctx->attack_client))) {\
                         numClientsChecked++;\
                         failureSubscriptToRun = functionToBeCalled(bsys, ctx, BATTLER_OPPONENT_SIDE_RIGHT(ctx->attack_client));\
-                        if (failureSubscriptToRun) {\
+                        if (failureSubscriptToRun != 0) {\
                             ctx->moveStatusFlagForSpreadMoves[BATTLER_OPPONENT_SIDE_RIGHT(ctx->attack_client)] = MOVE_STATUS_FLAG_FAILED;\
                             numClientsFailed++;\
                         }\
@@ -3621,10 +3638,20 @@ void LONG_CALL ov12_02252D14(struct BattleSystem *bsys, struct BattleStruct *ctx
             ctx->clientLoopForSpreadMoves = SPREAD_MOVE_LOOP_MAX + 1;\
             if (IS_VALID_MOVE_TARGET(ctx, ctx->defence_client)) {\
                 int failureSubscriptToRun = functionToBeCalled(bsys, ctx, ctx->defence_client);\
-                if (failureSubscriptToRun) {\
+                if (failureSubscriptToRun == 1) {\
                     LoadBattleSubSeqScript(ctx, ARC_BATTLE_MOVE_SEQ, ctx->current_move_index);\
                     ctx->server_seq_no = CONTROLLER_COMMAND_24;\
                     ST_ServerTotteokiCountCalc(bsys, ctx);\
+                    return;\
+                }\
+                if (failureSubscriptToRun > 1) {\
+                    ctx->oneTurnFlag[ctx->attack_client].parental_bond_flag = 0;\
+                    ctx->oneTurnFlag[ctx->attack_client].parental_bond_is_active = FALSE;\
+                    ctx->msg_work = ctx->defence_client;\
+                    LoadBattleSubSeqScript(ctx, ARC_BATTLE_SUB_SEQ, failureSubscriptToRun);\
+                    ctx->next_server_seq_no = ctx->server_seq_no;\
+                    ctx->server_seq_no = CONTROLLER_COMMAND_RUN_SCRIPT;\
+                    ctx->moveStatusFlagForSpreadMoves[ctx->defence_client] = MOVE_STATUS_NO_MORE_WORK;\
                     return;\
                 }\
             }\
@@ -3695,5 +3722,7 @@ void LONG_CALL BattleMessage_BufferTrainerName(struct BattleSystem *bsys, int bu
 void LONG_CALL BattleMessage_BufferBoxName(struct BattleSystem *bsys, int bufferIndex, int param);
 
 void LONG_CALL BufferItemNameWithIndefArticle(u32 *msgFmt, u32 fieldno, u32 itemId);
+
+int LONG_CALL MoveCheckDamageNegatingAbilities(struct BattleStruct *sp, int attacker, int defender);
 
 #endif // BATTLE_H
