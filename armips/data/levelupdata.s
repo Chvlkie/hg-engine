@@ -87,69 +87,56 @@ levelup SPECIES_VENUSAUR
 levelup SPECIES_CHARMANDER
     learnset MOVE_SCRATCH, 1
     learnset MOVE_GROWL, 1
-    learnset MOVE_EMBER, 5
-    learnset MOVE_SMOKESCREEN, 8
+    learnset MOVE_EMBER, 7
+    learnset MOVE_SMOKESCREEN, 10
     learnset MOVE_METAL_CLAW, 12
     learnset MOVE_RAGE, 16
-    learnset MOVE_FIRE_FANG, 20
-    learnset MOVE_SCARY_FACE, 23
-    learnset MOVE_SLASH, 26
+    learnset MOVE_SCARY_FACE, 19
+    learnset MOVE_DRAGON_RAGE, 22
+    learnset MOVE_FIRE_FANG, 25
     learnset MOVE_FLAME_BURST, 28
-    learnset MOVE_FLAMETHROWER, 30
-    learnset MOVE_DRAGON_BREATH, 35
-    learnset MOVE_FIRE_SPIN, 37
-    learnset MOVE_INFERNO, 40
-    learnset MOVE_FLARE_BLITZ, 40
+    learnset MOVE_SLASH, 34
+    learnset MOVE_FLAMETHROWER, 37
+    learnset MOVE_FIRE_SPIN, 43
     terminatelearnset
 
 
 levelup SPECIES_CHARMELEON
     learnset MOVE_SCRATCH, 1
     learnset MOVE_GROWL, 1
-    learnset MOVE_EMBER, 5
-    learnset MOVE_SMOKESCREEN, 8
+    learnset MOVE_SMOKESCREEN, 1
+    learnset MOVE_SMOKESCREEN, 10
     learnset MOVE_METAL_CLAW, 12
     learnset MOVE_RAGE, 16
-    learnset MOVE_FIRE_FANG, 20
-    learnset MOVE_SCARY_FACE, 23
-    learnset MOVE_SLASH, 26
+    learnset MOVE_SCARY_FACE, 19
+    learnset MOVE_DRAGON_RAGE, 22
+    learnset MOVE_FIRE_FANG, 25
     learnset MOVE_FLAME_BURST, 28
-    learnset MOVE_FLAMETHROWER, 30
-    learnset MOVE_DRAGON_BREATH, 35
-    learnset MOVE_FIRE_SPIN, 37
-    learnset MOVE_INFERNO, 40
-    learnset MOVE_FLARE_BLITZ, 40
+    learnset MOVE_SLASH, 34
+    learnset MOVE_FLAMETHROWER, 37
+    learnset MOVE_FIRE_SPIN, 43
     terminatelearnset
 
 
 levelup SPECIES_CHARIZARD
-    learnset MOVE_METAL_CLAW, 1
-    learnset MOVE_AIR_SLASH, 0
     learnset MOVE_WING_ATTACK, 0
-    learnset MOVE_AIR_SLASH, 1
+    learnset MOVE_DRAGON_CLAW, 0
+    learnset MOVE_WING_ATTACK, 1
     learnset MOVE_DRAGON_CLAW, 1
     learnset MOVE_HEAT_WAVE, 1
     learnset MOVE_SCRATCH, 1
     learnset MOVE_GROWL, 1
     learnset MOVE_EMBER, 1
     learnset MOVE_SMOKESCREEN, 1
-    learnset MOVE_WING_ATTACK, 1
-    learnset MOVE_FLARE_BLITZ, 1
-    learnset MOVE_SHADOW_CLAW, 1
-    learnset MOVE_EMBER, 7
-    learnset MOVE_SMOKESCREEN, 10
-    learnset MOVE_RAGE, 16
-    learnset MOVE_FIRE_FANG, 23
-    learnset MOVE_DRAGON_RAGE, 26
-    learnset MOVE_SCARY_FACE, 30
-    learnset MOVE_SLASH, 31
-    learnset MOVE_FLAME_BURST, 32
-    learnset MOVE_DRAGON_BREATH, 35
-    learnset MOVE_FLAMETHROWER, 37
-    learnset MOVE_FIRE_SPIN, 50
-    learnset MOVE_INFERNO, 57
-    learnset MOVE_FLARE_BLITZ, 69
-    learnset MOVE_HEAT_WAVE, 71
+    learnset MOVE_DRAGON_BREATH, 12
+    learnset MOVE_FIRE_FANG, 19
+    learnset MOVE_SLASH, 24
+    learnset MOVE_FLAMETHROWER, 30
+    learnset MOVE_FLAMETHROWER, 38
+    learnset MOVE_AIR_SLASH, 42
+    learnset MOVE_FIRE_SPIN, 46
+    learnset MOVE_INFERNO, 54
+    learnset MOVE_FLARE_BLITZ, 62
     terminatelearnset
 
 
