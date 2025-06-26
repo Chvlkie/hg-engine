@@ -280,7 +280,6 @@ BattleScriptCmdTable = 0x0226C6C8;
 /* i can't believe i haven't used this one yet */
 GetItemData = 0x02077D88 | 1;
 GiratinaBoxPokemonFormChange = 0x02071CBC | 1;
-GrashideaFeasibleCheck = 0x02071DB4 | 1;
 PokeList_FormDemoOverlayLoad = 0x0207CB54 | 1;
 
 /* save stuff */
@@ -391,6 +390,7 @@ Fsys_GetWeather_HandleDiamondDust = 0x0203BBB4 | 1;
 sub_0206D038 = 0x0206D038 | 1;
 GetSpeciesNameIntoArray = 0x0200BC28 | 1;
 PlayCry = 0x02006218 | 1;
+PlaySE = 0x0200604C | 1;
 
 weatherSysObjFadeInit = 0x021EC504 | 1;
 weatherSysFogFadeInInitPack = 0x021EC5FC | 1;
@@ -751,3 +751,9 @@ sub_02092D8C = 0x02092D8C | 1;
 PokegearTownMap_LaunchApp_Impl = 0x0203EA5C | 1;
 ov115_0225F158 = 0x0225F158 | 1;
 ov115_0225F1BC = 0x0225F1BC | 1;
+
+/* spa functions */
+LoadOpenSPAToEmitter = 0x0201526C | 1;
+OpenSPAFileInHeap = 0x02015264 | 1;
+QueueEmitterWithCallback = 0x02015494 | 1;
+particleEmitCallback = 0x021E5C28 | 1;
