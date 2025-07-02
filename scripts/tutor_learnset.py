@@ -5,17 +5,45 @@ import struct
 dump = False
 
 numToTutorName = {
-    0: "TUTOR_TOP_LEFT",
-    1: "TUTOR_TOP_RIGHT",
-    2: "TUTOR_BOTTOM_RIGHT",
-    3: "TUTOR_HEADBUTT",
+    0: "TUTOR_BUG_BITE",
+    1: "TUTOR_MEGA_KICK",
+    2: "TUTOR_MEGA_PUNCH",
+    3: "TUTOR_STEEL_BEAM",
+    4: "TUTOR_ROCK_BLAST",
+    5: "TUTOR_COVET",
+    6: "TUTOR_COSMIC_POWER",
+    7: "TUTOR_SOFTBOILED",
+    8: "TUTOR_MIMIC",
+    9: "TUTOR_ELECTROWEB",
+    10: "TUTOR_SUBSTITUTE",
+    11: "TUTOR_ANCIENT_POWER",
+    12: "TUTOR_LASER_FOCUS",
+    13: "TUTOR_LAVA_PLUME",
+    14: "TUTOR_FREEZE_DRY",
+    15: "TUTOR_METEOR_BEAM",
+    16: "TUTOR_BATTLE_F_1",
+    17: "TUTOR_BATTLE_F_2",
 }
 
 tutorNameToNum = {
-    "TUTOR_TOP_LEFT": 0,
-    "TUTOR_TOP_RIGHT": 1,
-    "TUTOR_BOTTOM_RIGHT": 2,
-    "TUTOR_HEADBUTT": 3,
+    "TUTOR_BUG_BITE": 0,
+    "TUTOR_MEGA_KICK": 1,
+    "TUTOR_MEGA_PUNCH": 2,
+    "TUTOR_STEEL_BEAM": 3,
+    "TUTOR_ROCK_BLAST": 4,
+    "TUTOR_COVET": 5,
+    "TUTOR_COSMIC_POWER": 6,
+    "TUTOR_SOFTBOILED": 7,
+    "TUTOR_MIMIC": 8,
+    "TUTOR_ELECTROWEB": 9,
+    "TUTOR_SUBSTITUTE": 10,
+    "TUTOR_ANCIENT_POWER": 11,
+    "TUTOR_LASER_FOCUS": 12,
+    "TUTOR_LAVA_PLUME": 13,
+    "TUTOR_FREEZE_DRY": 14,
+    "TUTOR_METEOR_BEAM": 15,
+    "TUTOR_BATTLE_F_1": 16,
+    "TUTOR_BATTLE_F_2": 17,
 }
 
 def GrabSpeciesDict(speciesDict: dict):
