@@ -1432,7 +1432,22 @@
     .long 259
     .endm
 
-    .equ BASE_ENGINE_BTL_SCR_CMDS_MAX, 259
+    .macro TryIncinerate arg_0
+    .long 260
+    .long (((\arg_0 - .) / 4) - 1)
+    .endm
+
+    .macro AddThirdType arg_0
+    .long 261
+    .long \arg_0
+    .endm
+
+    .macro TryAuroraVeil arg_0
+    .long 262
+    .long (((\arg_0 - .) / 4) - 1)
+    .endm
+
+    .equ BASE_ENGINE_BTL_SCR_CMDS_MAX, 262
 
      .macro CalcElectroBallPower
      .long (BASE_ENGINE_BTL_SCR_CMDS_MAX + 1)
