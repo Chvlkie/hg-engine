@@ -94,7 +94,7 @@ BOOL btl_scr_cmd_103_checkprotectcontactmoves(void *bsys, struct BattleStruct *c
 BOOL btl_scr_cmd_104_tryincinerate(void* bsys, struct BattleStruct* ctx);
 BOOL btl_scr_cmd_105_addthirdtype(void* bsys UNUSED, struct BattleStruct* ctx);
 BOOL btl_scr_cmd_106_tryauroraveil(void* bw, struct BattleStruct* ctx);
-BOOL btl_scr_cmd_104_calcelectroball(void *bsys UNUSED, struct BattleStruct *ctx);
+BOOL btl_scr_cmd_custom_01__calcelectroball(void *bsys UNUSED, struct BattleStruct *ctx);
 BOOL BtlCmd_GoToMoveScript(struct BattleSystem *bsys, struct BattleStruct *ctx);
 BOOL BtlCmd_WeatherHPRecovery(void *bw, struct BattleStruct *sp);
 BOOL BtlCmd_CalcWeatherBallParams(void *bw, struct BattleStruct *sp);
@@ -435,7 +435,7 @@ const btl_scr_cmd_func NewBattleScriptCmdTable[] =
     [0x105 - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_105_addthirdtype,
     [0x106 - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_106_tryauroraveil,
     // [BASE_ENGINE_BTL_SCR_CMDS_MAX - START_OF_NEW_BTL_SCR_CMDS + 1] = btl_scr_cmd_custom_01_your_custom_command,
-    [(BASE_ENGINE_BTL_SCR_CMDS_MAX + 1) - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_104_calcelectroball,
+    [(BASE_ENGINE_BTL_SCR_CMDS_MAX + 1) - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_custom_01__calcelectroball,
 };
 
 // entries before 0xFFFE are banned for mimic and metronome--after is just banned for metronome.  table ends with 0xFFFF
@@ -3217,7 +3217,7 @@ BOOL btl_scr_cmd_102_removeentryhazardfromqueue(void *bsys UNUSED, struct Battle
     return FALSE;
 }
 
-BOOL btl_scr_cmd_104_calcelectroball(void *bsys UNUSED, struct BattleStruct *ctx)
+BOOL btl_scr_cmd_custom_01__calcelectroball(void *bsys UNUSED, struct BattleStruct *ctx)
 {
     IncrementBattleScriptPtr(ctx, 1);
 
