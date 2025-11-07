@@ -1,5 +1,4 @@
 from dump_scripts.dump_tools import *
-import pprint
 
 AI_FLAG_DEFINES = [
     "F_PRIORITIZE_SUPER_EFFECTIVE",
@@ -91,7 +90,8 @@ def dump_trainerdata(trdata_narc, trpok_narc, is_expanded):
             if flags & 0x40:
                 trainerdata_armips += f'        shinylock {trpok_narc[idx][monPartyIdx]["shiny_lock"]}\n'
             if flags & 0x80:
-                sys.exit("Additional flags not currently implemented in the dumper!  Quit.")
+                print("Additional flags not currently implemented in the dumper!  Quit.")
+                sys.exit(0)
             trainerdata_armips += f'        ballseal {trpok_narc[idx][monPartyIdx]["ballseal"]}\n'
             if monPartyIdx != len(trpok_narc[idx])-1:
                 trainerdata_armips += '\n'
@@ -112,12 +112,3 @@ def get_trainer_names():
             current_trainer_index += 1
 
     return names
-
-def flags_to_string(flags, defines):
-    retStr = []
-    for i in range(0, len(defines)):
-        if (flags & 1 << i):
-            retStr.append(defines[i])
-    if len(retStr) == 0:
-        return "0"
-    return " | ".join(retStr)

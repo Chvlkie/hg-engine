@@ -195,6 +195,14 @@ def dump_narc(rom, narc_path, narc_format):
 
     return parsed_narc_data
 
+def signed_byte(value):
+    retVal = value
+    if (value > 255):
+        print("Value not valid for bytes!")
+    if (value > 127):
+        retVal = (value - 256)
+    return retVal
+
 def dump_trpok_narc(rom, narc_path, trdata_narc):
     parsed_narc_data = {}
 
@@ -249,7 +257,8 @@ def dump_trpok_narc(rom, narc_path, trdata_narc):
             narc_format.remove([1, "move_3_pp"])
             narc_format.remove([1, "move_4_pp"])
         else:
-            sys.exit("Additional flags not currently implemented in the dumper!  Quit.")
+            print("Additional flags not currently implemented in the dumper!  Quit.")
+            sys.exit(0)
 
         #parsed_narc_data.append(read_narc_data(data, narc_format))
         totalSizePerMon = 0
@@ -410,6 +419,15 @@ def parse_inc_file(file_path: str) -> Dict[str, Dict[int, str]]:
             raise ValueError("Unable to resolve all variable dependencies")
 
     return dict(result)
+
+def flags_to_string(flags, defines):
+    retStr = []
+    for i in range(0, len(defines)):
+        if (flags & 1 << i):
+            retStr.append(defines[i])
+    if len(retStr) == 0:
+        return "0"
+    return " | ".join(retStr)
 
 class DictWrapper:
     def __init__(self, dictionary):
