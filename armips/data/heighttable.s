@@ -1415,3 +1415,8 @@ heightentry SPECIES_OGERPON_CORNERSTONE_MASK_TERASTAL, 0, "null", 0, "null"
 heightentry SPECIES_URSALUNA_BLOODMOON, 0, 0, 0, 0
 heightentry SPECIES_TERAPAGOS_TERASTAL, 16, 16, 0, 0
 heightentry SPECIES_TERAPAGOS_STELLAR, 0, 0, 0, 0
+heightentry SPECIES_VOLTORB_OVERHEAT, "null", 20, "null", 25
+heightentry SPECIES_ELECTRODE_OVERHEAT, "null", 16, "null", 17
+heightentry SPECIES_ONIX_CRYSTAL, 0, 0, 6, 6
+heightentry SPECIES_MAGIKARP_DEEPSEA, 7, 7, 10, 10
+heightentry SPECIES_GYARADOS_DEEPSEA, 6, 6, 0, 0

@@ -1401,4 +1401,9 @@
 /* SPECIES_TERAPAGOS_TERASTAL                */ .word 160
 /* SPECIES_TERAPAGOS_STELLAR                 */ .word 770
 
+/* SPECIES_VOLTORB_OVERHEAT                  */ .word 104
+/* SPECIES_ELECTRODE_OVERHEAT                */ .word 666
+/* SPECIES_ONIX_CRYSTAL                      */ .word 2100
+/* SPECIES_MAGIKARP_DEEPSEA                  */ .word 100
+/* SPECIES_GYARADOS_DEEPSEA                  */ .word 2350
 .close
