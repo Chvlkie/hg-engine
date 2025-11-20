@@ -16774,6 +16774,7 @@ evodata SPECIES_TERAPAGOS_STELLAR
     evolution EVO_NONE, 0, SPECIES_NONE
 terminateevodata
 
+
 evodata SPECIES_VOLTORB_OVERHEAT
     evolutionwithform EVO_STONE, ITEM_FIRE_STONE, SPECIES_ELECTRODE, 3
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -16785,6 +16786,7 @@ evodata SPECIES_VOLTORB_OVERHEAT
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
 terminateevodata
+
 
 evodata SPECIES_ELECTRODE_OVERHEAT
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -16798,9 +16800,10 @@ evodata SPECIES_ELECTRODE_OVERHEAT
     evolution EVO_NONE, 0, SPECIES_NONE
 terminateevodata
 
-evodata SPECIES_MAGIKARP_DEEPSEA
-    evolutionwithform EVO_ITEM_DAY, ITEM_DRAGON_SCALE, SPECIES_GYARADOS
-    evolutionwithform EVO_ITEM_NIGHT, ITEM_DRAGON_SCALE, SPECIES_GYARADOS
+
+evodata SPECIES_ONIX_CRYSTAL
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -16809,6 +16812,20 @@ evodata SPECIES_MAGIKARP_DEEPSEA
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     terminateevodata
+
+
+evodata SPECIES_MAGIKARP_DEEPSEA
+    evolutionwithform EVO_ITEM_DAY, ITEM_DRAGON_SCALE, SPECIES_GYARADOS, 2
+    evolutionwithform EVO_ITEM_NIGHT, ITEM_DRAGON_SCALE, SPECIES_GYARADOS, 2
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    terminateevodata
+
 
 evodata SPECIES_GYARADOS_DEEPSEA
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -16822,14 +16839,3 @@ evodata SPECIES_GYARADOS_DEEPSEA
     evolution EVO_NONE, 0, SPECIES_NONE
     terminateevodata
 
-    evodata SPECIES_ONIX_CRYSTAL
-    evolution EVO_NONE, 0, SPECIES_NONE
-    evolution EVO_NONE, 0, SPECIES_NONE
-    evolution EVO_NONE, 0, SPECIES_NONE
-    evolution EVO_NONE, 0, SPECIES_NONE
-    evolution EVO_NONE, 0, SPECIES_NONE
-    evolution EVO_NONE, 0, SPECIES_NONE
-    evolution EVO_NONE, 0, SPECIES_NONE
-    evolution EVO_NONE, 0, SPECIES_NONE
-    evolution EVO_NONE, 0, SPECIES_NONE
-    terminateevodata
