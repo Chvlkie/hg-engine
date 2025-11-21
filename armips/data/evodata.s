@@ -15166,7 +15166,7 @@ terminateevodata
 
 evodata SPECIES_PUMPKABOO_SMALL
     evolutionwithform EVO_TRADE, 0, SPECIES_GOURGEIST, 1
-    evolutionwithform EVO_STONE, ITEM_LINKING_CORD, SPECIES_GOURGEIST. 1
+    evolutionwithform EVO_STONE, ITEM_LINKING_CORD, SPECIES_GOURGEIST, 1
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -15178,7 +15178,7 @@ terminateevodata
 
 evodata SPECIES_PUMPKABOO_LARGE
     evolutionwithform EVO_TRADE, 0, SPECIES_GOURGEIST, 2
-    evolutionwithform EVO_STONE, ITEM_LINKING_CORD, SPECIES_GOURGEIST. 2
+    evolutionwithform EVO_STONE, ITEM_LINKING_CORD, SPECIES_GOURGEIST, 2
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -15190,7 +15190,7 @@ terminateevodata
 
 evodata SPECIES_PUMPKABOO_SUPER
     evolutionwithform EVO_TRADE, 0, SPECIES_GOURGEIST, 3
-    evolutionwithform EVO_STONE, ITEM_LINKING_CORD, SPECIES_GOURGEIST. 3
+    evolutionwithform EVO_STONE, ITEM_LINKING_CORD, SPECIES_GOURGEIST, 3
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
