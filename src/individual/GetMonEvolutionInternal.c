@@ -85,19 +85,19 @@ u16 GetMonEvolutionInternal(struct Party *party, struct PartyPokemon *pokemon, u
             case EVO_NONE:
                 break;
             case EVO_FRIENDSHIP:
-                if (friendship >= FRIENDSHIP_EVOLUTION_THRESHOLD && CheckScriptFlag(FLAG_GAME_CLEAR)) {
+                if (friendship >= FRIENDSHIP_EVOLUTION_THRESHOLD && CheckScriptFlag(FLAG_GAME_CLEAR == 1)) {
                     target = evoTable[i].target & 0x7FF;
                     *method_ret = EVO_FRIENDSHIP;
                 }
                 break;
             case EVO_FRIENDSHIP_DAY:
-                if (IsNighttime() == 0 && friendship >= FRIENDSHIP_EVOLUTION_THRESHOLD && CheckScriptFlag(FLAG_GAME_CLEAR)) {
+                if (IsNighttime() == 0 && friendship >= FRIENDSHIP_EVOLUTION_THRESHOLD && CheckScriptFlag(FLAG_GAME_CLEAR) == 1) {
                     target = evoTable[i].target & 0x7FF;
                     *method_ret = EVO_FRIENDSHIP_DAY;
                 }
                 break;
             case EVO_FRIENDSHIP_NIGHT:
-                if (IsNighttime() == 1 && friendship >= FRIENDSHIP_EVOLUTION_THRESHOLD && CheckScriptFlag(FLAG_GAME_CLEAR)) {
+                if (IsNighttime() == 1 && friendship >= FRIENDSHIP_EVOLUTION_THRESHOLD && CheckScriptFlag(FLAG_GAME_CLEAR) == 1) {
                     target = evoTable[i].target & 0x7FF;
                     *method_ret = EVO_FRIENDSHIP_NIGHT;
                 }
@@ -176,7 +176,7 @@ u16 GetMonEvolutionInternal(struct Party *party, struct PartyPokemon *pokemon, u
                 }
                 break;
             case EVO_HAS_MOVE:
-                if (MonHasMove(pokemon, evoTable[i].param) == TRUE && CheckScriptFlag(FLAG_GAME_CLEAR)) {
+                if (MonHasMove(pokemon, evoTable[i].param) == TRUE && CheckScriptFlag(FLAG_GAME_CLEAR) == 1) {
                     target = evoTable[i].target & 0x7FF;
                     *method_ret = EVO_HAS_MOVE;
                 }
@@ -203,7 +203,7 @@ u16 GetMonEvolutionInternal(struct Party *party, struct PartyPokemon *pokemon, u
                 {
                     u32 location = gFieldSysPtr->location->mapId;
 
-                    if ((location == 45 || location == 18) && CheckScriptFlag(FLAG_GAME_CLEAR))
+                    if ((location == 45 || location == 18) && CheckScriptFlag(FLAG_GAME_CLEAR) == 1)
                     {
                         target = evoTable[i].target & 0x7FF;
                         *method_ret = EVO_CORONET;
@@ -214,7 +214,7 @@ u16 GetMonEvolutionInternal(struct Party *party, struct PartyPokemon *pokemon, u
                 {
                     u32 location = gFieldSysPtr->location->mapId;
 
-                    if (location == MAP_D46R0102 && CheckScriptFlag(FLAG_GAME_CLEAR))
+                    if (location == MAP_D46R0102 && CheckScriptFlag(FLAG_GAME_CLEAR) == 1)
                     {
                         target = evoTable[i].target & 0x7FF;
                         *method_ret = EVO_ETERNA;
@@ -225,7 +225,7 @@ u16 GetMonEvolutionInternal(struct Party *party, struct PartyPokemon *pokemon, u
                 {
                     u32 location = gFieldSysPtr->location->mapId;
 
-                    if ((location == 239 || location == 456) && CheckScriptFlag(FLAG_GAME_CLEAR))
+                    if ((location == 239 || location == 456) && CheckScriptFlag(FLAG_GAME_CLEAR) == 1)
                     {
                         target = evoTable[i].target & 0x7FF;
                         *method_ret = EVO_ROUTE217;
@@ -273,7 +273,7 @@ u16 GetMonEvolutionInternal(struct Party *party, struct PartyPokemon *pokemon, u
                 break;
             case EVO_HAS_MOVE_TYPE:
                 {
-                if (!CheckScriptFlag(FLAG_GAME_CLEAR)) {
+                if (!CheckScriptFlag(FLAG_GAME_CLEAR) == 1) {
                     break;
                 }
                     int k;
