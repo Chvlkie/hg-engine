@@ -27714,7 +27714,7 @@ mondata SPECIES_ELECTRODE_OVERHEAT, "-----"
     runchance 0
     colorflip BODY_COLOR_RED, 0
 
-mondata SPECIES_ONIX, "-----"
+mondata SPECIES_ONIX_CRYSTAL, "-----"
     basestats 35, 45, 160, 70, 30, 45
     types TYPE_ROCK, TYPE_FAIRY
     catchrate 45
@@ -27730,7 +27730,7 @@ mondata SPECIES_ONIX, "-----"
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
 
-mondata SPECIES_MAGIKARP, "-----"
+mondata SPECIES_MAGIKARP_DEEPSEA, "-----"
     basestats 20, 10, 55, 80, 15, 20
     types TYPE_WATER, TYPE_DARK
     catchrate 255
@@ -27746,7 +27746,7 @@ mondata SPECIES_MAGIKARP, "-----"
     runchance 0
     colorflip BODY_COLOR_RED, 0
 
-mondata SPECIES_GYARADOS, "-----"
+mondata SPECIES_GYARADOS_DEEPSEA, "-----"
     basestats 95, 125, 79, 81, 60, 100
     types TYPE_WATER, TYPE_DRAGON
     catchrate 325
