@@ -9989,7 +9989,25 @@ mondata SPECIES_PORYGON_Z, "Porygon-Z"
     mondexweight SPECIES_PORYGON_Z, "75.0 lbs."
 
 
-
+mondata SPECIES_GALLADE, "Gallade"
+    basestats 68, 125, 65, 80, 65, 115
+    types TYPE_PSYCHIC, TYPE_FIGHTING
+    catchrate 45
+    baseexp 0 // defined in baseexp.s
+    evyields 0, 3, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_NONE
+    genderratio 0
+    eggcycles 20
+    basefriendship 35
+    growthrate GROWTH_SLOW
+    egggroups EGG_GROUP_HUMAN_LIKE, EGG_GROUP_AMORPHOUS
+    abilities ABILITY_STEADFAST, ABILITY_SHARPNESS
+    runchance 0
+    colorflip BODY_COLOR_WHITE, 0
+    mondexentry SPECIES_GALLADE, "Because it can sense what its foe\nis thinking, its attacks burst out\nfirst, fast, and fierce."
+    mondexclassification SPECIES_GALLADE, "Blade Pokémon"
+    mondexheight SPECIES_GALLADE, "5’03”"
+    mondexweight SPECIES_GALLADE, "114.6 lbs."
 
 
 mondata SPECIES_PROBOPASS, "Probopass"
