@@ -718,5 +718,7 @@ const u16 UNUSED PokeFormDataTbl[][32] =
     [SPECIES_ONIX] = {
         SPECIES_ONIX_CRYSTAL,
     },
-    [SPECIES_MAGIKARP] = { SPECIES_MAGIKARP_DEEPSEA, }
+    [SPECIES_MAGIKARP] = {
+        SPECIES_MAGIKARP_DEEPSEA,
+    }
 };
