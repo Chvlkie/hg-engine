@@ -97,6 +97,7 @@ BOOL btl_scr_cmd_106_tryauroraveil(void *bw, struct BattleStruct *ctx);
 BOOL btl_scr_cmd_107_clearauroraveil(void *bsys, struct BattleStruct *ctx);
 BOOL btl_scr_cmd_108_strengthsapcalc(void* bw, struct BattleStruct* sp);
 BOOL btl_scr_cmd_109_checktargetispartner(void* bw, struct BattleStruct* sp);
+BOOL btl_scr_cmd_110_clearsmog(void *bsys UNUSED, struct BattleStruct *ctx);
 BOOL btl_scr_cmd_custom_01__calcelectroball(void *bsys UNUSED, struct BattleStruct *ctx);
 BOOL BtlCmd_GoToMoveScript(struct BattleSystem *bsys, struct BattleStruct *ctx);
 BOOL BtlCmd_WeatherHPRecovery(void *bw, struct BattleStruct *sp);
@@ -113,6 +114,7 @@ BOOL BtlCmd_GenerateEndOfBattleItem(struct BattleSystem *bw, struct BattleStruct
 BOOL BtlCmd_TryPluck(void* bw, struct BattleStruct* sp);
 BOOL BtlCmd_PlayFaintAnimation(struct BattleSystem* bsys, struct BattleStruct* sp);
 BOOL BtlCmd_TryBreakScreens(struct BattleSystem *bsys, struct BattleStruct *ctx);
+BOOL BtlCmd_ResetAllStatChanges(struct BattleSystem *bsys, struct BattleStruct *ctx);
 u32 CalculateBallShakes(void *bw, struct BattleStruct *sp);
 u32 DealWithCriticalCaptureShakes(struct EXP_CALCULATOR *expcalc, u32 shakes);
 u32 LoadCaptureSuccessSPA(u32 id);
@@ -390,6 +392,7 @@ const u8 *BattleScrCmdNames[] =
     "ClearAuroraVeil",
     "StrengthSapCalc",
     "CheckTargetIsPartner",
+    "ClearSmog",
     "CalcElectroBallPower",
     // "YourCustomCommand",
 };
@@ -398,7 +401,7 @@ u32 cmdAddress = 0;
 #pragma GCC diagnostic pop
 #endif // DEBUG_BATTLE_SCRIPT_COMMANDS
 
-#define BASE_ENGINE_BTL_SCR_CMDS_MAX 0x109
+#define BASE_ENGINE_BTL_SCR_CMDS_MAX 0x110
 
 const btl_scr_cmd_func NewBattleScriptCmdTable[] =
 {
@@ -443,6 +446,7 @@ const btl_scr_cmd_func NewBattleScriptCmdTable[] =
     [0x107 - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_107_clearauroraveil,
     [0x108 - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_108_strengthsapcalc,
     [0x109 - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_109_checktargetispartner,
+    [0x110 - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_110_clearsmog,
     // [BASE_ENGINE_BTL_SCR_CMDS_MAX - START_OF_NEW_BTL_SCR_CMDS + 1] = btl_scr_cmd_custom_01_your_custom_command,
     [(BASE_ENGINE_BTL_SCR_CMDS_MAX + 1) - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_custom_01__calcelectroball,
 };
@@ -4333,5 +4337,31 @@ BOOL BtlCmd_TryBreakScreens(struct BattleSystem *bsys, struct BattleStruct *ctx)
         IncrementBattleScriptPtr(ctx, adrs);
     }
 
+    return FALSE;
+}
+
+void reset_stat_changes(struct BattleStruct *ctx, int battlerId)
+{
+    for (int stat = 0; stat < 8; stat++) {
+        ctx->battlemon[battlerId].states[stat] = 6;
+    }
+    // ctx->battleMons[battlerId].status2 &= ~STATUS2_FOCUS_ENERGY; as of Gen5
+}
+
+BOOL BtlCmd_ResetAllStatChanges(struct BattleSystem *bsys, struct BattleStruct *ctx)
+{
+    IncrementBattleScriptPtr(ctx, 1);
+
+    int battlersMax = BattleWorkClientSetMaxGet(bsys);
+    for (int battlerId = 0; battlerId < battlersMax; ++battlerId) {
+        reset_stat_changes(ctx, battlerId);
+    }
+    return FALSE;
+}
+
+BOOL btl_scr_cmd_110_clearsmog(void *bsys UNUSED, struct BattleStruct *ctx)
+{
+    IncrementBattleScriptPtr(ctx, 1);
+    reset_stat_changes(ctx, ctx->defence_client);
     return FALSE;
 }
