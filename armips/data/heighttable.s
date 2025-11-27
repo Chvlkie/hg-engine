@@ -1088,7 +1088,7 @@ heightentry SPECIES_GOUGING_FIRE, "null", 0, "null", 0
 heightentry SPECIES_RAGING_BOLT, "null", 0, "null", 0
 heightentry SPECIES_IRON_BOULDER, "null", 0, "null", 0
 heightentry SPECIES_IRON_CROWN, "null", 0, "null", 0
-heightentry SPECIES_TERAPAGOS, 0, 0, 0, 0
+heightentry SPECIES_TERAPAGOS, "null", 0, "null", 0
 heightentry SPECIES_PECHARUNT, "null", 10, "null", 0
 
 heightentry SPECIES_MEGA_VENUSAUR, 0, 0, 0, 0
@@ -1104,8 +1104,8 @@ heightentry SPECIES_MEGA_KANGASKHAN, 0, "null", 0, "null"
 heightentry SPECIES_MEGA_PINSIR, 0, 0, 0, 0
 heightentry SPECIES_MEGA_GYARADOS, 0, 0, 0, 0
 heightentry SPECIES_MEGA_AERODACTYL, 12, 12, 0, 0
-heightentry SPECIES_MEGA_MEWTWO_X, 0, 0, 0, 0
-heightentry SPECIES_MEGA_MEWTWO_Y, 0, 0, 0, 0
+heightentry SPECIES_MEGA_MEWTWO_X, "null", 0, "null", 0
+heightentry SPECIES_MEGA_MEWTWO_Y, "null", 0, "null", 0
 heightentry SPECIES_MEGA_AMPHAROS, 0, 0, 0, 0
 heightentry SPECIES_MEGA_STEELIX, 0, 0, 0, 0
 heightentry SPECIES_MEGA_SCIZOR, 0, 0, 0, 0
@@ -1182,9 +1182,9 @@ heightentry SPECIES_SLOWBRO_GALARIAN, 11, 11, 0, 0
 heightentry SPECIES_FARFETCHD_GALARIAN, 0, 0, 0, 0
 heightentry SPECIES_WEEZING_GALARIAN, 5, 5, 0, 0
 heightentry SPECIES_MR_MIME_GALARIAN, 7, 7, 0, 0
-heightentry SPECIES_ARTICUNO_GALARIAN, 0, 0, 0, 0
-heightentry SPECIES_ZAPDOS_GALARIAN, 8, 8, 0, 0
-heightentry SPECIES_MOLTRES_GALARIAN, 0, 0, 0, 0
+heightentry SPECIES_ARTICUNO_GALARIAN, "null", 6, "null", 4
+heightentry SPECIES_ZAPDOS_GALARIAN, "null", 15, "null", 6
+heightentry SPECIES_MOLTRES_GALARIAN, "null", 6, "null", 4
 heightentry SPECIES_SLOWKING_GALARIAN, 0, 0, 0, 0
 heightentry SPECIES_CORSOLA_GALARIAN, 10, 10, 0, 0
 heightentry SPECIES_ZIGZAGOON_GALARIAN, 0, 0, 0, 0
@@ -1347,8 +1347,8 @@ heightentry SPECIES_CALYREX_SHADOW_RIDER, 0, 0, 0, 0
 heightentry SPECIES_ENAMORUS_THERIAN, 0, "null", 0, "null"
 heightentry SPECIES_GROWLITHE_HISUIAN, 10, 10, 0, 0
 heightentry SPECIES_ARCANINE_HISUIAN, 0, 0, 0, 0
-heightentry SPECIES_VOLTORB_HISUIAN, 20, 20, 0, 0
-heightentry SPECIES_ELECTRODE_HISUIAN, 0, 0, 0, 0
+heightentry SPECIES_VOLTORB_HISUIAN, "null", 20, "null", 0
+heightentry SPECIES_ELECTRODE_HISUIAN, "null", 0, "null", 0
 heightentry SPECIES_TYPHLOSION_HISUIAN, 4, 4, 0, 0
 heightentry SPECIES_QWILFISH_HISUIAN, 8, 8, 0, 0
 heightentry SPECIES_SNEASEL_HISUIAN, 3, 3, 0, 0
@@ -1413,10 +1413,5 @@ heightentry SPECIES_OGERPON_WELLSPRING_MASK_TERASTAL, 0, "null", 0, "null"
 heightentry SPECIES_OGERPON_HEARTHFLAME_MASK_TERASTAL, 0, "null", 0, "null"
 heightentry SPECIES_OGERPON_CORNERSTONE_MASK_TERASTAL, 0, "null", 0, "null"
 heightentry SPECIES_URSALUNA_BLOODMOON, 0, 0, 0, 0
-heightentry SPECIES_TERAPAGOS_TERASTAL, 16, 16, 0, 0
-heightentry SPECIES_TERAPAGOS_STELLAR, 0, 0, 0, 0
-heightentry SPECIES_VOLTORB_OVERHEAT, "null", 20, "null", 25
-heightentry SPECIES_ELECTRODE_OVERHEAT, "null", 16, "null", 17
-heightentry SPECIES_ONIX_CRYSTAL, 0, 0, 6, 6
-heightentry SPECIES_MAGIKARP_DEEPSEA, 7, 7, 10, 10
-heightentry SPECIES_GYARADOS_DEEPSEA, 6, 6, 0, 0
+heightentry SPECIES_TERAPAGOS_TERASTAL, "null", 16, "null", 0
+heightentry SPECIES_TERAPAGOS_STELLAR, "null", 0, "null", 0

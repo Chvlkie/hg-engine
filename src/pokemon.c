@@ -110,7 +110,7 @@ int LONG_CALL PokeOtherFormMonsNoGet(int mons_no, int form_no)
         }
         break;
 
-    default:;
+    default:
         if (form_no != 0) {
             u16 newSpecies;
             ArchiveDataLoadOfs(&newSpecies, ARC_CODE_ADDONS, CODE_ADDON_FORM_DATA, sizeof(u16) * (32 * mons_no + form_no - 1), sizeof(u16));
@@ -1388,8 +1388,9 @@ u16 LONG_CALL GetMonEvolution(struct Party *party, struct PartyPokemon *pokemon,
  */
 u32 LONG_CALL GrabSexFromSpeciesAndForm(u32 species, u32 pid, u32 form)
 {
-    u32 realSpecies = PokeOtherFormMonsNoGet(species, form);
-    u32 genderRatio = PokeFormNoPersonalParaGet(realSpecies, form, PERSONAL_GENDER_RATIO);
+   // u32 realSpecies = PokeOtherFormMonsNoGet(species, form);
+    u32 genderRatio = PokeFormNoPersonalParaGet(species, form, PERSONAL_GENDER_RATIO);
+    
     switch (genderRatio) {
     case 0: // fully male
         return POKEMON_GENDER_MALE;
