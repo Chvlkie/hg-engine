@@ -1348,4 +1348,5 @@ const u16 UNUSED BaseExperienceTable[] =
     [SPECIES_TERAPAGOS_TERASTAL          ] = 90,
     [SPECIES_TERAPAGOS_STELLAR           ] = 90,
     [SPECIES_URSALUNA_BLOODMOON          ] = 275,
+    [SPECIES_ONIX_CRYSTAL] = 155,
 };

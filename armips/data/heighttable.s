@@ -1415,3 +1415,4 @@ heightentry SPECIES_OGERPON_CORNERSTONE_MASK_TERASTAL, 0, "null", 0, "null"
 heightentry SPECIES_URSALUNA_BLOODMOON, 0, 0, 0, 0
 heightentry SPECIES_TERAPAGOS_TERASTAL, "null", 16, "null", 0
 heightentry SPECIES_TERAPAGOS_STELLAR, "null", 0, "null", 0
+heightentry SPECIES_ONIX_CRYSTAL, 0, 0, 6, 6

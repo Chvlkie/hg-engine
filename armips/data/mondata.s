@@ -27681,3 +27681,19 @@ mondata SPECIES_TERAPAGOS_STELLAR, "-----"
     abilities ABILITY_TERAFORM_ZERO, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
+
+mondata SPECIES_ONIX_CRYSTAL, "-----"
+    basestats 35, 45, 160, 70, 30, 45
+    types TYPE_ROCK, TYPE_FAIRY
+    catchrate 45
+    baseexp 0 // defined in baseexp.s
+    evyields 0, 0, 1, 0, 0, 0
+    items ITEM_NONE, ITEM_HARD_STONE
+    genderratio 127
+    eggcycles 25
+    basefriendship 50
+    growthrate GROWTH_MEDIUM_FAST
+    egggroups EGG_GROUP_MINERAL, EGG_GROUP_MINERAL
+    abilities ABILITY_ROCK_HEAD, ABILITY_STURDY
+    runchance 0
+    colorflip BODY_COLOR_BLUE, 0

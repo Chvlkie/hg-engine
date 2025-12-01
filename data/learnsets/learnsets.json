@@ -1,10 +1,4 @@
 {
-  "SPECIES_NONE": {
-    "LevelMoves": [],
-    "MachineMoves": [],
-    "EggMoves": [],
-    "TutorMoves": []
-  },
   "SPECIES_BULBASAUR": {
     "LevelMoves": [
       {
@@ -155048,4 +155042,154 @@
     "MachineMoves": [],
     "EggMoves": [],
     "TutorMoves": []
+  },
+  "SPECIES_ONIX_CRYSTAL": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_TACKLE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_HARDEN"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_BIND"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_ROCK_THROW"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_MUD_SPORT"
+      },
+      {
+        "Level": 7,
+        "Move": "MOVE_ROCK_THROW"
+      },
+      {
+        "Level": 10,
+        "Move": "MOVE_CURSE"
+      },
+      {
+        "Level": 10,
+        "Move": "MOVE_ROCK_TOMB"
+      },
+      {
+        "Level": 12,
+        "Move": "MOVE_SMACK_DOWN"
+      },
+      {
+        "Level": 13,
+        "Move": "MOVE_ROCK_POLISH"
+      },
+      {
+        "Level": 13,
+        "Move": "MOVE_RAGE"
+      },
+      {
+        "Level": 18,
+        "Move": "MOVE_DRAGON_BREATH"
+      },
+      {
+        "Level": 20,
+        "Move": "MOVE_GYRO_BALL"
+      },
+      {
+        "Level": 24,
+        "Move": "MOVE_STEALTH_ROCK"
+      },
+      {
+        "Level": 26,
+        "Move": "MOVE_ROCK_SLIDE"
+      },
+      {
+        "Level": 27,
+        "Move": "MOVE_SCREECH"
+      },
+      {
+        "Level": 32,
+        "Move": "MOVE_SAND_TOMB"
+      },
+      {
+        "Level": 32,
+        "Move": "MOVE_SLAM"
+      },
+      {
+        "Level": 43,
+        "Move": "MOVE_DIG"
+      },
+      {
+        "Level": 44,
+        "Move": "MOVE_IRON_TAIL"
+      },
+      {
+        "Level": 45,
+        "Move": "MOVE_SANDSTORM"
+      },
+      {
+        "Level": 49,
+        "Move": "MOVE_STONE_EDGE"
+      },
+      {
+        "Level": 52,
+        "Move": "MOVE_DOUBLE_EDGE"
+      }
+    ],
+    "MachineMoves": [
+      "MOVE_ATTRACT",
+      "MOVE_CAPTIVATE",
+      "MOVE_DIG",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_DRAGON_PULSE",
+      "MOVE_EARTHQUAKE",
+      "MOVE_ENDURE",
+      "MOVE_EXPLOSION",
+      "MOVE_FACADE",
+      "MOVE_FLASH_CANNON",
+      "MOVE_FRUSTRATION",
+      "MOVE_GYRO_BALL",
+      "MOVE_HIDDEN_POWER",
+      "MOVE_IRON_TAIL",
+      "MOVE_NATURAL_GIFT",
+      "MOVE_PAYBACK",
+      "MOVE_PROTECT",
+      "MOVE_PSYCH_UP",
+      "MOVE_REST",
+      "MOVE_RETURN",
+      "MOVE_ROAR",
+      "MOVE_ROCK_CLIMB",
+      "MOVE_ROCK_POLISH",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_ROCK_SMASH",
+      "MOVE_ROCK_TOMB",
+      "MOVE_SANDSTORM",
+      "MOVE_SECRET_POWER",
+      "MOVE_SLEEP_TALK",
+      "MOVE_STEALTH_ROCK",
+      "MOVE_STONE_EDGE",
+      "MOVE_STRENGTH",
+      "MOVE_SUBSTITUTE",
+      "MOVE_SUNNY_DAY",
+      "MOVE_SWAGGER",
+      "MOVE_TAUNT",
+      "MOVE_TORMENT",
+      "MOVE_TOXIC"
+    ],
+    "EggMoves": [
+      "MOVE_ROCK_SLIDE",
+      "MOVE_FLAIL",
+      "MOVE_EXPLOSION",
+      "MOVE_BLOCK",
+      "MOVE_DEFENSE_CURL",
+      "MOVE_ROLLOUT",
+      "MOVE_ROCK_BLAST"
+    ],
+    "TutorMoves": [
+      "MOVE_METEOR_BEAM",
+      "MOVE_ROCK_BLAST"
+    ]
   }
+}
