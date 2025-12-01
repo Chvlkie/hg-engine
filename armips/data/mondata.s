@@ -27697,3 +27697,68 @@ mondata SPECIES_ONIX_CRYSTAL, "-----"
     abilities ABILITY_ROCK_HEAD, ABILITY_STURDY
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
+
+mondata SPECIES_VOLTORB_OVERHEAT, "-----"
+    basestats 40, 30, 50, 100, 55, 55
+    types TYPE_ELECTRIC, TYPE_FIRE
+    catchrate 235
+    baseexp 103
+    evyields 0, 0, 0, 1, 0, 0
+    items ITEM_NONE, ITEM_NONE
+    genderratio 255
+    eggcycles 20
+    basefriendship 70
+    growthrate GROWTH_MEDIUM_FAST
+    egggroups EGG_GROUP_MINERAL, EGG_GROUP_MINERAL
+    abilities ABILITY_SOUNDPROOF, ABILITY_STATIC
+    runchance 0
+    colorflip BODY_COLOR_RED, 0
+
+mondata SPECIES_ELECTRODE_OVERHEAT, "-----"
+    basestats 60, 50, 70, 150, 80, 80
+    types TYPE_ELECTRIC, TYPE_FIRE
+    catchrate 135
+    baseexp 150
+    evyields 0, 0, 0, 2, 0, 0
+    items ITEM_NONE, ITEM_NONE
+    genderratio 255
+    eggcycles 20
+    basefriendship 70
+    growthrate GROWTH_MEDIUM_FAST
+    egggroups EGG_GROUP_MINERAL, EGG_GROUP_MINERAL
+    abilities ABILITY_SOUNDPROOF, ABILITY_STATIC
+    runchance 0
+    colorflip BODY_COLOR_RED, 0
+
+mondata SPECIES_MAGIKARP_DEEPSEA, "-----"
+    basestats 20, 10, 55, 80, 15, 20
+    types TYPE_WATER, TYPE_DARK
+    catchrate 255
+    baseexp 0 // defined in baseexp.s
+    evyields 0, 0, 0, 1, 0, 0
+    items ITEM_NONE, ITEM_NONE
+    genderratio 127
+    eggcycles 5
+    basefriendship 50
+    growthrate GROWTH_SLOW
+    egggroups EGG_GROUP_WATER_2, EGG_GROUP_DRAGON
+    abilities ABILITY_SWIFT_SWIM, ABILITY_NONE
+    runchance 0
+    colorflip BODY_COLOR_RED, 0
+
+
+mondata SPECIES_GYARADOS_DEEPSEA, "-----"
+    basestats 95, 125, 79, 81, 60, 100
+    types TYPE_WATER, TYPE_DRAGON
+    catchrate 45
+    baseexp 0 // defined in baseexp.s
+    evyields 0, 2, 0, 0, 0, 0
+    items ITEM_NONE, ITEM_NONE
+    genderratio 127
+    eggcycles 5
+    basefriendship 50
+    growthrate GROWTH_SLOW
+    egggroups EGG_GROUP_WATER_2, EGG_GROUP_DRAGON
+    abilities ABILITY_INTIMIDATE, ABILITY_NONE
+    runchance 0
+    colorflip BODY_COLOR_BLUE, 0

@@ -140,7 +140,9 @@ heightentry SPECIES_MAGMAR, 3, 3, 9, 9
 heightentry SPECIES_PINSIR, 8, 8, 8, 8
 heightentry SPECIES_TAUROS, "null", 16, "null", 10
 heightentry SPECIES_MAGIKARP, 7, 7, 10, 10
+heightentry SPECIES_MAGIKARP_DEEPSEA, 7, 7, 10, 10
 heightentry SPECIES_GYARADOS, 6, 6, 0, 0
+heightentry SPECIES_GYARADOS_DEEPSEA, 6, 6, 0, 0
 heightentry SPECIES_LAPRAS, 4, 4, 9, 9
 heightentry SPECIES_DITTO, "null", 22, "null", 25
 heightentry SPECIES_EEVEE, 13, 13, 18, 18
@@ -1348,7 +1350,9 @@ heightentry SPECIES_ENAMORUS_THERIAN, 0, "null", 0, "null"
 heightentry SPECIES_GROWLITHE_HISUIAN, 10, 10, 0, 0
 heightentry SPECIES_ARCANINE_HISUIAN, 0, 0, 0, 0
 heightentry SPECIES_VOLTORB_HISUIAN, "null", 20, "null", 0
+heightentry SPECIES_VOLTORB_OVERHEAT, "null", 20, "null", 0
 heightentry SPECIES_ELECTRODE_HISUIAN, "null", 0, "null", 0
+heightentry SPECIES_ELECTRODE_OVERHEAT, "null", 0, "null", 0
 heightentry SPECIES_TYPHLOSION_HISUIAN, 4, 4, 0, 0
 heightentry SPECIES_QWILFISH_HISUIAN, 8, 8, 0, 0
 heightentry SPECIES_SNEASEL_HISUIAN, 3, 3, 0, 0
