@@ -27730,6 +27730,7 @@ mondata SPECIES_ELECTRODE_OVERHEAT, "-----"
     runchance 0
     colorflip BODY_COLOR_RED, 0
 
+
 mondata SPECIES_MAGIKARP_DEEPSEA, "-----"
     basestats 20, 10, 55, 80, 15, 20
     types TYPE_WATER, TYPE_DARK
