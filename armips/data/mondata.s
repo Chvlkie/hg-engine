@@ -27763,3 +27763,67 @@ mondata SPECIES_GYARADOS_DEEPSEA, "-----"
     abilities ABILITY_INTIMIDATE, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
+
+mondata SPECIES_PIKACHU_SURFING, "-----"
+    basestats 35, 55, 40, 90, 50, 50
+    types TYPE_ELECTRIC, TYPE_WATER
+    catchrate 190
+    baseexp 112
+    evyields 0, 0, 0, 2, 0, 0
+    items ITEM_NONE, ITEM_LIGHT_BALL
+    genderratio 127
+    eggcycles 10
+    basefriendship 70
+    growthrate GROWTH_MEDIUM_FAST
+    egggroups EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED
+    abilities ABILITY_STATIC,  ABILITY_NONE
+    runchance 0
+    colorflip BODY_COLOR_YELLOW, 0
+
+mondata SPECIES_PIKACHU_FLYING, "-----"
+    basestats 35, 55, 40, 90, 50, 50
+    types TYPE_ELECTRIC, TYPE_FLYING
+    catchrate 190
+    baseexp 112
+    evyields 0, 0, 0, 2, 0, 0
+    items ITEM_NONE, ITEM_LIGHT_BALL
+    genderratio 127
+    eggcycles 10
+    basefriendship 70
+    growthrate GROWTH_MEDIUM_FAST
+    egggroups EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED
+    abilities ABILITY_STATIC,  ABILITY_NONE
+    runchance 0
+    colorflip BODY_COLOR_YELLOW, 0
+
+mondata SPECIES_PIKACHU_SNOWMAN, "-----"
+    basestats 35, 55, 40, 90, 50, 50
+    types TYPE_ELECTRIC, TYPE_ICE
+    catchrate 190
+    baseexp 112
+    evyields 0, 0, 0, 2, 0, 0
+    items ITEM_NONE, ITEM_LIGHT_BALL
+    genderratio 127
+    eggcycles 10
+    basefriendship 70
+    growthrate GROWTH_MEDIUM_FAST
+    egggroups EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED
+    abilities ABILITY_STATIC,  ABILITY_NONE
+    runchance 0
+    colorflip BODY_COLOR_YELLOW, 0
+
+mondata SPECIES_PARASECT_GHOST, "-----"
+    basestats 60, 95, 80, 30, 60, 80
+    types TYPE_BUG, TYPE_GHOST
+    catchrate 75
+    baseexp 0 // defined in baseexp.s
+    evyields 0, 2, 1, 0, 0, 0
+    items ITEM_TINY_MUSHROOM, ITEM_BIG_MUSHROOM
+    genderratio 127
+    eggcycles 20
+    basefriendship 70
+    growthrate GROWTH_MEDIUM_FAST
+    egggroups EGG_GROUP_BUG, EGG_GROUP_GRASS
+    abilities ABILITY_EFFECT_SPORE, ABILITY_DRY_SKIN
+    runchance 0
+    colorflip BODY_COLOR_RED, 0

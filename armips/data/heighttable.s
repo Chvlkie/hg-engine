@@ -58,6 +58,7 @@ heightentry SPECIES_GLOOM, 14, 14, 20, 20
 heightentry SPECIES_VILEPLUME, 7, 7, 15, 15
 heightentry SPECIES_PARAS, 23, 23, 23, 23
 heightentry SPECIES_PARASECT, 16, 16, 14, 14
+heightentry SPECIES_PARASECT_GHOST, 16, 16, 14, 14
 heightentry SPECIES_VENONAT, 6, 6, 12, 12
 heightentry SPECIES_VENOMOTH, 5, 5, 14, 14
 heightentry SPECIES_DIGLETT, 24, 24, 26, 26
@@ -1209,6 +1210,9 @@ heightentry SPECIES_PIKACHU_KALOS_CAP, 0, 0, 0, 0
 heightentry SPECIES_PIKACHU_ALOLA_CAP, 0, 0, 0, 0
 heightentry SPECIES_PIKACHU_PARTNER_CAP, 0, 0, 0, 0
 heightentry SPECIES_PIKACHU_WORLD_CAP, 0, 0, 0, 0
+heightentry SPECIES_PIKACHU_SURFING, 0, 0, 0, 0
+heightentry SPECIES_PIKACHU_FLYING, 0, 0, 0, 0
+heightentry SPECIES_PIKACHU_SNOWMAN, 0, 0, 0, 0
 heightentry SPECIES_CASTFORM_SUNNY, 8, 8, 25, 25
 heightentry SPECIES_CASTFORM_RAINY, 8, 8, 25, 25
 heightentry SPECIES_CASTFORM_SNOWY, 8, 8, 25, 25

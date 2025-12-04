@@ -565,7 +565,7 @@ evodata SPECIES_VILEPLUME
 
 evodata SPECIES_PARAS
     evolution EVO_LEVEL, 24, SPECIES_PARASECT
-    evolution EVO_NONE, 0, SPECIES_NONE
+    evolutionwithform EVO_LEVEL_MOSSY_STONE, 0, SPECIES_PARASECT, 1
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -16811,8 +16811,8 @@ evodata SPECIES_ELECTRODE_OVERHEAT
 terminateevodata
 
 evodata SPECIES_MAGIKARP_DEEPSEA
-    evolutionwithform EVO_ITEM_DAY, ITEM_FIRE_STONE, SPECIES_GYARADOS, 2
-    evolutionwithform EVO_ITEM_NIGHT, ITEM_FIRE_STONE, SPECIES_GYARADOS, 2
+    evolutionwithform EVO_ITEM_DAY, ITEM_DRAGON_SCALE, SPECIES_GYARADOS, 2
+    evolutionwithform EVO_ITEM_NIGHT, ITEM_DRAGON_SCALE, SPECIES_GYARADOS, 2
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -16823,6 +16823,54 @@ evodata SPECIES_MAGIKARP_DEEPSEA
 terminateevodata
 
 evodata SPECIES_GYARADOS_DEEPSEA
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+terminateevodata
+
+evodata SPECIES_PIKACHU_SURFING
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+terminateevodata
+
+evodata SPECIES_PIKACHU_FLYING
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+terminateevodata
+
+evodata SPECIES_PIKACHU_SNOWMAN
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+    evolution EVO_NONE, 0, SPECIES_NONE
+terminateevodata
+
+evodata SPECIES_PARASECT_GHOST
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE

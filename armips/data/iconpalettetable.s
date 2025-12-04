@@ -1427,6 +1427,10 @@ gIconPalTable:
 /* SPECIES_ELECTRODE_OVERHEAT       */ .byte  0x0
 /* SPECIES_MAGIKARP_DEEPSEA       */ .byte  0x0
 /* SPECIES_GYARADOS_DEEPSEA       */ .byte  0x0
+/* SPECIES_PIKACHU_SURFING         */ .byte  0x2
+/* SPECIES_PIKACHU_FLYING         */ .byte  0x2
+/* SPECIES_PIKACHU_SNOWMAN         */ .byte  0x2
+/* SPECIES_PARASECT_GHOST        */ .byte  0x0
 .endarea
 
 .close
