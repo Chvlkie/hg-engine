@@ -1043,13 +1043,11 @@ u32 LONG_CALL UseItemMonAttrChangeCheck(struct PartyMenu *wk, void *dat)
 
     // handle nature mints
 
-    if (IS_ITEM_NATURE_MINT(wk->args->itemId))
-    {
+ if (IS_ITEM_NATURE_MINT(wk->args->itemId)) {
         u32 nature;
         void *bag = Sav2_Bag_get(SaveBlock2_get());
-        for (nature = 0; nature < 25; nature++)
-        {
-            if (NatureToMintItem[nature] == wk->args->itemId)
+        for (nature = 0; nature < 25; nature++) {
+            if (NatureToMintItem[nature] == wk->args->itemId) {
                 break;
             }
         }
