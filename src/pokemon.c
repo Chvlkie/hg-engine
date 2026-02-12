@@ -171,11 +171,11 @@ u16 LONG_CALL GetFormFromAdjustedForm(u32 mons_no)
     if (mons_no > MAX_MON_NUM) {
         u16 oldSpecies = GetBaseSpeciesFromAdjustedForm(mons_no);
         u16 formTable[32]; // right on stack so do not have to free this
-        ArchiveDataLoadOfs(formTable, ARC_CODE_ADDONS, CODE_ADDON_FORM_DATA, sizeof(u16) * (oldSpecies * 32), sizeof(u16) * 32);
-        for (ret = 0; ret < 32; ret++) {
-            if (formTable[ret] == mons_no || formTable[ret]) {
+        ArchiveDataLoadOfs(formTable, ARC_CODE_ADDONS, CODE_ADDON_FORM_DATA, sizeof(u16) * (oldSpecies*32), sizeof(u16)*32);
+        for (ret = 0; ret < 32; ret++)
+        {
+            if ((formTable[ret] & ~NEEDS_REVERSION) == mons_no || !formTable[ret])
                 break;
-            }
         }
         ret++; // offset by 1 because form 0 isn't listed in the file
     }
