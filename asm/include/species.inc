@@ -1083,6 +1083,7 @@
 .equ MAX_CANONICAL_MON_NUM, (SPECIES_PECHARUNT)
 
 // define your fakemons below like this
+//.equ SPECIES_FAKEMON_NAME1, (MAX_CANONICAL_MON_NUM + 1)
 
 .equ NUM_OF_FAKEMONS, 0
 
