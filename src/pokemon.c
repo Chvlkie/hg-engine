@@ -1461,19 +1461,18 @@ u16 LONG_CALL GetMonEvolution(struct Party *party, struct PartyPokemon *pokemon,
  */
 u32 LONG_CALL GrabSexFromSpeciesAndForm(u32 species, u32 pid, u32 form)
 {
-   // u32 realSpecies = PokeOtherFormMonsNoGet(species, form); 
-    u32 genderRatio = PokeFormNoPersonalParaGet(species, form, PERSONAL_GENDER_RATIO);
-    switch (genderRatio)
-    {
-        case 0:   // fully male
-            return POKEMON_GENDER_MALE;
-        case 254: // fully female
-            return POKEMON_GENDER_FEMALE;
-        case 255: // unknown
-            return POKEMON_GENDER_UNKNOWN;
+    u16 realSpecies = GetSpeciesBasedOnForm(species, form);
+    u8 genderRatio = PokeFormNoPersonalParaGet(realSpecies, form, PERSONAL_GENDER_RATIO);
+    switch (genderRatio) {
+    case 0: // fully male
+        return POKEMON_GENDER_MALE;
+    case 254: // fully female
+        return POKEMON_GENDER_FEMALE;
+    case 255: // unknown
+        return POKEMON_GENDER_UNKNOWN;
     }
 
-    if (genderRatio > (pid & 0xFF)) {
+    if (genderRatio > (u8)pid) {
         return POKEMON_GENDER_FEMALE;
     }
 
