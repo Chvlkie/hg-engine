@@ -694,7 +694,7 @@ typedef struct
     u16 arc_no;
     u16 index_chr;
     u16 index_pal;
-    u16 strike_mons;
+    u16 species;
     u8 form_no;
     u8 dummy[3];
     u32 personal_rnd;
@@ -1460,9 +1460,11 @@ u32 LONG_CALL TryAppendMonMove(struct PartyPokemon *mon, u16 move);
  *  @param form_no form number of the pokémon
  *  @return FALSE if there is no need to look through the form table or a matching entry is not found; TRUE otherwise
  */
-BOOL LONG_CALL GetOtherFormPic(MON_PIC *picdata, u16 mons_no, u8 dir, u8 col, u8 form_no);
+BOOL LONG_CALL GetOtherFormPic(MON_PIC *picdata, u16 mons_no, u8 dir, u8 col, u8 form_no, u8 gender);
 
-/**
+void LONG_CALL GetMonSpriteCharAndPlttNarcIdsEx(MON_PIC *picdata, u16 mons_no, u8 gender, u8 dir, u8 col, u8 form_no, u32 personality);
+
+    /**
  *  @brief pass species and form to get new species for personal narc, parsing through form table if necessary
  *
  *  @param mons_no base species

@@ -36,7 +36,7 @@ u16 ALIGN4 gEvolutionSceneOverride[2][2];
  *  @param form_no form number of the pokémon
  *  @return FALSE if there is no need to look through the form table or a matching entry is not found; TRUE otherwise
  */
-BOOL LONG_CALL GetOtherFormPic(MON_PIC *picdata, u16 mons_no, u8 dir, u8 col, u8 form_no)
+BOOL LONG_CALL GetOtherFormPic(MON_PIC *picdata, u16 mons_no, u8 dir, u8 col, u8 form_no, u8 gender)
 {
     u32 ret = FALSE;
 
@@ -47,13 +47,122 @@ BOOL LONG_CALL GetOtherFormPic(MON_PIC *picdata, u16 mons_no, u8 dir, u8 col, u8
         ArchiveDataLoadOfs(&newSpecies, ARC_CODE_ADDONS, CODE_ADDON_FORM_DATA, sizeof(u16) * (32 * mons_no + form_no - 1), sizeof(u16));
         newSpecies &= ~(NEEDS_REVERSION);
         if (newSpecies != 0) {
+
             picdata->arc_no = ARC_MON_PIC;
-            picdata->index_chr = (newSpecies) * 6 + dir;
+            picdata->index_chr = (newSpecies) * 6 + dir + (gender = POKEMON_GENDER_FEMALE ? 0 : 1);
+            //picdata->index_chr = (newSpecies) * 6 + dir;
             picdata->index_pal = (newSpecies) * 6 + 4 + col;
             ret = TRUE;
         }
     }
     return ret;
+}
+
+void LONG_CALL GetPokePic(MON_PIC *picdata, u16 mons_no, u8 gender, u8 dir, u8 col, u8 form_no, u32 personality)
+{
+    picdata->species = SPECIES_NONE;
+    picdata->form_no = 0;
+    picdata->personal_rnd = 0;
+    form_no = SanitizeFormNumber(mons_no, form_no);
+    switch (mons_no) {
+    case SPECIES_BURMY:
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir / 2 + 0x48 + form_no * 2);
+        picdata->index_pal = (u16)(col + 0xAA + form_no * 2);
+        break;
+    case SPECIES_WORMADAM:
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir / 2 + 0x4E + form_no * 2);
+        picdata->index_pal = (u16)(col + 0xB0 + form_no * 2);
+        break;
+    case SPECIES_SHELLOS:
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir + 0x54 + form_no);
+        picdata->index_pal = (u16)(col + 0xB6 + form_no * 2);
+        break;
+    case SPECIES_GASTRODON:
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir + 0x58 + form_no);
+        picdata->index_pal = (u16)(col + 0xBA + form_no * 2);
+        break;
+    case SPECIES_CHERRIM:
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir + 0x5C + form_no);
+        picdata->index_pal = (u16)(col * 2 + 0xBE + form_no);
+        break;
+    case SPECIES_ARCEUS:
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir / 2 + 0x60 + form_no * 2);
+        picdata->index_pal = (u16)(col + 0xC2 + form_no * 2);
+        break;
+    case SPECIES_CASTFORM:
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir * 2 + 0x40 + form_no);
+        picdata->index_pal = (u16)(col * 4 + 0xA2 + form_no);
+        break;
+    case SPECIES_DEOXYS:
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir / 2 + form_no * 2);
+        picdata->index_pal = (u16)(col + 0x9E);
+        break;
+    case SPECIES_UNOWN:
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir / 2 + 0x8 + form_no * 2);
+        picdata->index_pal = (u16)(col + 0xA0);
+        break;
+    case SPECIES_EGG: // egg, manaphy egg
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(0x84 + form_no);
+        picdata->index_pal = (u16)(0xE6 + form_no);
+        break;
+    case SPECIES_BAD_EGG: // bad egg
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = 0x84;
+        picdata->index_pal = 0xE6;
+        break;
+    case SPECIES_SHAYMIN: // land, sky
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir / 2 + 0x86 + form_no * 2);
+        picdata->index_pal = (u16)(col + 0xE8 + form_no * 2);
+        break;
+    case SPECIES_ROTOM: // normal, fan, mow, wash, heat, frost
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir / 2 + 0x8A + form_no * 2);
+        picdata->index_pal = (u16)(col + 0xEC + form_no * 2);
+        break;
+    case SPECIES_GIRATINA: // altered, origin
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir / 2 + 0x96 + form_no * 2);
+        picdata->index_pal = (u16)(col + 0xF8 + form_no * 2);
+        break;
+    case SPECIES_PICHU: // spiky-ear
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir / 2 + 0x9A + form_no * 2);
+        picdata->index_pal = (u16)(col + 0xFC + form_no * 2);
+        break;
+    default:
+        if (form_no != 0) {
+            u16 newSpecies;
+            ArchiveDataLoadOfs(&newSpecies, ARC_CODE_ADDONS, CODE_ADDON_FORM_DATA, sizeof(u16) * (32 * mons_no + form_no - 1), sizeof(u16));
+            newSpecies &= ~(NEEDS_REVERSION);
+            if (newSpecies != 0) {
+
+                picdata->arc_no = ARC_MON_PIC;
+                picdata->index_chr = (newSpecies) * 6 + dir + (gender == POKEMON_GENDER_FEMALE ? 0 : 1);
+                picdata->index_pal = (newSpecies) * 6 + 4 + col;
+            }
+        } else {
+            picdata->arc_no = ARC_MON_PIC;
+            picdata->index_chr = (u16)(mons_no * 6 + dir + (gender == POKEMON_GENDER_FEMALE ? 0 : 1));
+            picdata->index_pal = (u16)(col + (mons_no * 6 + 4));
+            if (mons_no == SPECIES_SPINDA && dir == 2) {
+                picdata->species = SPECIES_SPINDA;
+                picdata->form_no = 0;
+                picdata->personal_rnd = personality;
+            }
+        }
+        break;
+    }
 }
 
 void SetPartyPokemonParamsForEvoCutscene(struct PartyPokemon *mon, u16 *targetSpecies, BOOL clearEvoStructure)
@@ -171,11 +280,11 @@ u16 LONG_CALL GetFormFromAdjustedForm(u32 mons_no)
     if (mons_no > MAX_MON_NUM) {
         u16 oldSpecies = GetBaseSpeciesFromAdjustedForm(mons_no);
         u16 formTable[32]; // right on stack so do not have to free this
-        ArchiveDataLoadOfs(formTable, ARC_CODE_ADDONS, CODE_ADDON_FORM_DATA, sizeof(u16) * (oldSpecies*32), sizeof(u16)*32);
-        for (ret = 0; ret < 32; ret++)
-        {
-            if ((formTable[ret] & ~NEEDS_REVERSION) == mons_no || !formTable[ret])
+        ArchiveDataLoadOfs(formTable, ARC_CODE_ADDONS, CODE_ADDON_FORM_DATA, sizeof(u16) * (oldSpecies * 32), sizeof(u16) * 32);
+        for (ret = 0; ret < 32; ret++) {
+            if ((formTable[ret] & ~NEEDS_REVERSION) == mons_no || !formTable[ret]) {
                 break;
+            }
         }
         ret++; // offset by 1 because form 0 isn't listed in the file
     }
@@ -619,8 +728,8 @@ BOOL AddBoxMonData_EditedCases(struct BoxMonSubstructs *blocks, u32 field, int d
 
     case MON_DATA_ABILITY: {
         u16 ability = (u16)data;
-        blockA->ability     = ability & 0xFF;
-        blockA->abilityMSB  = (ability >> 8) & 0x01;
+        blockA->ability = ability & 0xFF;
+        blockA->abilityMSB = (ability >> 8) & 0x01;
         ret = TRUE;
 #ifdef DEBUG_BOXMONDATA_EDITED_CASES
         debug_printf("[AddBoxMonData] Ability to set %d, LSB %d, MSb %d\n", ability, blockA->ability, blockA->abilityMSB);
@@ -865,9 +974,8 @@ u32 CanUseAbilityPatch(struct PartyPokemon *pp)
 
 BOOL CanUseRotomCatalog(struct PartyPokemon *pp)
 {
-    return (GetMonData(pp, MON_DATA_SPECIES, NULL) == SPECIES_ROTOM);
+    return GetMonData(pp, MON_DATA_SPECIES, NULL) == SPECIES_ROTOM;
 }
-
 
 u32 ALIGN4 partyMenuSignal = 0;
 
@@ -909,8 +1017,7 @@ u32 LONG_CALL UseItemMonAttrChangeCheck(struct PartyMenu *wk, void *dat)
     // handle shaymin
 
     if (wk->args->itemId == ITEM_GRACIDEA
-     && Mon_CanUseGracidea(pp) == TRUE)
-    {
+        && Mon_CanUseGracidea(pp) == TRUE) {
         wk->args->species = 1; // change to sky forme
         sys_FreeMemoryEz(dat);
         PokeList_FormDemoOverlayLoad(wk);
@@ -921,8 +1028,7 @@ u32 LONG_CALL UseItemMonAttrChangeCheck(struct PartyMenu *wk, void *dat)
     // handle tornadus/thundurus/landorus/enamorus
 
     if (wk->args->itemId == ITEM_REVEAL_GLASS
-     && CanUseRevealGlass(pp) == TRUE)
-    {
+        && CanUseRevealGlass(pp) == TRUE) {
         u32 currForm = GetMonData(pp, MON_DATA_FORM, NULL);
         wk->args->species = currForm ^ 1; // toggle form between therian/incarnate
         sys_FreeMemoryEz(dat);
@@ -935,8 +1041,7 @@ u32 LONG_CALL UseItemMonAttrChangeCheck(struct PartyMenu *wk, void *dat)
     // This code relies on the item ids of the nectars being consecutive
 
     if (wk->args->itemId >= ITEM_RED_NECTAR && wk->args->itemId <= ITEM_PURPLE_NECTAR
-     && CanUseNectar(pp, wk->args->itemId) == TRUE)
-    {
+        && CanUseNectar(pp, wk->args->itemId) == TRUE) {
         void *bag = Sav2_Bag_get(SaveBlock2_get());
         wk->args->species = wk->args->itemId - ITEM_RED_NECTAR;
         sys_FreeMemoryEz(dat);
@@ -955,8 +1060,7 @@ u32 LONG_CALL UseItemMonAttrChangeCheck(struct PartyMenu *wk, void *dat)
 
     // TODO: handle correct item
     if (wk->args->itemId == ITEM_DNA_SPLICERS_FUSE
-     && (splicer_pos < 6))
-    {
+        && (splicer_pos < 6)) {
         void *saveData = SaveBlock2_get();
         struct SAVE_MISC_DATA *saveMiscData = Sav2_Misc_get(saveData);
 
@@ -966,7 +1070,7 @@ u32 LONG_CALL UseItemMonAttrChangeCheck(struct PartyMenu *wk, void *dat)
 
             // grab reshiram from save
             // add reshiram to party--can't just use PokeParty_Add because icons freak out when you tell them to animate something that isn't there
-            //PokeParty_Add(wk->args->party, &saveMiscData->storedMons[STORED_MONS_DNA_SPLICERS]);
+            // PokeParty_Add(wk->args->party, &saveMiscData->storedMons[STORED_MONS_DNA_SPLICERS]);
             struct PartyPokemon *reshiram = Party_GetMonByIndex(wk->args->party, splicer_pos);
             *reshiram = saveMiscData->storedMons[STORED_MONS_DNA_SPLICERS];
             partyMenuSignal = 1;
@@ -995,16 +1099,18 @@ u32 LONG_CALL UseItemMonAttrChangeCheck(struct PartyMenu *wk, void *dat)
                 pp = Party_GetMonByIndex(wk->args->party, wk->partyMonIndex);
             }
 
-            if (reshiramBool) // turn to white kyurem
+            if (reshiramBool) { // turn to white kyurem
                 wk->args->species = 1;
-            else              // turn to black kyurem
+            } else { // turn to black kyurem
                 wk->args->species = 2;
+            }
 
             ChangePartyPokemonToForm(pp, wk->args->species);
             SwapPartyPokemonMove(pp, MOVE_GLACIATE, wk->args->species == 1 ? MOVE_ICE_BURN : MOVE_FREEZE_SHOCK);
             SwapPartyPokemonMove(pp, MOVE_SCARY_FACE, wk->args->species == 1 ? MOVE_FUSION_FLARE : MOVE_FUSION_BOLT);
-        }
-        else { return FALSE; } // get out because no changes should be made
+        } else {
+            return FALSE;
+        } // get out because no changes should be made
         sys_FreeMemoryEz(dat);
         PokeList_FormDemoOverlayLoad(wk);
         return TRUE;
@@ -1013,8 +1119,7 @@ u32 LONG_CALL UseItemMonAttrChangeCheck(struct PartyMenu *wk, void *dat)
 
     // handle ability capsule
 
-    if (wk->args->itemId == ITEM_ABILITY_CAPSULE && CanUseAbilityCapsule(pp) == TRUE)
-    {
+    if (wk->args->itemId == ITEM_ABILITY_CAPSULE && CanUseAbilityCapsule(pp) == TRUE) {
         void *bag = Sav2_Bag_get(SaveBlock2_get());
         partyMenuSignal = 193; // signal to change the message to this index
         wk->args->species = GetMonData(pp, MON_DATA_FORM, NULL); // no form change
@@ -1028,8 +1133,7 @@ u32 LONG_CALL UseItemMonAttrChangeCheck(struct PartyMenu *wk, void *dat)
 
     // handle ability patch
 
-    if (wk->args->itemId == ITEM_ABILITY_PATCH && CanUseAbilityPatch(pp) == TRUE)
-    {
+    if (wk->args->itemId == ITEM_ABILITY_PATCH && CanUseAbilityPatch(pp) == TRUE) {
         void *bag = Sav2_Bag_get(SaveBlock2_get());
         partyMenuSignal = 193; // signal to change the message to this index
         wk->args->species = GetMonData(pp, MON_DATA_FORM, NULL); // no form change
@@ -1043,7 +1147,7 @@ u32 LONG_CALL UseItemMonAttrChangeCheck(struct PartyMenu *wk, void *dat)
 
     // handle nature mints
 
- if (IS_ITEM_NATURE_MINT(wk->args->itemId)) {
+    if (IS_ITEM_NATURE_MINT(wk->args->itemId)) {
         u32 nature;
         void *bag = Sav2_Bag_get(SaveBlock2_get());
         for (nature = 0; nature < 25; nature++) {
@@ -1396,15 +1500,15 @@ u32 LONG_CALL CheckIfMonsAreEqual(struct PartyPokemon *pokemon1, struct PartyPok
  *  @param heapID heap to use for allocations
  *  @return TRUE if can use item, FALSE otherwise
  */
-BOOL LONG_CALL CanUseItemOnMonInParty(struct Party *party, u16 itemID, s32 partyIdx, s32 moveIdx, u32 heapID) {
+BOOL LONG_CALL CanUseItemOnMonInParty(struct Party *party, u16 itemID, s32 partyIdx, s32 moveIdx, u32 heapID)
+{
     struct PartyPokemon *mon = Party_GetMonByIndex(party, partyIdx);
 
     if (GetItemData(itemID, ITEM_PARAM_LEVEL_UP, heapID) && GetMonData(mon, MON_DATA_LEVEL, NULL) == 100 && GetMonEvolution(party, mon, EVOCTX_LEVELUP, itemID, NULL)) {
         return TRUE;
     }
 
-    if (itemID == ITEM_ROTOM_CATALOG)
-    {
+    if (itemID == ITEM_ROTOM_CATALOG) {
         return CanUseRotomCatalog(mon);
     }
 
@@ -1461,8 +1565,7 @@ u16 LONG_CALL GetMonEvolution(struct Party *party, struct PartyPokemon *pokemon,
  */
 u32 LONG_CALL GrabSexFromSpeciesAndForm(u32 species, u32 pid, u32 form)
 {
-    //u16 realSpecies = GetSpeciesBasedOnForm(species, form);
-    u8 genderRatio = PokeFormNoPersonalParaGet(species, form, PERSONAL_GENDER_RATIO);
+    u32 genderRatio = PokeFormNoPersonalParaGet(species, form, PERSONAL_GENDER_RATIO);
     switch (genderRatio) {
     case 0: // fully male
         return POKEMON_GENDER_MALE;
@@ -1472,7 +1575,7 @@ u32 LONG_CALL GrabSexFromSpeciesAndForm(u32 species, u32 pid, u32 form)
         return POKEMON_GENDER_UNKNOWN;
     }
 
-    if (genderRatio > (u8)pid) {
+    if (genderRatio > (pid & 0xFF)) {
         return POKEMON_GENDER_FEMALE;
     }
 
