@@ -1540,6 +1540,10 @@ PLAYER_TRANSITION_x4000            equ 16384
 RunNewCommand NEW_COMMAND_QUEUE_NEW_REPEL, 0x800C
 .endmacro
 
+.macro reset_box_transparency
+RunNewCommand NEW_COMMAND_RESET_BOX_TRANSPARENCY, 0x800C
+.endmacro
+
 // Dummy
 .macro scrcmd_209,slot,unk
 .halfword 209
@@ -6751,6 +6755,7 @@ FORM_ROCKET_DISGUISE                    equ 1024
 
 // 208 has been reused for new script commands
 .equ NEW_COMMAND_QUEUE_NEW_REPEL, 0
+.equ NEW_COMMAND_RESET_BOX_TRANSPARENCY, 1
 
 .macro RunNewCommand,slot,unk
 DummyTextTrap slot, unk
@@ -6758,6 +6763,10 @@ DummyTextTrap slot, unk
 
 .macro QueueNewRepel
 RunNewCommand NEW_COMMAND_QUEUE_NEW_REPEL, 0x800C
+.endmacro
+
+.macro ResetBoxTransparency
+ RunNewCommand NEW_COMMAND_RESET_BOX_TRANSPARENCY, 0x800C
 .endmacro
 
 // Dummy

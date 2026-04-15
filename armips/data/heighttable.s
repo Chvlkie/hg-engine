@@ -1088,7 +1088,7 @@ heightentry SPECIES_GOUGING_FIRE, "null", 0, "null", 0
 heightentry SPECIES_RAGING_BOLT, "null", 0, "null", 0
 heightentry SPECIES_IRON_BOULDER, "null", 0, "null", 0
 heightentry SPECIES_IRON_CROWN, "null", 0, "null", 0
-heightentry SPECIES_TERAPAGOS, 0, 0, 0, 0
+heightentry SPECIES_TERAPAGOS, "null", 0, "null", 0
 heightentry SPECIES_PECHARUNT, "null", 10, "null", 0
 
 heightentry SPECIES_MEGA_VENUSAUR, 0, 0, 0, 0
@@ -1104,8 +1104,8 @@ heightentry SPECIES_MEGA_KANGASKHAN, 0, "null", 0, "null"
 heightentry SPECIES_MEGA_PINSIR, 0, 0, 0, 0
 heightentry SPECIES_MEGA_GYARADOS, 0, 0, 0, 0
 heightentry SPECIES_MEGA_AERODACTYL, 12, 12, 0, 0
-heightentry SPECIES_MEGA_MEWTWO_X, 0, 0, 0, 0
-heightentry SPECIES_MEGA_MEWTWO_Y, 0, 0, 0, 0
+heightentry SPECIES_MEGA_MEWTWO_X, "null", 0, "null", 0
+heightentry SPECIES_MEGA_MEWTWO_Y, "null", 0, "null", 0
 heightentry SPECIES_MEGA_AMPHAROS, 0, 0, 0, 0
 heightentry SPECIES_MEGA_STEELIX, 0, 0, 0, 0
 heightentry SPECIES_MEGA_SCIZOR, 0, 0, 0, 0
@@ -1128,17 +1128,17 @@ heightentry SPECIES_MEGA_BANETTE, 0, 0, 0, 0
 heightentry SPECIES_MEGA_ABSOL, 0, 0, 0, 0
 heightentry SPECIES_MEGA_GLALIE, 0, 0, 0, 0
 heightentry SPECIES_MEGA_SALAMENCE, 2, 2, 0, 0
-heightentry SPECIES_MEGA_METAGROSS, 0, 0, 0, 0
-heightentry SPECIES_MEGA_LATIAS, 0, 0, 0, 0 
-heightentry SPECIES_MEGA_LATIOS, 0, 0, 0, 0
-heightentry SPECIES_MEGA_RAYQUAZA, 8, 8, 0, 0
+heightentry SPECIES_MEGA_METAGROSS, "null", 0, "null", 0
+heightentry SPECIES_MEGA_LATIAS,0, "null", 7, "null"
+heightentry SPECIES_MEGA_LATIOS,"null", 0, "null", 5
+heightentry SPECIES_MEGA_RAYQUAZA, "null", 8, "null", 0
 heightentry SPECIES_MEGA_LOPUNNY, 0, 0, 0, 0
 heightentry SPECIES_MEGA_GARCHOMP, 0, 0, 0, 0
 heightentry SPECIES_MEGA_LUCARIO, 0, 0, 0, 0
 heightentry SPECIES_MEGA_ABOMASNOW, 0, 0, 0, 0
-heightentry SPECIES_MEGA_GALLADE, 0, 0, 0, 0
+heightentry SPECIES_MEGA_GALLADE, "null", 0, "null", 0
 heightentry SPECIES_MEGA_AUDINO, 0, 0, 0, 0
-heightentry SPECIES_MEGA_DIANCIE, 0, 0, 0, 0
+heightentry SPECIES_MEGA_DIANCIE, "null", 7, "null", 0
 
 heightentry SPECIES_KYOGRE_PRIMAL, "null", 0, "null", 2
 heightentry SPECIES_GROUDON_PRIMAL, "null", 0, "null", 1
@@ -1182,9 +1182,9 @@ heightentry SPECIES_SLOWBRO_GALARIAN, 11, 11, 0, 0
 heightentry SPECIES_FARFETCHD_GALARIAN, 0, 0, 0, 0
 heightentry SPECIES_WEEZING_GALARIAN, 5, 5, 0, 0
 heightentry SPECIES_MR_MIME_GALARIAN, 7, 7, 0, 0
-heightentry SPECIES_ARTICUNO_GALARIAN, 0, 0, 0, 0
-heightentry SPECIES_ZAPDOS_GALARIAN, 8, 8, 0, 0
-heightentry SPECIES_MOLTRES_GALARIAN, 0, 0, 0, 0
+heightentry SPECIES_ARTICUNO_GALARIAN, "null", 6, "null", 4
+heightentry SPECIES_ZAPDOS_GALARIAN, "null", 15, "null", 6
+heightentry SPECIES_MOLTRES_GALARIAN, "null", 6, "null", 4
 heightentry SPECIES_SLOWKING_GALARIAN, 0, 0, 0, 0
 heightentry SPECIES_CORSOLA_GALARIAN, 10, 10, 0, 0
 heightentry SPECIES_ZIGZAGOON_GALARIAN, 0, 0, 0, 0
@@ -1213,8 +1213,8 @@ heightentry SPECIES_CASTFORM_SNOWY, 8, 8, 25, 25
 heightentry SPECIES_CHERRIM_SUNSHINE, 0, 0, 21, 21
 heightentry SPECIES_SHELLOS_EAST_SEA, 0, 0, 17, 17
 heightentry SPECIES_GASTRODON_EAST_SEA, 0, 0, 13, 13
-heightentry SPECIES_DIALGA_ORIGIN, 0, 0, 0, 0
-heightentry SPECIES_PALKIA_ORIGIN, 0, 0, 0, 0
+heightentry SPECIES_DIALGA_ORIGIN, "null", 0, "null", 0
+heightentry SPECIES_PALKIA_ORIGIN, "null", 0, "null", 0
 heightentry SPECIES_BASCULIN_BLUE_STRIPED, 3, 3, 0, 0
 heightentry SPECIES_BASCULIN_WHITE_STRIPED, 3, 3, 0, 0
 heightentry SPECIES_DARMANITAN_ZEN_MODE, 4, 4, 0, 0
@@ -1225,17 +1225,17 @@ heightentry SPECIES_DEERLING_WINTER, 0, 0, 0, 0
 heightentry SPECIES_SAWSBUCK_SUMMER, 0, 0, 0, 0
 heightentry SPECIES_SAWSBUCK_AUTUMN, 0, 0, 0, 0
 heightentry SPECIES_SAWSBUCK_WINTER, 0, 0, 0, 0
-heightentry SPECIES_TORNADUS_THERIAN, 0, 0, 0, 0
-heightentry SPECIES_THUNDURUS_THERIAN, 0, 0, 0, 0
-heightentry SPECIES_LANDORUS_THERIAN, 0, 0, 0, 0
-heightentry SPECIES_KYUREM_WHITE, 0, 0, 0, 0
-heightentry SPECIES_KYUREM_BLACK, 0, 0, 0, 0
-heightentry SPECIES_KELDEO_RESOLUTE, 0, 0, 0, 0
-heightentry SPECIES_MELOETTA_PIROUETTE, 2, 2, 0, 0
-heightentry SPECIES_GENESECT_DOUSE_DRIVE, 0, 0, 0, 0
-heightentry SPECIES_GENESECT_SHOCK_DRIVE, 0, 0, 0, 0
-heightentry SPECIES_GENESECT_BURN_DRIVE, 0, 0, 0, 0
-heightentry SPECIES_GENESECT_CHILL_DRIVE, 0, 0, 0, 0
+heightentry SPECIES_TORNADUS_THERIAN, "null", 0, "null", 0
+heightentry SPECIES_THUNDURUS_THERIAN, "null", 0, "null", 0
+heightentry SPECIES_LANDORUS_THERIAN, "null", 0, "null", 0
+heightentry SPECIES_KYUREM_WHITE, "null", 0, 0, 0
+heightentry SPECIES_KYUREM_BLACK, "null", 0, "null", 0
+heightentry SPECIES_KELDEO_RESOLUTE, "null", 0, "null", 0
+heightentry SPECIES_MELOETTA_PIROUETTE, "null", 2, "null", 0
+heightentry SPECIES_GENESECT_DOUSE_DRIVE, "null", 0, "null", 0
+heightentry SPECIES_GENESECT_SHOCK_DRIVE, "null", 0, "null", 0
+heightentry SPECIES_GENESECT_BURN_DRIVE, "null", 0, "null", 0
+heightentry SPECIES_GENESECT_CHILL_DRIVE, "null", 0, "null", 0
 heightentry SPECIES_GRENINJA_BATTLE_BOND, 0, 0, 0, 0
 heightentry SPECIES_GRENINJA_ASH, 0, 0, 0, 0
 heightentry SPECIES_VIVILLON_POLAR, 5, 5, 0, 0
@@ -1347,8 +1347,8 @@ heightentry SPECIES_CALYREX_SHADOW_RIDER, 0, 0, 0, 0
 heightentry SPECIES_ENAMORUS_THERIAN, 0, "null", 0, "null"
 heightentry SPECIES_GROWLITHE_HISUIAN, 10, 10, 0, 0
 heightentry SPECIES_ARCANINE_HISUIAN, 0, 0, 0, 0
-heightentry SPECIES_VOLTORB_HISUIAN, 20, 20, 0, 0
-heightentry SPECIES_ELECTRODE_HISUIAN, 0, 0, 0, 0
+heightentry SPECIES_VOLTORB_HISUIAN, "null", 20, "null", 0
+heightentry SPECIES_ELECTRODE_HISUIAN, "null", 0, "null", 0
 heightentry SPECIES_TYPHLOSION_HISUIAN, 4, 4, 0, 0
 heightentry SPECIES_QWILFISH_HISUIAN, 8, 8, 0, 0
 heightentry SPECIES_SNEASEL_HISUIAN, 3, 3, 0, 0
@@ -1413,5 +1413,14 @@ heightentry SPECIES_OGERPON_WELLSPRING_MASK_TERASTAL, 0, "null", 0, "null"
 heightentry SPECIES_OGERPON_HEARTHFLAME_MASK_TERASTAL, 0, "null", 0, "null"
 heightentry SPECIES_OGERPON_CORNERSTONE_MASK_TERASTAL, 0, "null", 0, "null"
 heightentry SPECIES_URSALUNA_BLOODMOON, 0, 0, 0, 0
-heightentry SPECIES_TERAPAGOS_TERASTAL, 16, 16, 0, 0
-heightentry SPECIES_TERAPAGOS_STELLAR, 0, 0, 0, 0
+heightentry SPECIES_TERAPAGOS_TERASTAL, "null", 16, "null", 0
+heightentry SPECIES_TERAPAGOS_STELLAR, "null", 0, "null", 0
+heightentry SPECIES_ONIX_CRYSTAL, 0, 0, 6, 6
+heightentry SPECIES_VOLTORB_OVERHEAT, "null", 20, "null", 0
+heightentry SPECIES_ELECTRODE_OVERHEAT, "null", 0, "null", 0
+heightentry SPECIES_MAGIKARP_DEEPSEA, 7, 7, 10, 10
+heightentry SPECIES_GYARADOS_DEEPSEA, 6, 6, 0, 0
+heightentry SPECIES_PIKACHU_SURFING, 0, 0, 0, 0
+heightentry SPECIES_PIKACHU_FLYING, 0, 0, 0, 0
+heightentry SPECIES_PIKACHU_SNOWMAN, 0, 0, 0, 0
+heightentry SPECIES_PARASECT_GHOST, 16, 16, 14, 14

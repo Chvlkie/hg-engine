@@ -36,26 +36,133 @@ u16 ALIGN4 gEvolutionSceneOverride[2][2];
  *  @param form_no form number of the pokémon
  *  @return FALSE if there is no need to look through the form table or a matching entry is not found; TRUE otherwise
  */
-BOOL LONG_CALL GetOtherFormPic(MON_PIC *picdata, u16 mons_no, u8 dir, u8 col, u8 form_no)
+BOOL LONG_CALL GetOtherFormPic(MON_PIC *picdata, u16 mons_no, u8 dir, u8 col, u8 form_no, u8 gender)
 {
     u32 ret = FALSE;
 
     word_to_store_form_at = form_no;
 
-    if (form_no != 0)
-    {
+    if (form_no != 0) {
         u16 newSpecies;
-        ArchiveDataLoadOfs(&newSpecies, ARC_CODE_ADDONS, CODE_ADDON_FORM_DATA, sizeof(u16)*(32*mons_no + form_no-1), sizeof(u16));
+        ArchiveDataLoadOfs(&newSpecies, ARC_CODE_ADDONS, CODE_ADDON_FORM_DATA, sizeof(u16) * (32 * mons_no + form_no - 1), sizeof(u16));
         newSpecies &= ~(NEEDS_REVERSION);
-        if (newSpecies != 0)
-        {
+        if (newSpecies != 0) {
+
             picdata->arc_no = ARC_MON_PIC;
-            picdata->index_chr = (newSpecies) * 6 + dir;
+            picdata->index_chr = (newSpecies) * 6 + dir + (gender = POKEMON_GENDER_FEMALE ? 0 : 1);
+            // picdata->index_chr = (newSpecies) * 6 + dir;
             picdata->index_pal = (newSpecies) * 6 + 4 + col;
             ret = TRUE;
         }
     }
     return ret;
+}
+
+void LONG_CALL GetPokePic(MON_PIC *picdata, u16 mons_no, u8 gender, u8 dir, u8 col, u8 form_no, u32 personality)
+{
+    picdata->species = SPECIES_NONE;
+    picdata->form_no = 0;
+    picdata->personal_rnd = 0;
+    form_no = SanitizeFormNumber(mons_no, form_no);
+    switch (mons_no) {
+    case SPECIES_BURMY:
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir / 2 + 0x48 + form_no * 2);
+        picdata->index_pal = (u16)(col + 0xAA + form_no * 2);
+        break;
+    case SPECIES_WORMADAM:
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir / 2 + 0x4E + form_no * 2);
+        picdata->index_pal = (u16)(col + 0xB0 + form_no * 2);
+        break;
+    case SPECIES_SHELLOS:
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir + 0x54 + form_no);
+        picdata->index_pal = (u16)(col + 0xB6 + form_no * 2);
+        break;
+    case SPECIES_GASTRODON:
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir + 0x58 + form_no);
+        picdata->index_pal = (u16)(col + 0xBA + form_no * 2);
+        break;
+    case SPECIES_CHERRIM:
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir + 0x5C + form_no);
+        picdata->index_pal = (u16)(col * 2 + 0xBE + form_no);
+        break;
+    case SPECIES_ARCEUS:
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir / 2 + 0x60 + form_no * 2);
+        picdata->index_pal = (u16)(col + 0xC2 + form_no * 2);
+        break;
+    case SPECIES_CASTFORM:
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir * 2 + 0x40 + form_no);
+        picdata->index_pal = (u16)(col * 4 + 0xA2 + form_no);
+        break;
+    case SPECIES_DEOXYS:
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir / 2 + form_no * 2);
+        picdata->index_pal = (u16)(col + 0x9E);
+        break;
+    case SPECIES_UNOWN:
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir / 2 + 0x8 + form_no * 2);
+        picdata->index_pal = (u16)(col + 0xA0);
+        break;
+    case SPECIES_EGG: // egg, manaphy egg
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(0x84 + form_no);
+        picdata->index_pal = (u16)(0xE6 + form_no);
+        break;
+    case SPECIES_BAD_EGG: // bad egg
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = 0x84;
+        picdata->index_pal = 0xE6;
+        break;
+    case SPECIES_SHAYMIN: // land, sky
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir / 2 + 0x86 + form_no * 2);
+        picdata->index_pal = (u16)(col + 0xE8 + form_no * 2);
+        break;
+    case SPECIES_ROTOM: // normal, fan, mow, wash, heat, frost
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir / 2 + 0x8A + form_no * 2);
+        picdata->index_pal = (u16)(col + 0xEC + form_no * 2);
+        break;
+    case SPECIES_GIRATINA: // altered, origin
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir / 2 + 0x96 + form_no * 2);
+        picdata->index_pal = (u16)(col + 0xF8 + form_no * 2);
+        break;
+    case SPECIES_PICHU: // spiky-ear
+        picdata->arc_no = ARC_PBR_OTHERPOKE;
+        picdata->index_chr = (u16)(dir / 2 + 0x9A + form_no * 2);
+        picdata->index_pal = (u16)(col + 0xFC + form_no * 2);
+        break;
+    default:
+        if (form_no != 0) {
+            u16 newSpecies;
+            ArchiveDataLoadOfs(&newSpecies, ARC_CODE_ADDONS, CODE_ADDON_FORM_DATA, sizeof(u16) * (32 * mons_no + form_no - 1), sizeof(u16));
+            newSpecies &= ~(NEEDS_REVERSION);
+            if (newSpecies != 0) {
+
+                picdata->arc_no = ARC_MON_PIC;
+                picdata->index_chr = (newSpecies) * 6 + dir + (gender == POKEMON_GENDER_FEMALE ? 0 : 1);
+                picdata->index_pal = (newSpecies) * 6 + 4 + col;
+            }
+        } else {
+            picdata->arc_no = ARC_MON_PIC;
+            picdata->index_chr = (u16)(mons_no * 6 + dir + (gender == POKEMON_GENDER_FEMALE ? 0 : 1));
+            picdata->index_pal = (u16)(col + (mons_no * 6 + 4));
+            if (mons_no == SPECIES_SPINDA && dir == 2) {
+                picdata->species = SPECIES_SPINDA;
+                picdata->form_no = 0;
+                picdata->personal_rnd = personality;
+            }
+        }
+        break;
+    }
 }
 
 void SetPartyPokemonParamsForEvoCutscene(struct PartyPokemon *mon, u16 *targetSpecies, BOOL clearEvoStructure)

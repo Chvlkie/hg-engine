@@ -1422,7 +1422,15 @@ gIconPalTable:
 /* SPECIES_URSALUNA_BLOODMOON          */ .byte  0x2
 /* SPECIES_TERAPAGOS_TERASTAL          */ .byte  0x0
 /* SPECIES_TERAPAGOS_STELLAR           */ .byte  0x0
-
+/* SPECIES_ONIX_CRYSTAL            */ .byte  0x2
+/* SPECIES_VOLTORB_OVERHEAT         */ .byte  0x0
+/* SPECIES_ELECTRODE_OVERHEAT       */ .byte  0x0
+/* SPECIES_MAGIKARP_DEEPSEA       */ .byte  0x0
+/* SPECIES_GYARADOS_DEEPSEA       */ .byte  0x0
+/* SPECIES_PIKACHU_SURFING         */ .byte  0x2
+/* SPECIES_PIKACHU_FLYING         */ .byte  0x2
+/* SPECIES_PIKACHU_SNOWMAN         */ .byte  0x2
+/* SPECIES_PARASECT_GHOST        */ .byte  0x0
 .endarea
 
 .close

@@ -1,12 +1,10 @@
-#include "../include/types.h"
 #include "../include/config.h"
-#include "../include/pokemon.h"
 #include "../include/constants/species.h"
-
+#include "../include/pokemon.h"
+#include "../include/types.h"
 
 // new format is 32 u16's per species
-const u16 UNUSED PokeFormDataTbl[][32] =
-{
+const u16 UNUSED PokeFormDataTbl[][32] = {
 #ifdef MEGA_EVOLUTIONS
     [SPECIES_VENUSAUR] = {
         NEEDS_REVERSION | SPECIES_MEGA_VENUSAUR,
@@ -40,9 +38,7 @@ const u16 UNUSED PokeFormDataTbl[][32] =
     [SPECIES_PINSIR] = {
         NEEDS_REVERSION | SPECIES_MEGA_PINSIR,
     },
-    [SPECIES_GYARADOS] = {
-        NEEDS_REVERSION | SPECIES_MEGA_GYARADOS,
-    },
+    [SPECIES_GYARADOS] = { NEEDS_REVERSION | SPECIES_MEGA_GYARADOS, SPECIES_GYARADOS_DEEPSEA },
     [SPECIES_AERODACTYL] = {
         NEEDS_REVERSION | SPECIES_MEGA_AERODACTYL,
     },
@@ -317,6 +313,9 @@ const u16 UNUSED PokeFormDataTbl[][32] =
         SPECIES_PIKACHU_PARTNER_CAP,
         SPECIES_PIKACHU_WORLD_CAP,
         SPECIES_PIKACHU_PARTNER,
+        SPECIES_PIKACHU_SURFING,
+        SPECIES_PIKACHU_FLYING,
+        SPECIES_PIKACHU_SNOWMAN,
     },
     [SPECIES_EEVEE] = {
         SPECIES_EEVEE_PARTNER,
@@ -567,10 +566,12 @@ const u16 UNUSED PokeFormDataTbl[][32] =
     },
     [SPECIES_VOLTORB] = {
         SPECIES_VOLTORB_HISUIAN,
+        SPECIES_VOLTORB_OVERHEAT,
     },
     [SPECIES_ELECTRODE] = {
         SPECIES_ELECTRODE_HISUIAN,
         SPECIES_ELECTRODE_LORD,
+        SPECIES_ELECTRODE_OVERHEAT,
     },
     [SPECIES_TYPHLOSION] = {
         SPECIES_TYPHLOSION_HISUIAN,
@@ -623,12 +624,8 @@ const u16 UNUSED PokeFormDataTbl[][32] =
     [SPECIES_FRILLISH] = {
         SPECIES_FRILLISH_FEMALE,
     },
-    [SPECIES_JELLICENT] = {
-        SPECIES_JELLICENT_FEMALE
-    },
-    [SPECIES_PYROAR] = {
-        SPECIES_PYROAR_FEMALE
-    },
+    [SPECIES_JELLICENT] = { SPECIES_JELLICENT_FEMALE },
+    [SPECIES_PYROAR] = { SPECIES_PYROAR_FEMALE },
     [SPECIES_MEOWSTIC] = {
         SPECIES_MEOWSTIC_FEMALE,
     },
@@ -642,7 +639,7 @@ const u16 UNUSED PokeFormDataTbl[][32] =
         SPECIES_MAUSHOLD_FAMILY_OF_THREE,
     },
 
-	/** paldean forms **/
+    /** paldean forms **/
     [SPECIES_SQUAWKABILLY] = {
         SPECIES_SQUAWKABILLY_BLUE_PLUMAGE,
         SPECIES_SQUAWKABILLY_YELLOW_PLUMAGE,
@@ -672,7 +669,8 @@ const u16 UNUSED PokeFormDataTbl[][32] =
     [SPECIES_OINKOLOGNE] = {
         SPECIES_OINKOLOGNE_FEMALE,
     },
-    [SPECIES_REVAVROOM] = { // not technically forms, vanilla mechanics users beware
+    [SPECIES_REVAVROOM] = {
+        // not technically forms, vanilla mechanics users beware
         SPECIES_REVAVROOM_SEGIN,
         SPECIES_REVAVROOM_SCHEDAR,
         SPECIES_REVAVROOM_NAVI,
@@ -712,5 +710,14 @@ const u16 UNUSED PokeFormDataTbl[][32] =
     [SPECIES_TERAPAGOS] = {
         NEEDS_REVERSION | SPECIES_TERAPAGOS_TERASTAL,
         NEEDS_REVERSION | SPECIES_TERAPAGOS_STELLAR,
+    },
+    [SPECIES_ONIX] = {
+        SPECIES_ONIX_CRYSTAL,
+    },
+    [SPECIES_MAGIKARP] = {
+        SPECIES_MAGIKARP_DEEPSEA,
+    },
+    [SPECIES_PARASECT] = {
+        SPECIES_PARASECT_GHOST,
     },
 };

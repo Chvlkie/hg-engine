@@ -19,7 +19,7 @@
 #0224C690
 0012 ServerHPCalc 08014DD0 2
 
-arm9 PokePicLoad 080701EC 1
+#arm9 PokePicLoad 080701EC 1
 arm9 PokeOtherFormMonsNoGet 08072634 2
 arm9 PokeIconIndexGetByMonsNumber 080741BC 3
 arm9 PokeIconCgxPatternGet 080742CC 1
@@ -588,3 +588,18 @@ arm9 PartyMenu_StartContextMenuButtonPressAnim_FromCursorObj 0207CB9C 3
 
 # determine rock smash table to use for items
 0001 DetermineRockSmashItem_hook 02204E28 1
+
+arm9 GetPokePic 020701E4
+
+#Pokegear to town map
+arm9 ReplacePokegearWithTownMap 0203EA84 1
+
+#Disable Lake of Rage swap
+arm9 ShouldUseAlternateLakeOfRage 0203b16c 2
+arm9 RemoveMahoganyTownAntennaTree 0203b0f4 1
+
+#Use Rival Name in other classes
+arm9 trainer_name_hook 0207340C 0
+
+# Rival name in Elite 4 VS Mughsot
+0115 e4_mughost_rival_name 0225FD20 2

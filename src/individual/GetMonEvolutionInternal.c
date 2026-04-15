@@ -16,6 +16,9 @@
 #include "../../include/constants/moves.h"
 #include "../../include/constants/species.h"
 #include "../../include/constants/weather_numbers.h"
+#include "../../include/constants/maps.h"
+
+#define FLAG_GAME_CLEAR 2404
 
 // top 5 bits are now form bit
 // if the form is nonzero, have to set it to that form.  most mons should keep their forms on evolution, but specifically significant gendered mons will need to not
@@ -83,19 +86,19 @@ u16 GetMonEvolutionInternal(struct Party *party, struct PartyPokemon *pokemon, u
             case EVO_NONE:
                 break;
             case EVO_FRIENDSHIP:
-                if (friendship >= FRIENDSHIP_EVOLUTION_THRESHOLD) {
+                if (friendship >= FRIENDSHIP_EVOLUTION_THRESHOLD && CheckScriptFlag(FLAG_GAME_CLEAR == 1)) {
                     target = evoTable[i].target & 0x7FF;
                     *method_ret = EVO_FRIENDSHIP;
                 }
                 break;
             case EVO_FRIENDSHIP_DAY:
-                if (IsNighttime() == 0 && friendship >= FRIENDSHIP_EVOLUTION_THRESHOLD) {
+                if (IsNighttime() == 0 && friendship >= FRIENDSHIP_EVOLUTION_THRESHOLD && CheckScriptFlag(FLAG_GAME_CLEAR) == 1) {
                     target = evoTable[i].target & 0x7FF;
                     *method_ret = EVO_FRIENDSHIP_DAY;
                 }
                 break;
             case EVO_FRIENDSHIP_NIGHT:
-                if (IsNighttime() == 1 && friendship >= FRIENDSHIP_EVOLUTION_THRESHOLD) {
+                if (IsNighttime() == 1 && friendship >= FRIENDSHIP_EVOLUTION_THRESHOLD && CheckScriptFlag(FLAG_GAME_CLEAR) == 1) {
                     target = evoTable[i].target & 0x7FF;
                     *method_ret = EVO_FRIENDSHIP_NIGHT;
                 }
@@ -174,7 +177,7 @@ u16 GetMonEvolutionInternal(struct Party *party, struct PartyPokemon *pokemon, u
                 }
                 break;
             case EVO_HAS_MOVE:
-                if (MonHasMove(pokemon, evoTable[i].param) == TRUE) {
+                if (MonHasMove(pokemon, evoTable[i].param) == TRUE && CheckScriptFlag(FLAG_GAME_CLEAR) == 1) {
                     target = evoTable[i].target & 0x7FF;
                     *method_ret = EVO_HAS_MOVE;
                 }
@@ -201,8 +204,7 @@ u16 GetMonEvolutionInternal(struct Party *party, struct PartyPokemon *pokemon, u
                 {
                     u32 location = gFieldSysPtr->location->mapId;
 
-                    if (location == 45 || location == 18)
-                    {
+                   if ((location == 45 || location == 18) && CheckScriptFlag(FLAG_GAME_CLEAR) == 1) {
                         target = evoTable[i].target & 0x7FF;
                         *method_ret = EVO_CORONET;
                     }
@@ -212,8 +214,7 @@ u16 GetMonEvolutionInternal(struct Party *party, struct PartyPokemon *pokemon, u
                 {
                     u32 location = gFieldSysPtr->location->mapId;
 
-                    if (location == 117 || location == 147)
-                    {
+                    if (location == MAP_D46R0102 && CheckScriptFlag(FLAG_GAME_CLEAR) == 1) {
                         target = evoTable[i].target & 0x7FF;
                         *method_ret = EVO_ETERNA;
                     }
@@ -223,8 +224,7 @@ u16 GetMonEvolutionInternal(struct Party *party, struct PartyPokemon *pokemon, u
                 {
                     u32 location = gFieldSysPtr->location->mapId;
 
-                    if (location == 239 || location == 456)
-                    {
+                    if ((location == 239 || location == 456) && CheckScriptFlag(FLAG_GAME_CLEAR) == 1) {
                         target = evoTable[i].target & 0x7FF;
                         *method_ret = EVO_ROUTE217;
                     }
@@ -271,6 +271,9 @@ u16 GetMonEvolutionInternal(struct Party *party, struct PartyPokemon *pokemon, u
                 break;
             case EVO_HAS_MOVE_TYPE:
                 {
+                if (!CheckScriptFlag(FLAG_GAME_CLEAR) == 1) {
+                    break;
+                }
                     int k;
 
                     for (k = 0; k < 4; k++)

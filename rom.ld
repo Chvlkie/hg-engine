@@ -843,3 +843,10 @@ sBattleBgProfileTable = 0x0226E70C;
 UpdateFriendshipFainted = 0x02248558 | 1;
 
 StringExpandPlaceholders = 0x0200CBBC | 1;
+
+/* Pokegear to Town Map*/
+MI_CpuFill8 = 0x020D4994 | 1;
+sub_02092D8C = 0x02092D8C | 1;
+PokegearTownMap_LaunchApp_Impl = 0x0203EA5C | 1;
+ov115_0225F158 = 0x0225F158 | 1;
+ov115_0225F1BC = 0x0225F1BC | 1;
