@@ -49,6 +49,17 @@ const u16 RockSmashItemTable[][NUM_ROCK_SMASH_ITEMS_PER_TABLE] =
         ITEM_CLAW_FOSSIL,
         ITEM_RARE_BONE,
     },
+    {
+        // test
+        ITEM_MASTER_BALL,
+        ITEM_MASTER_BALL,
+        ITEM_MASTER_BALL,
+        ITEM_POKE_BALL,
+        ITEM_POKE_BALL,
+        ITEM_ULTRA_BALL,
+        ITEM_ULTRA_BALL,
+        ITEM_ULTRA_BALL,
+    },
 };
 
 u32 DetermineRockSmashItem(u32 tableIndex, u32 index)
