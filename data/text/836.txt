@@ -91,7 +91,7 @@
 {COLOR 255}Medal Boxes{COLOR 0}
 {COLOR 255}DNA Splicers{COLOR 0}
 {COLOR 255}DNA Splicers{COLOR 0}
-{COLOR 255}Permits{COLOR 0}
+{COLOR 255}Lure Charms{COLOR 0}
 {COLOR 255}Oval Charms{COLOR 0}
 {COLOR 255}Shiny Charms{COLOR 0}
 {COLOR 255}Plasma Cards{COLOR 0}

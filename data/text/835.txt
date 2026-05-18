@@ -91,7 +91,7 @@ a {COLOR 255}Xtransceiver{COLOR 0}
 a {COLOR 255}Medal Box{COLOR 0}
 the {COLOR 255}DNA Splicers{COLOR 0}
 the {COLOR 255}DNA Splicers{COLOR 0}
-a {COLOR 255}Permit{COLOR 0}
+a {COLOR 255}Lure Charm{COLOR 0}
 an {COLOR 255}Oval Charm{COLOR 0}
 a {COLOR 255}Shiny Charm{COLOR 0}
 a {COLOR 255}Plasma Card{COLOR 0}

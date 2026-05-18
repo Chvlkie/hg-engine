@@ -633,7 +633,7 @@
 #define ITEM_MEDAL_BOX                    627
 #define ITEM_DNA_SPLICERS_FUSE            628
 #define ITEM_DNA_SPLICERS_UNFUSE          629
-#define ITEM_PERMIT                       630
+#define ITEM_LURE_CHARM                       630
 #define ITEM_OVAL_CHARM                   631
 #define ITEM_SHINY_CHARM                  632
 #define ITEM_PLASMA_CARD                  633
