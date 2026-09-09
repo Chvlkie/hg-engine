@@ -1,5 +1,5 @@
-#ifndef POKEHEARTGOLD_PARTY_MENU_H
-#define POKEHEARTGOLD_PARTY_MENU_H
+#ifndef PARTY_MENU_H
+#define PARTY_MENU_H
 
 #include "types.h"
 
@@ -450,4 +450,4 @@ void LONG_CALL PartyMenu_DisableMainScreenBlend_AfterYesNo(void);
 void LONG_CALL PartyMonContextMenuAction_RotomCatalog(struct PartyMenu *partyMenu, int *pState);
 void LONG_CALL PartyMonContextMenuAction_QuitToBag(struct PartyMenu *partyMenu, int *pState);
 
-#endif // POKEHEARTGOLD_PARTY_MENU_H
+#endif // PARTY_MENU_H

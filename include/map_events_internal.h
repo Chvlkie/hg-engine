@@ -1,5 +1,5 @@
-#ifndef POKEHEARTGOLD_MAP_EVENTS_INTERNAL_H
-#define POKEHEARTGOLD_MAP_EVENTS_INTERNAL_H
+#ifndef MAP_EVENTS_INTERNAL_H
+#define MAP_EVENTS_INTERNAL_H
 
 // #include "wild_encounter.h"
 #include "types.h"
@@ -294,4 +294,4 @@ int LONG_CALL GetPlayerYCoord(FIELD_PLAYER_AVATAR *avatar);
 BOOL MapObject_IsSingleMovementActive(LocalMapObject *obj);
 void MapObject_PauseMovement(LocalMapObject *obj);
 
-#endif // POKEHEARTGOLD_MAP_EVENTS_INTERNAL_H
+#endif // MAP_EVENTS_INTERNAL_H

@@ -1,5 +1,5 @@
-#ifndef POKEHEARTGOLD_CONSTANTS_SNDSEQ_H
-#define POKEHEARTGOLD_CONSTANTS_SNDSEQ_H
+#ifndef CONSTANTS_SNDSEQ_H
+#define CONSTANTS_SNDSEQ_H
 
 #define SEQ_PV001                     1
 #define SEQ_PV                        2
@@ -1424,4 +1424,4 @@ enum {
     ANIM_MUSIC_COMBO_RED,
 };
 
-#endif // POKEHEARTGOLD_CONSTANTS_SNDSEQ_H
+#endif // CONSTANTS_SNDSEQ_H

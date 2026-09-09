@@ -1,5 +1,5 @@
-#ifndef POKEHEARTGOLD_ROAMER_H
-#define POKEHEARTGOLD_ROAMER_H
+#ifndef ROAMER_H
+#define ROAMER_H
 
 #include "types.h"
 
@@ -55,4 +55,4 @@ u8 LONG_CALL Roamer_GetLocation(void *roamerSave, u8 roamerId);
 
 void LONG_CALL Save_CreateRoamerByID(SaveData *saveData, u8 idx);
 
-#endif // POKEHEARTGOLD_ROAMER_H
+#endif // ROAMER_H

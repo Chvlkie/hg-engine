@@ -1,5 +1,5 @@
-#ifndef POKEHEARTGOLD_UNK_0200E320_H
-#define POKEHEARTGOLD_UNK_0200E320_H
+#ifndef UNK_0200E320_H
+#define UNK_0200E320_H
 
 #include "types.h"
 

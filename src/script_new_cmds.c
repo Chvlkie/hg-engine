@@ -6,6 +6,7 @@
 #include "../include/types.h"
 
 #define SCRIPT_NEW_CMD_REPEL_USE 0
+#define SCRIPT_NEW_CMD_RESET_BOX_TRANSPARENCY 1
 
 #define SCRIPT_NEW_CMD_MAX 256
 
@@ -22,7 +23,13 @@ BOOL Script_RunNewCmd(SCRIPTCONTEXT *ctx)
         Repel_Use(most_recent_repel, HEAPID_MAIN_HEAP);
 #endif
         break;
-
+    case SCRIPT_NEW_CMD_RESET_BOX_TRANSPARENCY:
+        if (reg_G2_BLDCNT == 0x1b4f) {
+            reg_G2_BLDCNT = 0;
+            reg_G2_BLDALPHA = 0;
+            reg_G2_BLDY = 0;
+        }
+        break;
     default:
         break;
     }

@@ -174,6 +174,8 @@ u32 LoadCaptureSuccessSPA(u32 id);
 u32 LoadCaptureSuccessSPAStarEmitter(u32 id);
 u32 LoadCaptureSuccessSPANumEmitters(u32 id);
 void LONG_CALL UpdateFriendshipFainted(struct BattleSystem *battleSystem, struct BattleStruct *ctx, int battlerId);
+// Custom Commands
+BOOL btl_scr_cmd_custom_01__calcelectroball(void *bsys UNUSED, struct BattleStruct *ctx);
 
 #ifdef DEBUG_BATTLE_SCRIPT_COMMANDS
 #pragma GCC diagnostic push
@@ -474,13 +476,14 @@ const u8 *BattleScrCmdNames[] = {
     "GetMonByCottonDownOrder",
     "TryActivateZeroToHero",
     // "YourCustomCommand",
+    "CalcElectroBallPower"
 };
 
 u32 cmdAddress = 0;
 #pragma GCC diagnostic pop
 #endif // DEBUG_BATTLE_SCRIPT_COMMANDS
 
-#define BASE_ENGINE_BTL_SCR_CMDS_MAX 0x11D
+#define BASE_ENGINE_BTL_SCR_CMDS_MAX 0x125
 
 // clang-format off
 const btl_scr_cmd_func NewBattleScriptCmdTable[] = {
@@ -554,6 +557,7 @@ const btl_scr_cmd_func NewBattleScriptCmdTable[] = {
     [0x124 - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_124_GetMonByCottonDownOrder,
     [0x125 - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_125_TryActivateZeroToHero,
     // [BASE_ENGINE_BTL_SCR_CMDS_MAX - START_OF_NEW_BTL_SCR_CMDS + 1] = btl_scr_cmd_custom_01_your_custom_command,
+    [(BASE_ENGINE_BTL_SCR_CMDS_MAX + 1) - START_OF_NEW_BTL_SCR_CMDS] = btl_scr_cmd_custom_01__calcelectroball,
 };
 
 // clang-format on
@@ -5729,5 +5733,31 @@ BOOL BtlCmd_Metronome(struct BattleSystem *bsys, struct BattleStruct *ctx)
         break;
     }
 
+    return FALSE;
+}
+BOOL btl_scr_cmd_custom_01__calcelectroball(void *bsys UNUSED, struct BattleStruct *ctx)
+{
+    IncrementBattleScriptPtr(ctx, 1);
+
+    u32 userSpeed = ctx->effectiveSpeed[ctx->attack_client];
+    u32 targetSpeed = ctx->effectiveSpeed[ctx->defence_client];
+
+    // Handle zero speed case first (prevent division by zero)
+    if (userSpeed == 0) {
+        ctx->damage_power *= 40;
+        return FALSE;
+    }
+
+    u32 comparisonBase = userSpeed * 100;
+
+    if (targetSpeed * 100 > comparisonBase / 2) { // >50%
+        ctx->damage_power *= 60;
+    } else if (targetSpeed * 100 > comparisonBase / 3) { // >33%
+        ctx->damage_power *= 80;
+    } else if (targetSpeed * 100 > comparisonBase / 4) { // >25%
+        ctx->damage_power *= 120;
+    } else { // ≤25%
+        ctx->damage_power *= 150;
+    }
     return FALSE;
 }

@@ -1,5 +1,5 @@
-#ifndef POKEHEARTGOLD_BAG_H
-#define POKEHEARTGOLD_BAG_H
+#ifndef BAG_H
+#define BAG_H
 
 #include "types.h"
 
@@ -266,4 +266,4 @@ BAG_DATA *LONG_CALL Sav2_Bag_get(void *saveData);
 void *LONG_CALL BagView_New(u8 heap_id);
 void LONG_CALL BagView_SetItem(void *bagView, ITEM_SLOT *slots, u8 pocketId, u8 position);
 
-#endif // POKEHEARTGOLD_BAG_H
+#endif // BAG_H

@@ -909,3 +909,10 @@ BattleSystem_GetPokepicManager = 0x0223A8D4 | 1;
 ov12_0223B750 = 0x0223B750 | 1;
 sub_0207294C = 0x0207294C | 1;
 sub_02017068 = 0x02017068 | 1;
+
+/* Pokegear to Town Map*/
+MI_CpuFill8 = 0x020D4994 | 1;
+sub_02092D8C = 0x02092D8C | 1;
+PokegearTownMap_LaunchApp_Impl = 0x0203EA5C | 1;
+ov115_0225F158 = 0x0225F158 | 1;
+ov115_0225F1BC = 0x0225F1BC | 1;

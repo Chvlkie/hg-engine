@@ -1,5 +1,5 @@
-#ifndef POKEHEARTGOLD_NPC_TRADE_H
-#define POKEHEARTGOLD_NPC_TRADE_H
+#ifndef NPC_TRADE_H
+#define NPC_TRADE_H
 
 #include "message.h"
 #include "pokemon.h"
@@ -54,4 +54,4 @@ String *LONG_CALL _GetNpcTradeName(u32 heapId, u32 msgno);
 u16 LONG_CALL MapHeader_GetMapSec(u32 map_no);
 void LONG_CALL MonSetTrainerMemo(struct PartyPokemon *mon, void *profile, int strat, int mapsec, u32 heapId);
 
-#endif // POKEHEARTGOLD_NPC_TRADE_H
+#endif // NPC_TRADE_H

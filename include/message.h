@@ -1,5 +1,5 @@
-#ifndef POKEHEARTGOLD_MSGDATA_H
-#define POKEHEARTGOLD_MSGDATA_H
+#ifndef MSGDATA_H
+#define MSGDATA_H
 
 #include "types.h"
 
@@ -67,4 +67,4 @@ void LONG_CALL BufferItemNameGiveItem(MessageFormat *msgFmt, u32 fieldno, u32 it
 u8 LONG_CALL AddTextPrinterParameterizedWithColor(void *window, u8 fontId, String *string, u32 x, u32 y, u32 textSpeed, u32 color, void *callback);
 String *LONG_CALL NewString_ReadMsgData(MsgData *msgData, s32 strno);
 
-#endif // POKEHEARTGOLD_MSGDATA_H
+#endif // MSGDATA_H

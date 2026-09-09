@@ -13211,7 +13211,7 @@ const MoveSourceEntry sMoveSource[NUM_OF_MOVES + 1] = {
             .fullName = "Electro Ball",
         },
         .data = {
-            .effect = MOVE_EFFECT_HIT,
+            .effect = MOVE_EFFECT_POWER_BASED_ON_HIGH_SPEED,
             .split = SPLIT_SPECIAL,
             .power = 1,
             .type = TYPE_ELECTRIC,
