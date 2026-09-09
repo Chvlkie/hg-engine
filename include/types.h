@@ -197,6 +197,7 @@ void *memcpy(void *dest, void *src, u32 size);
 void *memset(void *dest, u8 fill, u32 size);
 void sprintf(u8 *buf, char *str, ...);
 void debugsyscall(u8 *buf);
+void MI_CpuFill8(void *dest, u8 data, u32 size);
 
 static inline void MI_CpuFillFast(void *dst, int data, u32 size)
 {

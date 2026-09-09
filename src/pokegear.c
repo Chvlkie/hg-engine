@@ -1,6 +1,5 @@
 #include "../include/types.h"
 #include "../include/task.h"
-#include "../include/memory.h"
 #include "../include/pokegear.h"
 
 PokegearArgs* ReplacePokegearWithTownMap(FieldSystem* fieldSystem) {

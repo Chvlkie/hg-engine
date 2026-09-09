@@ -103,7 +103,7 @@
 
 // DISABLE_END_OF_TURN_WEATHER_MESSAGE removes the weather messages at the end of the turn.  instead the bottom screen icon can be used
 // uncomment the line out to get this functionality
- #define DISABLE_END_OF_TURN_WEATHER_MESSAGE
+ #define DISABLE_WEATHER_MESSAGE
 
 // IMPLEMENT_SEASONS currently implements season mechanics. Used for changing forms of Deerling and Sawsbuck.
 // Comment the line out to disable this functionality (Gen 6+)

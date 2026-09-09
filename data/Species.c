@@ -84139,7 +84139,6 @@ const SpeciesDataEntry sSpeciesData[MAX_SPECIES_INCLUDING_FORMS + 1] = {
             .classification = "Rock Snake Pokémon",
             .height = "28’10”",
             .weight = "463.0 lbs.",
-            ,
         },
         .speciesData = {
             .baseStats = {
