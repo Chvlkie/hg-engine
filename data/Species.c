@@ -87495,8 +87495,6 @@ const SpeciesDataEntry sSpeciesData[MAX_SPECIES_INCLUDING_FORMS + 1] = {
             .malePokemonYOffset = 24,
         },
     },
-
-};
     [SPECIES_ONIX_CRYSTAL] = {
         .textData = {
             .name = "-----",
