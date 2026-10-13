@@ -265,7 +265,10 @@ int UNUSED SwitchInAbilityCheck(void *bw, struct BattleStruct *sp)
                 }
 
                 // Trace
-                {
+                if ((sp->battlemon[client_no].ability_activated_flag == 0)
+                    && sp->battlemon[client_no].hp
+                    && (sp->battlemon[client_no].item != ITEM_GRISEOUS_ORB)
+                    && (GetBattlerAbility(sp, client_no) == ABILITY_TRACE)) {
                     int def1, def2;
 
                     def1 = BattleWorkEnemyClientGet(bw, client_no, BATTLER_POSITION_SIDE_RIGHT);
@@ -273,12 +276,8 @@ int UNUSED SwitchInAbilityCheck(void *bw, struct BattleStruct *sp)
 
                     sp->defence_client_work = GetTraceClient(bw, sp, def1, def2);
 
-                    if ((sp->battlemon[client_no].ability_activated_flag == 0)
-                        && (sp->defence_client_work != 0xFF)
-                        && (sp->battlemon[client_no].hp)
-                        && (sp->battlemon[client_no].item != ITEM_GRISEOUS_ORB)
-                        && (sp->battlemon[sp->defence_client_work].hp)
-                        && (GetBattlerAbility(sp, client_no) == ABILITY_TRACE)) {
+                    if ((sp->defence_client_work != 0xFF)
+                        && (sp->battlemon[sp->defence_client_work].hp)) {
                         sp->battlerIdTemp = client_no;
                         scriptnum = BATTLE_SUBSCRIPT_TRACE;
                         ret = SWITCH_IN_CHECK_MOVE_SCRIPT;

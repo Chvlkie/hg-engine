@@ -21,6 +21,25 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 void CalcDamageOverall(void *bw, struct BattleStruct *sp);
 int AdjustDamageForRoll(void *bw, struct BattleStruct *sp, int damage);
 
+static u32 sAIDamageEvaluationDepth;
+static BOOL sAIDamageOverlayLoaded;
+
+void BattleAI_BeginDamageEvaluation(void)
+{
+    sAIDamageEvaluationDepth++;
+}
+
+void BattleAI_EndDamageEvaluation(void)
+{
+    if (sAIDamageEvaluationDepth == 0) {
+        return;
+    }
+    if (--sAIDamageEvaluationDepth == 0 && sAIDamageOverlayLoaded) {
+        UnloadOverlayByID(OVERLAY_CALCBASEDAMAGE);
+        sAIDamageOverlayLoaded = FALSE;
+    }
+}
+
 int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond UNUSED, u32 field_cond, u16 pow UNUSED, u8 type UNUSED, u8 attacker, u8 defender, u8 critical)
 {
     struct DamageCalcStruct damageCalc = { 0 };
@@ -36,10 +55,13 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond 
     }
 
     damageCalc.maxBattlers = BattleWorkClientSetMaxGet(bw);
-    damageCalc.attackerPartySize = Battle_GetClientPartySize(bw, attacker);
-    for (int i = 0; i < damageCalc.attackerPartySize; i++) {
-        struct PartyPokemon *mon = Battle_GetClientPartyMon(bw, attacker, i);
-        damageCalc.attackerParty[i] = mon;
+    // Only Beat Up reads party data in the damage calculator.
+    if (moveno == MOVE_BEAT_UP) {
+        damageCalc.attackerPartySize = Battle_GetClientPartySize(bw, attacker);
+        for (int i = 0; i < damageCalc.attackerPartySize; i++) {
+            struct PartyPokemon *mon = Battle_GetClientPartyMon(bw, attacker, i);
+            damageCalc.attackerParty[i] = mon;
+        }
     }
     damageCalc.attacker = attacker;
     damageCalc.defender = defender;
@@ -104,7 +126,10 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond 
         client.ability = GetBattlerAbility(sp, i);
         client.sex = BattlePokemonParamGet(sp, i, BATTLE_MON_DATA_SEX, NULL);
         client.speed = sp->effectiveSpeed[i];
-        client.weight = GetPokemonWeight(bw, sp, attacker, i);
+        if ((i == defender && (moveno == MOVE_LOW_KICK || moveno == MOVE_GRASS_KNOT))
+            || ((i == attacker || i == defender) && (moveno == MOVE_HEAVY_SLAM || moveno == MOVE_HEAT_CRASH))) {
+            client.weight = GetPokemonWeight(bw, sp, attacker, i);
+        }
         client.happiness = sp->battlemon[i].friendship;
         client.form = sp->battlemon[i].form_no;
         client.furyCutterCount = sp->battlemon[i].moveeffect.furyCutterCount;
@@ -181,10 +206,17 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond 
 
     ovyId = OVERLAY_CALCBASEDAMAGE;
     offset = 0x023C0400 | 1;
-    HandleLoadOverlay(ovyId, 2);
+    if (!sAIDamageEvaluationDepth || !sAIDamageOverlayLoaded) {
+        HandleLoadOverlay(ovyId, 2);
+        if (sAIDamageEvaluationDepth) {
+            sAIDamageOverlayLoaded = TRUE;
+        }
+    }
     internalFunc = (int (*)(struct BattleSystem *bw, struct BattleStruct *sp, struct DamageCalcStruct *damageCalc))(offset);
     ret = internalFunc(bw, sp, &damageCalc);
-    UnloadOverlayByID(ovyId);
+    if (!sAIDamageEvaluationDepth) {
+        UnloadOverlayByID(ovyId);
+    }
 
     return ret;
 }

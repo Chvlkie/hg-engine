@@ -4,6 +4,9 @@
 #overlay 1 is loaded in at 021E5900
 #overlay 2 is loaded in at 02245B80
 #overlay 12 is loaded in at 022378C0
+# Reuse the damage-calculation overlay within each synchronous AI decision.
+0012 AI_PickCommand_hook 0225E10A 3
+0012 AI_SelectMove_hook 0225E43A 2
 #mega
 0012 LoadMegaOam 0226715C 1
 0012 MegaButtonCheck 02267F04 2

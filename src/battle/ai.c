@@ -17,6 +17,26 @@
 // function declarations
 void AITypeCalc(struct BattleStruct *sp, u32 move, u32 type, int atkAbility, int defAbility, int held_effect, int type1, int type2, u32 *flag);
 
+// These native AI decisions finish synchronously before their controller task returns.
+// Retain the damage overlay only within that decision, loading it on first use.
+int LONG_CALL AI_PickCommand(struct BattleSystem *bsys, int battler)
+{
+    int (*nativeFunc)(struct BattleSystem *, int) = (int (*)(struct BattleSystem *, int))(0x022205BC | 1);
+    BattleAI_BeginDamageEvaluation();
+    int result = nativeFunc(bsys, battler);
+    BattleAI_EndDamageEvaluation();
+    return result;
+}
+
+u8 LONG_CALL AI_SelectMove(struct BattleSystem *bsys, int battler)
+{
+    u8 (*nativeFunc)(struct BattleSystem *, int) = (u8 (*)(struct BattleSystem *, int))(0x0221BEF4 | 1);
+    BattleAI_BeginDamageEvaluation();
+    u8 result = nativeFunc(bsys, battler);
+    BattleAI_EndDamageEvaluation();
+    return result;
+}
+
 /**
  *  @brief set up type calc flags for AI to respect and make decisions based on
  *

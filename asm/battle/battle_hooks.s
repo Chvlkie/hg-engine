@@ -5,6 +5,28 @@
 .include "asm/include/interop_macros.inc"
 #include "../../include/constants/moves.h"
 
+.global AI_PickCommand_hook
+AI_PickCommand_hook:
+mov r5, r0
+ldr r0, [r4]
+bl AI_PickCommand
+// The unaligned hook occupies ten bytes, including the original result copy.
+mov r2, r0
+ldr r3, =0x0225E114 | 1
+bx r3
+
+.global AI_SelectMove_hook
+AI_SelectMove_hook:
+ldrb r1, [r6, #0x1D]
+ldr r0, [r6]
+bl AI_SelectMove
+// Replay the comparison overwritten by the ten-byte hook before its BEQ.
+ldr r3, =0x0225E444 | 1
+cmp r0, #0xFF
+bx r3
+
+.pool
+
 //形态变化恢复
 .global TryRevertFormChange_hook
 TryRevertFormChange_hook:

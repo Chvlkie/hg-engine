@@ -169,6 +169,7 @@ static const OAMSpriteTemplate WeatherIconObjParam = {
 void Sub_PokeIconResourceLoad(struct BI_PARAM *bip)
 {
     u32 nclr;
+    BOOL needsMegaIcon = FALSE;
     void *csp;
     void *crp;
     void *pfd;
@@ -177,26 +178,33 @@ void Sub_PokeIconResourceLoad(struct BI_PARAM *bip)
     crp = BattleWorkCATS_RES_PTRGet(bip->bw);
     pfd = BattleWorkPfdGet(bip->bw);
 
-    OAM_LoadResourcePlttWorkArc(pfd, FADE_SUB_OBJ, csp, crp, ARC_POKEICON, PokeIconPalArcIndexGet(), 0, 3, NNS_G2D_VRAM_TYPE_2DSUB, 20022);
+    void *pokeIconNarc = NARC_New(ARC_POKEICON, HEAPID_BATTLE_HEAP);
+    OAM_LoadResourcePlttWorkArcH(pfd, FADE_SUB_OBJ, csp, crp, pokeIconNarc, PokeIconPalArcIndexGet(), 0, 3, NNS_G2D_VRAM_TYPE_2DSUB, 20022);
 
-    OAM_LoadResourceCellArc(csp, crp, ARC_POKEICON, PokeIconAnmCellArcIndexGet(), 0, 20021);
+    OAM_LoadResourceCellArcH(csp, crp, pokeIconNarc, PokeIconAnmCellArcIndexGet(), 0, 20021);
 
-    OAM_LoadResourceCellAnmArc(csp, crp, ARC_POKEICON, PokeIconAnmCellAnmArcIndexGet(), 0, 20021);
+    OAM_LoadResourceCellAnmArcH(csp, crp, pokeIconNarc, PokeIconAnmCellAnmArcIndexGet(), 0, 20021);
 
     if (bip->client_no < CLIENT_MAX) // when in the fight screen, the client_no gets set to a crazy value.  do not load a different palette until the next mon is selected and client_no has returned to a sane value
     {
         if (CheckIsPrimalGroudon(bip)) {
+            needsMegaIcon = TRUE;
             OAM_LoadResourcePlttWorkArc(pfd, FADE_SUB_OBJ, csp, crp, ARC_BATTLE_GFX, PRIMAL_REVERSION_OMEGA_GFX + 1, 0, 1, NNS_G2D_VRAM_TYPE_2DSUB, MEGA_ICON_PAL_TAG);
         } else if (CheckIsPrimalKyogre(bip)) {
+            needsMegaIcon = TRUE;
             OAM_LoadResourcePlttWorkArc(pfd, FADE_SUB_OBJ, csp, crp, ARC_BATTLE_GFX, PRIMAL_REVERSION_ALPHA_GFX + 1, 0, 1, NNS_G2D_VRAM_TYPE_2DSUB, MEGA_ICON_PAL_TAG);
         } else if (CheckIsMega(bip)) {
+            needsMegaIcon = TRUE;
             OAM_LoadResourcePlttWorkArc(pfd, FADE_SUB_OBJ, csp, crp, ARC_BATTLE_GFX, MEGA_ICON_FIGHT_GFX + 1, 0, 1, NNS_G2D_VRAM_TYPE_2DSUB, MEGA_ICON_PAL_TAG);
         }
     }
 
-    OAM_LoadResourceCellArc(csp, crp, ARC_ITEM_GFX_DATA, 1, 0, MEGA_ICON_CELL_TAG);
-
-    OAM_LoadResourceCellAnmArc(csp, crp, ARC_ITEM_GFX_DATA, 0, 0, MEGA_ICON_CELL_ANIM_TAG);
+    if (needsMegaIcon) {
+        void *itemNarc = NARC_New(ARC_ITEM_GFX_DATA, HEAPID_BATTLE_HEAP);
+        OAM_LoadResourceCellArcH(csp, crp, itemNarc, 1, 0, MEGA_ICON_CELL_TAG);
+        OAM_LoadResourceCellAnmArcH(csp, crp, itemNarc, 0, 0, MEGA_ICON_CELL_ANIM_TAG);
+        NARC_Delete(itemNarc);
+    }
 
     // weather
     if (bip->bw->sp->field_condition & WEATHER_ANY_ICONS) {
@@ -216,8 +224,9 @@ void Sub_PokeIconResourceLoad(struct BI_PARAM *bip)
 
         OAM_LoadResourceCellArc(csp, crp, ARC_BATTLE_GFX, BATTLE_GFX_NCER, 0, WEATHER_ICON_CELL_TAG); // NCER
 
-        OAM_LoadResourceCellAnmArc(csp, crp, ARC_POKEICON, 3, 0, WEATHER_ICON_CELL_ANIM_TAG); // NANR
+        OAM_LoadResourceCellAnmArcH(csp, crp, pokeIconNarc, 3, 0, WEATHER_ICON_CELL_ANIM_TAG); // NANR
     }
+    NARC_Delete(pokeIconNarc);
 }
 
 /**
@@ -374,8 +383,10 @@ void LoadMegaButton(struct BI_PARAM *bip)
         OAM_LoadResourcePlttWorkArc(pfd, FADE_SUB_OBJ, csp, crp, ARC_BATTLE_GFX, palindex, 0, 1, NNS_G2D_VRAM_TYPE_2DSUB, MEGA_BUTTON_PAL_TAG);
         OAM_LoadResourceCharArc(csp, crp, ARC_BATTLE_GFX, iconindex, 0, NNS_G2D_VRAM_TYPE_2DSUB, MEGA_BUTTON_SPRITE_TAG);
 
-        OAM_LoadResourceCellArc(csp, crp, ARC_ITEM_GFX_DATA, 1, 0, MEGA_ICON_CELL_TAG);
-        OAM_LoadResourceCellAnmArc(csp, crp, ARC_ITEM_GFX_DATA, 0, 0, MEGA_ICON_CELL_ANIM_TAG);
+        void *itemNarc = NARC_New(ARC_ITEM_GFX_DATA, HEAPID_BATTLE_HEAP);
+        OAM_LoadResourceCellArcH(csp, crp, itemNarc, 1, 0, MEGA_ICON_CELL_TAG);
+        OAM_LoadResourceCellAnmArcH(csp, crp, itemNarc, 0, 0, MEGA_ICON_CELL_ANIM_TAG);
+        NARC_Delete(itemNarc);
         newBS.MegaButton = OAM_ObjectAdd_S(csp, crp, &MegaButtonTemplate);
         OAM_ObjectUpdate(newBS.MegaButton->act);
     }

@@ -1282,9 +1282,13 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
 
     // Step 6: Iron Ball / Macho Brace / Power EV items
 
+    // Preserve the raw-item suppression rules used by this step.
+    u32 speedDownHoldEffect1 = BattleItemDataGet(sp, sp->battlemon[client1].item, 1);
+    u32 speedDownHoldEffect2 = BattleItemDataGet(sp, sp->battlemon[client2].item, 1);
+
     for (i = 0; i < NELEMS(DecreaseSpeedHoldEffects); i++) {
-        if (BattleItemDataGet(sp, sp->battlemon[client1].item, 1) == DecreaseSpeedHoldEffects[i]) {
-            if (!(GetBattlerAbility(sp, client1) == ABILITY_KLUTZ && DecreaseSpeedHoldEffects[i] == HOLD_EFFECT_SPEED_DOWN_GROUNDED)) {
+        if (speedDownHoldEffect1 == DecreaseSpeedHoldEffects[i]) {
+            if (!(ability1 == ABILITY_KLUTZ && DecreaseSpeedHoldEffects[i] == HOLD_EFFECT_SPEED_DOWN_GROUNDED)) {
                 speedModifier1 = QMul_RoundUp(speedModifier1, UQ412__0_5);
                 break;
             }
@@ -1292,8 +1296,8 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
     }
 
     for (i = 0; i < NELEMS(DecreaseSpeedHoldEffects); i++) {
-        if (BattleItemDataGet(sp, sp->battlemon[client2].item, 1) == DecreaseSpeedHoldEffects[i]) {
-            if (!(GetBattlerAbility(sp, client2) == ABILITY_KLUTZ && DecreaseSpeedHoldEffects[i] == HOLD_EFFECT_SPEED_DOWN_GROUNDED)) {
+        if (speedDownHoldEffect2 == DecreaseSpeedHoldEffects[i]) {
+            if (!(ability2 == ABILITY_KLUTZ && DecreaseSpeedHoldEffects[i] == HOLD_EFFECT_SPEED_DOWN_GROUNDED)) {
                 speedModifier2 = QMul_RoundUp(speedModifier2, UQ412__0_5);
                 break;
             }

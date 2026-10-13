@@ -517,6 +517,10 @@ u32 LONG_CALL MoldBreakerAbilityCheckInternal(int attacker, int defender, int at
 {
     BOOL ret = FALSE;
 
+    if ((u32)defenderAbility != ability) {
+        return FALSE;
+    }
+
     if ((attacker == defender) || !AbilityIsIgnoredByMoldBreaker(ability)) {
         return (u32)defenderAbility == ability;
     }
@@ -1062,12 +1066,17 @@ void ServerDoPostMoveEffects(struct BattleSystem *bsys, struct BattleStruct *ctx
 
 AbilityFlags LONG_CALL GetAbilityFlags(int ability)
 {
+    // Cache immutable ROM flags, independently of battlers' current abilities.
+    static AbilityFlags cachedFlags[NUM_ABILITIES];
+    static u8 cachedFlagsValid[NUM_ABILITIES];
     AbilityFlags flags = { 0 };
     if (ability <= ABILITY_NONE || ability >= NUM_ABILITIES) {
         return flags;
     }
 
-    ReadFromNarcMemberByIdPair(&flags, ARC_CODE_ADDONS, CODE_ADDON_ABILITY_FLAGS, ability * sizeof(AbilityFlags), sizeof(AbilityFlags));
-
-    return flags;
+    if (!cachedFlagsValid[ability]) {
+        ReadFromNarcMemberByIdPair(&cachedFlags[ability], ARC_CODE_ADDONS, CODE_ADDON_ABILITY_FLAGS, ability * sizeof(AbilityFlags), sizeof(AbilityFlags));
+        cachedFlagsValid[ability] = TRUE;
+    }
+    return cachedFlags[ability];
 }

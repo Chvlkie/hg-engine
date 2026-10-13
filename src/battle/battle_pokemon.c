@@ -234,6 +234,27 @@ BOOL LONG_CALL BattleFormChangeCheck(void *bw, struct BattleStruct *sp, int *seq
     BOOL (*internalFunc)(void *bw, struct BattleStruct *sp, int *seq_no);
     // clang-format on
 
+    // Only load the form-check overlay for a species it handles.
+    if (sp->checkOnlySpecifiedTarget) {
+        sp->battlerIdTemp = sp->checkOnlySpecifiedTargetClient;
+        switch (sp->battlemon[sp->battlerIdTemp].species) {
+        case SPECIES_CASTFORM:
+        case SPECIES_CHERRIM:
+        case SPECIES_ARCEUS:
+        case SPECIES_SILVALLY:
+        case SPECIES_GIRATINA:
+        case SPECIES_DARMANITAN:
+        case SPECIES_MELOETTA:
+        case SPECIES_GENESECT:
+        case SPECIES_XERNEAS:
+        case SPECIES_ZYGARDE:
+        case SPECIES_WISHIWASHI:
+            break;
+        default:
+            return FALSE;
+        }
+    }
+
     UnloadOverlayByID(6); // unload overlay 6 so this can be loaded
 
     ovyId = OVERLAY_BATTLEFORMCHANGECHECK;
