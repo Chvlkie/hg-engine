@@ -163,6 +163,14 @@ int LONG_CALL NNSi_SndArcLoadWaveArc(u16 waveArcNo, u32 loadFlag, void *heap, BO
 BOOL LONG_CALL LoadSingleWaves(SNDWaveArc *waveArc, SNDBankData *bank, int index, u32 fileId, void *heap);
 void LONG_CALL SND_AssignWaveArc(SNDBankData *bank, int index, SNDWaveArc *waveArc);
 
+typedef void (*SoundHeapDisposeCallback)(void *memory, u32 size, u32 userData1, u32 userData2);
+void *LONG_CALL NNS_SndHeapCreate(void *memory, u32 size);
+void LONG_CALL NNS_SndHeapDestroy(void *heap);
+void *LONG_CALL NNS_SndHeapAlloc(void *heap, u32 size, SoundHeapDisposeCallback callback, u32 userData1, u32 userData2);
+u32 LONG_CALL NNS_SndArcGetFileSize(u32 fileId);
+void LONG_CALL NNS_FndFreeToExpHeap(void *heap, void *memory);
+int LONG_CALL NNS_SndPlayerCountPlayingSeqByPlayerNo(int playerNo);
+
 void LONG_CALL PlayCry(u16 species, u8 forme);
 void LONG_CALL PlaySE(u32 se);
 

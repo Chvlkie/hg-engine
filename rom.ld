@@ -409,6 +409,12 @@ LoadBank = 0x020CA398;
 NNS_SndArcGetFileAddress = 0x020C99A4;
 NNS_SndArcGetWaveArcInfo = 0x020C9788;
 NNSi_SndArcLoadWaveArc = 0x020CA194;
+NNS_SndHeapCreate = 0x020C9A0C;
+NNS_SndHeapDestroy = 0x020C9A7C;
+NNS_SndHeapAlloc = 0x020C9B50;
+NNS_SndArcGetFileSize = 0x020C98B4;
+NNS_FndFreeToExpHeap = 0x020B5530;
+NNS_SndPlayerCountPlayingSeqByPlayerNo = 0x020C81F0;
 LoadSingleWaves = 0x020CA788;
 SND_AssignWaveArc = 0x020D6154;
 
